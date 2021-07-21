@@ -1,5 +1,6 @@
-import React, {useRef, useEffect, useState} from 'react'
+import React, {useRef, useEffect, useState} from 'react';
 import logoArmazem from '../../img/logo-armazem-do-vinho.png';
+import whatsappIcon from '../../img/whatsappIcon.png';
 
 /* import Header from '../../components/header'
 import Footer from '../../components/footer' */
@@ -80,7 +81,7 @@ const Contact = () => {
 
         if(formData.phone != '' && formData.name != '' && formData.message != ''){
     
-            mail.href = `mailto:comercialaureaej@gmail.com?subject=${formData.subject}&body=Oi%20,%20meu%20nome%20é%20${formData.name}.%20sou%20de%20${selectedUf},%20-%20${selectedCity},%20minhas%20informações%20para%20contato:%20${formData.phone}%20${formData.contact}%20.%0D${formData.message}`
+            mail.href = `mailto:barretonovaes.vilas@gmail.com?subject=${formData.subject}&body=Oi%20,%20meu%20nome%20é%20${formData.name}.%20sou%20de%20${selectedUf},%20-%20${selectedCity},%20minhas%20informações%20para%20contato:%20${formData.phone}%20${formData.contact}%20.%0D${formData.message}`
     
             // alert(`Obrigado pelo contato, ${formData.name}! Seu app de e-mail abrirá agora e basta clicar em enviar que em pouco tempo te retornarei e espero que consiga te ajudar!.`)
         
@@ -123,10 +124,11 @@ const Contact = () => {
                         <div className="page-title">
                             
                             <div className="logo-2">
-                                <img src={logoArmazem} alt="logo 2 Emporio Bom Jardim" />
+                                <img src={logoArmazem} alt="Logo armazém do vinho" />
                             </div>
 
                             <h2> Entre em contato conosco! </h2>
+                            <p> Preencha os campos abaixo com seus dados e mensagem, e então clique em enviar, uma janela para envio de e-mail irá aparecer para que seja possível concluir o envio, assim que enviada responderemos em breve! </p>  
 
                         </div>
 
@@ -266,8 +268,8 @@ const Contact = () => {
 
                 <div className='whatsappContact'>
                     <h3>Ou se preferir...</h3>
-                    <a href="https://api.whatsapp.com/send?phone=552199015-7124&text=Como%20podemos%20te%20ajudar?" target="_blank" >
-{/*                         <img src={whatsappIcon} id='wppImage' /> */}
+                    <a href="https://api.whatsapp.com/send?phone=TELEFONE&text=Como%20podemos%20te%20ajudar?" target="_blank" >
+                        <img src={whatsappIcon} id='wppImage' />
                     </a>
                 </div> 
 

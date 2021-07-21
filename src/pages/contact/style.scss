@@ -6,13 +6,18 @@
     font-family: 'Montserrat', sans-serif;
 }
 
-#contactMain h1 {
+/* #contactMain h1 {
     color: #DBB826;
-}
+} */
 
 .page-title {
     margin-bottom: 20px;
     justify-content: center;
+}
+
+.page-title h2,
+.page-title p {
+    text-align: center;
 }
 
 .logo-2 {
@@ -56,16 +61,6 @@ fieldset {
     border: 0;
 }
 
-fieldset legend h2 {
-    font-size: 24px;
-}
-
-fieldset form legend span {
-    font-size: 14px;
-    font-weight: normal;
-    color: #DBB826;
-}
-
 fieldset .inputboxes {
     width: 60%;
     display: flex;
@@ -98,7 +93,7 @@ fieldset .field {
 
 fieldset input {
     width: 100%;
-    background-color: #ffc05c;
+    background-color: #8E092D;
     border: none;
     margin: 3px 0px 50px 0px;
     padding: 16px 24px;
@@ -115,7 +110,7 @@ fieldset .selects {
 fieldset .selects select {
 
     width: 110%;
-    background-color: #ffc05c;
+    background-color: #8E092D;
     border: none;
     margin: 3px 0px 50px 0px;
     padding: 16px 24px;
@@ -136,7 +131,7 @@ fieldset .messageInput {
 fieldset #message {
     height: 150px;
     width: 103%;
-    background-color: #ffc05c;
+    background-color: #8E092D;
     color: #ffffff;
     padding: 15px;
 }
