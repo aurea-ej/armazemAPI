@@ -1,0 +1,122 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+//background: linear-gradient(199deg, rgba(0,0,0,1) 14%, rgba(167,28,43,1) 100%);
+
+:root {
+      --vinho: #A71C2B;
+      --branco: #ffffff;
+      --background-color: #F2F2F2;
+      
+      background-color: var(--background-color);
+}
+
+* {
+      font-family: 'Montserrat', sans-serif;
+      box-sizing: border-box;
+}
+      
+
+.App {
+      width: 100vw;
+      margin: auto;
+      justify-content: center;
+      align-items: center;
+      display: flex;
+      flex-direction: column;
+      overflow-x: hidden;
+}
+
+.firstLetter {
+      font-size: 2rem;
+      color: var(--vinho);
+}
+
+.aboutSection {
+      text-align: center;
+      margin: 0;
+
+      .aboutContainer {
+            object-fit: contain;
+            width: 100vw;
+
+            video {
+                  position: relative;
+                  z-index: 0;
+
+                  margin: 0;
+                  width: 100%;
+                  height: 100%;
+                  object-fit: cover;
+                  border-bottom: solid 1rem var(--vinho);
+            }
+
+            h1 {
+                  margin: 0;
+                  top: 45%;
+                  left: 20%;
+                  display: flex;
+                  position: absolute;
+                  z-index: 1;
+                  
+                  font-size: 3rem;
+                  color:var(--branco);
+            }
+      }
+
+      .aboutText {
+            margin: 0;
+            padding: 0 6rem;
+            justify-content: center;
+
+            img {
+                  margin-top: 1.5rem;
+                  width: 25%;
+            }
+
+            p {
+                  margin-top: 1.5rem;
+                  justify-content: left;
+                  line-height: 1.75rem;
+                  text-align: justify;
+            }
+
+            .topbar {
+                  margin-top: 1rem;
+                  background-color: var(--vinho);
+                  width: 7rem;
+                  height: .5rem;
+            }
+      } 
+}
+
+.aboutCard {
+      padding: 0 6rem;
+      width: 100vw;
+      margin: 0;
+
+      .cardContainer {
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            
+            .card {
+                  padding: 2rem;
+                  margin: 2rem;
+                  background-color: var(--vinho);
+                  box-shadow: inset 0px 0px 13px 0px rgba(0,0,0,0.6);
+                  width: 350px;
+                  height: 250px;
+
+                  color: var(--branco);
+                  text-align: justify;
+                  font-size: 1.2rem;
+
+                  h3 {
+                        padding: 0;
+                        margin: 0;
+                        font-size: 3rem;
+                  }
+            }
+      }
+}
