@@ -260,7 +260,7 @@ const Contact = () => {
 
                     <div className='sendButton' >
 
-                        <a onClick={sendMail()} href='' id='mail'>Enviar</a>                    
+                        <button onClick={sendMail()} href='' id='mail'>Enviar</button>                    
 
                     </div>
 

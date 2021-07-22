@@ -103,13 +103,13 @@ fieldset input {
 
 fieldset .selects {
 
-    width: 105%;
+    width: 100%;
 
 }
 
 fieldset .selects select {
 
-    width: 110%;
+    width: 100%;
     background-color: #8E092D;
     border: none;
     margin: 3px 0px 50px 0px;
@@ -130,7 +130,7 @@ fieldset .messageInput {
 
 fieldset #message {
     height: 150px;
-    width: 103%;
+    width: 100%;
     background-color: #8E092D;
     color: #ffffff;
     padding: 15px;
@@ -157,20 +157,21 @@ fieldset #message {
     justify-content: center;
     margin-top: 50px;
     margin-bottom: 50px;
-    width: 60px;
-    height: 20px;
-    text-decoration: none;
-    cursor: pointer;
-    color: white;
-    padding: 15px;
-    border-radius: 10px;
-    background-color: #662210;
 }
 
-.sendButton a {
+.sendButton button {
+    background-color: #8E092D;
+    cursor: pointer;
     font-size: 13pt;
     color: white;
     text-decoration: none;
+    border-radius: 10px;
+    padding: 10px;
+    border: 0px;
+}
+
+#mail:hover {
+    background-color: #ce1042;
 }
 
 @media screen and (max-width: 768px) {
