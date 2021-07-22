@@ -1,0 +1,138 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
+:root {
+  --vinho: #A71C2B;
+  --branco: #ffffff;
+  --background-color: #F2F2F2;
+  background-color: var(--background-color);
+}
+
+* {
+  font-family: 'Montserrat', sans-serif;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.App {
+  width: 100vw;
+  margin: auto;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  overflow-x: hidden;
+}
+
+.firstLetter {
+  font-size: 2rem;
+  color: var(--vinho);
+}
+
+.aboutSection {
+  text-align: center;
+  margin: 0;
+}
+
+.aboutSection .aboutContainer {
+  -o-object-fit: contain;
+     object-fit: contain;
+  width: 100vw;
+}
+
+.aboutSection .aboutContainer video {
+  position: relative;
+  z-index: 0;
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-bottom: solid 1rem var(--vinho);
+}
+
+.aboutSection .aboutContainer h1 {
+  margin: 0;
+  top: 45%;
+  left: 20%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: absolute;
+  z-index: 1;
+  font-size: 3rem;
+  color: var(--branco);
+}
+
+.aboutSection .aboutText {
+  margin: 0;
+  padding: 0 6rem;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.aboutSection .aboutText img {
+  margin-top: 1.5rem;
+  width: 25%;
+}
+
+.aboutSection .aboutText p {
+  margin-top: 1.5rem;
+  -webkit-box-pack: left;
+      -ms-flex-pack: left;
+          justify-content: left;
+  line-height: 1.75rem;
+  text-align: justify;
+}
+
+.aboutSection .aboutText .topbar {
+  margin-top: 1rem;
+  background-color: var(--vinho);
+  width: 7rem;
+  height: .5rem;
+}
+
+.aboutCard {
+  padding: 0 6rem;
+  width: 100vw;
+  margin: 0;
+}
+
+.aboutCard .cardContainer {
+  margin: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.aboutCard .cardContainer .card {
+  padding: 2rem;
+  margin: 2rem;
+  background-color: var(--vinho);
+  -webkit-box-shadow: inset 0px 0px 13px 0px rgba(0, 0, 0, 0.6);
+          box-shadow: inset 0px 0px 13px 0px rgba(0, 0, 0, 0.6);
+  width: 350px;
+  height: 250px;
+  color: var(--branco);
+  text-align: justify;
+  font-size: 1.2rem;
+}
+
+.aboutCard .cardContainer .card h3 {
+  padding: 0;
+  margin: 0;
+  font-size: 3rem;
+}
+/*# sourceMappingURL=style.css.map */

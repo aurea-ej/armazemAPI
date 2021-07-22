@@ -1,14 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
 
 //background: linear-gradient(199deg, rgba(0,0,0,1) 14%, rgba(167,28,43,1) 100%);
 
 :root {
       --vinho: #A71C2B;
       --branco: #ffffff;
-      --background-color: #F2F2F2;
+      --offwhite: #F2F2F2;
+      --cinza: #596264;
+      --preto: #000000;
       
-      background-color: var(--background-color);
+      background-color: var(--offwhite);
 }
 
 * {
@@ -18,6 +20,7 @@
       
 
 .App {
+      max-width: 1900px;
       width: 100vw;
       margin: auto;
       justify-content: center;
@@ -32,62 +35,65 @@
       color: var(--vinho);
 }
 
-.aboutSection {
+.aboutContainer {
+      margin: auto;
+      width: 100vw;
+      height: 100vh;
+      display: flex;           
       text-align: center;
-      margin: 0;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      object-fit: contain;
 
-      .aboutContainer {
-            object-fit: contain;
-            width: 100vw;
+      video {
+            position: relative;
+            z-index: 0;
 
-            video {
-                  position: relative;
-                  z-index: 0;
-
-                  margin: 0;
-                  width: 100%;
-                  height: 100%;
-                  object-fit: cover;
-                  border-bottom: solid 1rem var(--vinho);
-            }
-
-            h1 {
-                  margin: 0;
-                  top: 45%;
-                  left: 20%;
-                  display: flex;
-                  position: absolute;
-                  z-index: 1;
-                  
-                  font-size: 3rem;
-                  color:var(--branco);
-            }
+            margin: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-bottom: solid 1rem var(--vinho);
       }
 
-      .aboutText {
+      h1 {
             margin: 0;
-            padding: 0 6rem;
-            justify-content: center;
+            top: 50%;
+            left: 25%;
+            display: flex;
+            position: absolute;
+            z-index: 1;
+                  
+            font-size: 4rem;
+            color:var(--offwhite);
+      }
+}
 
-            img {
-                  margin-top: 1.5rem;
-                  width: 25%;
-            }
+.aboutText {
+      margin: 0;
+      padding: 0 6rem;
+      text-align: center;
+      justify-content: center;
 
-            p {
-                  margin-top: 1.5rem;
-                  justify-content: left;
-                  line-height: 1.75rem;
-                  text-align: justify;
-            }
+      img {
+            margin-top: 1.5rem;
+            width: 25%;
+      }
 
-            .topbar {
-                  margin-top: 1rem;
-                  background-color: var(--vinho);
-                  width: 7rem;
-                  height: .5rem;
-            }
-      } 
+      p {
+            margin-top: 1.5rem;
+            justify-content: left;
+            line-height: 1.75rem;
+            text-align: justify;
+      }
+
+      .topbar {
+            margin-top: 1rem;
+            background-color: var(--vinho);
+            width: 7rem;
+            height: .5rem;
+      }
 }
 
 .aboutCard {
@@ -101,21 +107,55 @@
             justify-content: center;
             
             .card {
+                  box-shadow: inset 0px 0px 13px 0px rgba(0,0,0,0.6);
+                  display: block;
+                  overflow: hidden;
+                  position: relative;
+                  max-width: 400px;
+                  max-height: 460px;
                   padding: 2rem;
                   margin: 2rem;
+                  z-index: 0;
+
                   background-color: var(--vinho);
-                  box-shadow: inset 0px 0px 13px 0px rgba(0,0,0,0.6);
-                  width: 350px;
-                  height: 250px;
-
-                  color: var(--branco);
+                  border-radius: .3rem;
+                  
                   text-align: justify;
+                  color: var(--branco);
                   font-size: 1.2rem;
-
+                      
                   h3 {
                         padding: 0;
                         margin: 0;
                         font-size: 3rem;
+                        text-align: right;
+                        
+                  }
+
+                  &:before {
+                        content: "";
+                        position: absolute;
+                        z-index: -1;
+                        top: -1rem;
+                        right: -1rem;
+                        
+                        background: var(--cinza);
+                        height: .7rem;
+                        width: 460px;
+                        //border-radius: 100%;
+                        transform-origin: 50% 50%;
+                        transition: transform .3s ease-out;
+                        transform: scale(1);
+                  }
+                      
+                  &:hover:before {
+                        transform: scale(50);
+                  }
+                  
+                  
+                  &:hover {
+                        transition: all .3s ease-out;
+                        color: var(--preto);
                   }
             }
       }

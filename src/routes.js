@@ -1,4 +1,4 @@
-import { React } from 'react'
+import React  from 'react'
 import { Route, BrowserRouter } from 'react-router-dom'
 
 import Home from './pages/home'
@@ -12,7 +12,7 @@ const Routes = () => {
         <BrowserRouter>
 
             <Route component={Home} path='/' exact />
-            <Route component={About} path="/quemsomos" />
+            <Route component={About} path='/quemsomos' />
             <Route component={Contact} path='/contato'/>
 
         </BrowserRouter>
