@@ -5,6 +5,8 @@ import Footer from '../../components/footer'
 
 import logoArmazem from '../../img/logo-armazem-do-vinho.png'
 import taca_armazem from '../../img/taca_armazem.png'
+import portugal from '../../img/portugal.png'
+import argentina from '../../img/argentina.png'
 
 function About() {
     return (
@@ -51,27 +53,37 @@ function About() {
                 <div className="aboutWine">
                     <h2>Carta de vinhos</h2>
                     <div className="wineContainer">
+
                         <div className="wineCard">
-                            <div className="wineCircle"></div>
+                           
+                            <div className="wineCircle"><h4>Vinhos Portugueses</h4></div>
+
                             <div className="content">
                                 <h2>Portugal</h2>
                                 <h3>Trapezzio, Latitud33</h3>
                                 <p><span className="firstLetter">O</span>s vinhos portugueses são de qualidade incomparável, etc etc.. Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi consequatur similique ullam laborum sequi velit repudiandae a non, alias delectus animi deleniti sunt consequuntur nihil aut modi. Repellendus, natus ad. Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
                                 <a href="/">Comprar</a>
                             </div>
-                            <img src={taca_armazem} alt="Taça de vinho"/>
+
+                            <img className="tacaVinho" src={taca_armazem} alt="Taça de vinho"/>
+                            <img className="bandeira" src={portugal} alt="Portugal"/>
                         </div>
 
                         <div className="wineCard">
-                            <div className="wineCircle"></div>
+
+                            <div className="wineCircle"><h4>Vinhos Argentinos</h4></div>
                             <div className="content">
+
                                 <h2>Argentina</h2>
                                 <h3>Monte da Raposinha</h3>
                                 <p><span className="firstLetter">V</span>inhos argentinos são ideais para celebrar o mais simples dos momentos. Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi consequatur similique ullam laborum sequi velit repudiandae a non, alias delectus animi deleniti sunt consequuntur nihil aut modi. Repellendus, natus ad. Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
                                 <a href="/">Comprar</a>
+
                             </div>
-                            <img src={taca_armazem} alt="Taça de vinho"/>
+                            <img className="bandeira" src={argentina} alt="Argentina"/>
+                            <img className="tacaVinho" src={taca_armazem} alt="Taça de vinho"/>
                         </div>
+
                     </div>
                 </div>
                     

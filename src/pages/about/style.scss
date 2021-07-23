@@ -64,7 +64,7 @@
       h1 {
             margin: 0;
             top: 50%;
-            left: 25%;
+            left: 16.9%;
             display: flex;
             position: absolute;
             z-index: 1;
@@ -115,7 +115,7 @@
                   display: block;
                   overflow: hidden;
                   position: relative;
-                  max-width: 400px;
+                  max-width: 450px;
                   max-height: 460px;
                   min-width: 300px;
                   padding: 2rem;
@@ -183,8 +183,8 @@
       .wineCard {
             margin-top: 1.75rem;
             position: relative;
-            width: 750px;
-            height: 480px;
+            width: 710px;
+            height: 460px;
             border-radius: .3rem;
             display: flex;
             transition: .5s;
@@ -198,6 +198,11 @@
                   height: 100%;
                   border-radius: .3rem;
                   overflow: hidden;
+
+                  h4 {
+                        color: var(--deepvinho);
+                        font-style: italic;
+                  }
 
                   &::before {
                         content: '';
@@ -214,7 +219,18 @@
     
             }
 
-            img {
+            img.bandeira {
+                  position: absolute;
+                  left: 64%;
+                  top: 70%;
+                  width: 100px;
+                  height: 100px;
+                  transition: .2s;
+                  //transform: translate(-50%,-50%);
+                  opacity: 1;
+            }
+
+            img.tacaVinho {
                   position: absolute;
                   top: 50%;
                   left: 50%;
@@ -229,7 +245,7 @@
                   position: relative;
                   width: 75%;
                   left: 13%;
-                  padding: 3rem;
+                  padding: 2.5rem;
                   transition: .5s;
                   color: var(--branco);
                   line-height: 1.3rem;
@@ -271,11 +287,14 @@
                         
                   }
 
-                  img {
+                  img.tacaVinho {
                         left: 82.5%;
-                        height: 400px;
+                        height: 375px;
                   }
 
+                  img.bandeira {
+                        opacity: 0;
+                  }
                   .content {
                         left: 0;
                         opacity: 1;
