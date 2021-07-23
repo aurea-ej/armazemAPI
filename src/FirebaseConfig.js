@@ -1,12 +1,13 @@
 
 const firebaseConfig = {
-    apiKey: "AIzaSyAWvZFi1AHS49xoF-x0Vuf9p3BOvEoRAXA",
-    authDomain: "armazem-do-vinho.firebaseapp.com",
-    databaseURL: "https://armazem-do-vinho-default-rtdb.firebaseio.com",
-    projectId: "armazem-do-vinho",
-    storageBucket: "armazem-do-vinho.appspot.com",
-    messagingSenderId: "627040949952",
-    appId: "1:627040949952:web:3c6c25b2912573b4697f25",
+    apiKey: "AIzaSyBFZ4PDFLjqfT5B01pZK_jhU69soHskkKA",
+    authDomain: "armazem-do-vinho-e946f.firebaseapp.com",
+    databaseURL: "https://armazem-do-vinho-e946f-default-rtdb.firebaseio.com",
+    projectId: "armazem-do-vinho-e946f",
+    storageBucket: "armazem-do-vinho-e946f.appspot.com",
+    messagingSenderId: "85558232246",
+    appId: "1:85558232246:web:98854feea97f2a56a79217",
+    measurementId: "G-XFMLX2TD0W"
 };
 
 export default firebaseConfig;

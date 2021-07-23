@@ -1,6 +1,9 @@
 import { React } from 'react';
 import { useState, useEffect } from 'react';
 
+import Header from '../../components/header'
+import Footer from '../../components/footer'
+
 import './style.scss'
 
 import firebase from 'firebase/app'
@@ -40,6 +43,8 @@ function Home() {
 
         <div className="App">
 
+            <Header />
+
             <h1>Olá, mundo!</h1>
 
             {
@@ -59,6 +64,8 @@ function Home() {
 
                 })
             }
+
+            <Footer />
 
         </div>
 
