@@ -1,6 +1,8 @@
 import { React } from 'react';
 import { useState, useEffect } from 'react';
 
+import shoppingBag from '../../img/close-shopping-bag.svg'
+
 import Header from '../../components/header'
 import Footer from '../../components/footer'
 
@@ -45,27 +47,51 @@ function Home() {
 
             <Header />
 
-            <h1>Olá, mundo!</h1>
+            <section id="heroSection">
 
-            {
-                data.map((item) => {
+                <div className="heroWrapper">
 
-                    return (
+                    <div className="leftSide">
 
-                        <div className="list">
+                        <h1>Isso é um teste</h1>
 
-                            <p>Nome: {item.name}</p>
-                            <p>Descrição: {item.description}</p>
-                            <p>Valor: R${item.value}</p>
+                    </div>
+
+                    <div className="rightSide">
+
+                        <div className="textRight">
+
+                            <h2>E isso aqui também</h2>
+
+                            <h1>Compre vinho</h1>
+
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+
 
                         </div>
 
-                    )
+                            <div className="buttonBuy">
+                                
+                                <a
 
-                })
-            }
+                                    href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">
+                                    Adicionar ao carrinho
+                                    <img src={shoppingBag}
+                                    alt="sacola" />
+                                    
+                                </a>
 
-            <Footer />
+                            </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <section id="sectionHome">
+                <p>teste</p>
+            </section>
 
         </div>
 
