@@ -89,8 +89,47 @@ function Home() {
 
             </section>
 
+            <section id="sectionInfos">
+
+                <div className="cardInfoHome">
+
+                    <div className="cardInfos">
+
+                        <div className="textCard">
+
+                            <h4>Melhores Preços</h4>
+                            <h5>Lorem ipsum dolor sit amet, consectetur adipiscing elit</h5>
+
+                        </div>
+
+                    </div>
+                    <div className="cardInfos">
+
+                        <div className="textCard">
+
+                            <h4>Entrega segura</h4>
+                            <h5>Lorem ipsum dolor sit amet, consectetur adipiscing elit</h5>
+
+                        </div>
+
+                    </div>
+                    <div className="cardInfos">
+
+                        <div className="textCard">
+
+                            <h4>Segurança na compra</h4>
+                            <h5>Lorem ipsum dolor sit amet, consectetur adipiscing elit</h5>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
             <section id="sectionHome">
-                <p>teste</p>
+                <h1>Confira nossas melhores ofertas</h1>
             </section>
 
         </div>

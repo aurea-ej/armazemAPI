@@ -106,10 +106,45 @@
 
         }
 
+    }
 
+}
+
+.cardInfoHome {
+
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+
+    .cardInfos{
+
+        width: 280px;
+        height: 120px;
+        background-color: #53051A;
+        text-align: center;
+        margin: 2rem .5rem 3rem .5rem;
 
     }
 
+    .textCard {
+
+        color: #fff;
+
+        h4 {
+
+            text-transform: uppercase;
+
+        }
+
+        h5 {
+
+            padding: 0 2rem 0 2rem;
+            font-weight: 500;
+
+        }
+
+    }
 
 }
 
