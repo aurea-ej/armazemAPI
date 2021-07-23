@@ -1,5 +1,9 @@
 import React from 'react'
-import { Link } from "react-router-dom";
+import {Link} from "react-router-dom";
+import logoArmazem from "../../img/logo-armazem-do-vinho2.png";
+import instagramIcon from "../../img/instagramIcon.png";
+import facebookIcon from "../../img/facebookIcon.png";
+import logoAurea from "../../img/Logos_Aurea2.png"
 
 import './style.scss'
 
@@ -9,38 +13,35 @@ export default function Footer (props) {
 
         <footer>
 
-            <div className='address' >
+            <div className='footerContacts' >
 
-                <img src='' alt='' />
+                <img src={logoArmazem} alt='Logo armazem' />
 
                 <ul>
                     <li> <Link to='/' > Início </Link> </li>
-                    <li> <Link to='/Quem-somos-nos'> Quem Somos </Link> </li>
+                    <li> <Link to='/quemsomos'> Quem Somos </Link> </li>
                     <li> <Link to='/Carrinho'> Carrinho </Link> </li>
+                    <li> <Link to='/contato'> Contato </Link> </li>
                     <li> <Link to='/Entrar'> Login/Perfil </Link> </li>
                 </ul>
 
-                <p> Rua tal</p>
-
-                <p>Whatsapp: </p>
+                <p>Telefone: (22) 98112-9219 </p>
                 
+            </div>
+
+            <div className='socialMedias' >
+
+                <a href='https://www.instagram.com/armazem.dovinho/?utm_medium=copy_link'  > <img src={instagramIcon} alt='logoInstagram' /> </a>
+                <a href='https://www.facebook.com/Armaz%C3%A9m-do-Vinho-107327764956105'  > <img src={facebookIcon} alt='logoFacebook' /> </a>
+
             </div>
 
             <div className='copyright' >
                 
                 <p>Desenvolvido por :</p>
-
-                <a href='https://aureaej.com/' ><img src='' alt='' /></a>
+                <a href='https://aureaej.com/' ><img src={logoAurea} alt='' /></a>
 
             </div>
-
-            {/* <div className='socialMedias' >
-
-                <a href='https://www.instagram.com/aureaej/'  > <img src={instagramIcon} alt='logoInstagram' /> </a>
-                <a href='https://www.facebook.com/aureaej'  > <img src={facebookIcon} alt='logoFacebook' /> </a>
-                <a href='https://www.linkedin.com/company/aureaej/'  > <img src={linkedinIcon} alt='logoLinkedin' /> </a>
-
-            </div> */}
 
 
         </footer>

@@ -1,5 +1,7 @@
 import { React } from 'react'
 import './style.scss'
+import Header from '../../components/header'
+import Footer from '../../components/footer'
 
 import logoArmazem from '../../img/logo-armazem-do-vinho.png'
 
@@ -7,6 +9,8 @@ function About() {
     return (
 
         <div className="App">
+
+            <Header />
 
             <div className="aboutContainer">
                 <video src="./videos/brindeVinho.mp4" autoPlay loop muted/>
@@ -44,6 +48,7 @@ function About() {
                 </div>
                     
             </div>
+            <Footer />
         </div>  
     )
 }

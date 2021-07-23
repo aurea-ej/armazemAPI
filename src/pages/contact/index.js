@@ -1,6 +1,8 @@
 import React, {useRef, useEffect, useState} from 'react';
 import logoArmazem from '../../img/logo-armazem-do-vinho.png';
 import whatsappIcon from '../../img/whatsappIcon.png';
+import Header from '../../components/header'
+import Footer from '../../components/footer'
 
 /* import Header from '../../components/header'
 import Footer from '../../components/footer' */
@@ -113,7 +115,7 @@ const Contact = () => {
 
         <div className="App">
 
-{/*             <Header /> */}
+            <Header />
 
             <main id='contactMain'>
 
@@ -275,7 +277,7 @@ const Contact = () => {
 
             </main>
 
-{/*             <Footer /> */}
+            <Footer />
 
         </div>
 

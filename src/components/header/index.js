@@ -3,7 +3,7 @@ import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import './style.scss'
 
-import logoArmazem from '../../img/logo-armazem-do-vinho.png'
+import logoArmazem from '../../img/logo-armazem-do-vinho2.png'
 
 import firebase from 'firebase/app'
 import 'firebase/auth'
@@ -48,6 +48,7 @@ export default function Header (props) {
         <div>
 
             <header>
+                
 
                 <div className='logo' >
 
@@ -60,8 +61,9 @@ export default function Header (props) {
                     <ul>
 
                         <li> <Link to='/' > Início </Link> </li>
-                        <li> <Link to='/Quem-somos-nos'> Quem Somos </Link> </li>
+                        <li> <Link to='/quemsomos'> Quem Somos </Link> </li>
                         <li> <Link to='/Carrinho'> Carrinho </Link> </li>
+                        <li> <Link to='/contato'> Contato </Link> </li>
                         <li> <Link to='/Entrar'> Login/Perfil </Link> </li>
 
                     </ul>
@@ -94,8 +96,9 @@ export default function Header (props) {
                 <ul>
 
                     <li> <Link to='/' > Início </Link> </li>
-                    <li> <Link to='/Quem-somos-nos'> Quem Somos </Link> </li>
+                    <li> <Link to='/quemsomos'> Quem Somos </Link> </li>
                     <li> <Link to='/Carrinho'> Carrinho </Link> </li>
+                    <li> <Link to='/contato'> Contato </Link> </li>
                     <li> <Link to='/Entrar'> Login/Perfil </Link> </li>
 
                 </ul>
@@ -106,3 +109,4 @@ export default function Header (props) {
 
     )
 }
+
