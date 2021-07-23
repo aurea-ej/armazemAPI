@@ -77,8 +77,8 @@ function Home() {
                                     href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">
                                     Adicionar ao carrinho
                                     <img src={shoppingBag}
-                                    alt="sacola" />
-                                    
+                                    alt="sacola de compras" />
+
                                 </a>
 
                             </div>
