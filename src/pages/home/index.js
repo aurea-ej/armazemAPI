@@ -1,7 +1,15 @@
 import { React } from 'react';
 import { useState, useEffect } from 'react';
 
-import shoppingBag from '../../img/close-shopping-bag.svg'
+import shoppingBagLogo from '../../img/close-shopping-bag.svg'
+import deliveryPackageLogo from '../../img/delivery.svg'
+import securityLogo from '../../img/security.svg'
+import flashSale from '../../img/flash-sale.svg'
+import spainFlag from '../../img/spain.svg'
+import discountTag from '../../img/offer.svg'
+
+
+import vinhoImg from '../../img/vinho_periquita_tinto.png'
 
 import Header from '../../components/header'
 import Footer from '../../components/footer'
@@ -15,7 +23,7 @@ import firebaseConfig from '../../FirebaseConfig.js'
 
 function Home() {
 
-    const [data, setData] = useState([])
+    const [data, setData] = useState([]);
 
     useEffect(() => {
 
@@ -70,18 +78,18 @@ function Home() {
 
                         </div>
 
-                            <div className="buttonBuy">
-                                
-                                <a
+                        <div className="buttonBuy">
 
-                                    href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">
-                                    Adicionar ao carrinho
-                                    <img src={shoppingBag}
+                            <a
+
+                                href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">
+                                Adicionar ao carrinho
+                                <img src={shoppingBagLogo}
                                     alt="sacola de compras" />
 
-                                </a>
+                            </a>
 
-                            </div>
+                        </div>
 
                     </div>
 
@@ -97,6 +105,8 @@ function Home() {
 
                         <div className="textCard">
 
+                            <img id="logoSale" src={flashSale} alt="Promoção" />
+
                             <h4>Melhores Preços</h4>
                             <h5>Lorem ipsum dolor sit amet, consectetur adipiscing elit</h5>
 
@@ -107,6 +117,8 @@ function Home() {
 
                         <div className="textCard">
 
+                            <img src={deliveryPackageLogo} alt="Entrega" />
+
                             <h4>Entrega segura</h4>
                             <h5>Lorem ipsum dolor sit amet, consectetur adipiscing elit</h5>
 
@@ -116,6 +128,8 @@ function Home() {
                     <div className="cardInfos">
 
                         <div className="textCard">
+
+                            <img id="logoSecurity" src={securityLogo} alt="Segurança" />
 
                             <h4>Segurança na compra</h4>
                             <h5>Lorem ipsum dolor sit amet, consectetur adipiscing elit</h5>
@@ -128,9 +142,131 @@ function Home() {
 
             </section>
 
-            <section id="sectionHome">
+            <section id="selectedSection">
+
                 <h1>Confira nossas melhores ofertas</h1>
+
+                <div className="selectedOptions">
+
+                    <div className="optionsContainer">
+
+                        <div className="optionsText">
+
+                            <p>Promoções</p>
+
+                        </div>
+
+                        <div className="optionsText">
+
+                            <p>Especiais</p>
+
+                        </div>
+
+                        <div className="optionsText">
+
+                            <p>Importados</p>
+
+                        </div>
+
+                        <div className="optionsText">
+
+                            <p>Kits</p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
             </section>
+
+            <section id="productsSection">
+
+                <div className="productsContainer">
+
+                    <div className="productCard">
+
+                        <img src={vinhoImg} alt="Imagem do vinho" />
+                        <p>Vinho Periquita Tinto</p>
+                        <p className="itemInfos">Espanha • Tinto • Teor 13%</p>
+                        <h3>R$ 68,00</h3>
+                        <button>Adicionar ao carrinho</button>
+
+                        <div className="dataItem">
+
+                            <img className="countryFlag" src={spainFlag} alt="Bandeira do país" />
+                            <h5>50% off</h5>
+
+                        </div>
+
+                    </div>
+                    <div className="productCard">
+
+                        <img src={vinhoImg} alt="Imagem do vinho" />
+                        <p>Vinho Periquita Tinto</p>
+                        <p className="itemInfos">Espanha • Tinto • Teor 13%</p>
+                        <h3>R$ 68,00</h3>
+                        <button>Adicionar ao carrinho</button>
+
+                        <div className="dataItem">
+
+                            <img className="countryFlag" src={spainFlag} alt="Bandeira do país" />
+                            <h5>50% off</h5>
+
+                        </div>
+                    </div>
+                    <div className="productCard">
+                        <img src={vinhoImg} alt="Imagem do vinho" />
+                        <p>Vinho Periquita Tinto</p>
+                        <p className="itemInfos">Espanha • Tinto • Teor 13%</p>
+                        <h3>R$ 68,00</h3>
+                        <button>Adicionar ao carrinho</button>
+
+                        <div className="dataItem">
+
+                            <img className="countryFlag" src={spainFlag} alt="Bandeira do país" />
+                            <h5>50% off</h5>
+
+                        </div>
+
+                    </div>
+                    <div className="productCard">
+
+                        <img src={vinhoImg} alt="Imagem do vinho" />
+                        <p>Vinho Periquita Tinto</p>
+                        <p className="itemInfos">Espanha • Tinto • Teor 13%</p>
+                        <h3>R$ 68,00</h3>                        
+                        <button>Adicionar ao carrinho</button>
+
+                        <div className="dataItem">
+
+                            <img className="countryFlag" src={spainFlag} alt="Bandeira do país" />
+                            <h5>50% off</h5>
+
+                        </div>
+
+                    </div>
+                    <div className="productCard">
+
+                    <img src={vinhoImg} alt="Imagem do vinho" />
+                        <p>Vinho Periquita Tinto</p>
+                        <p className="itemInfos">Espanha • Tinto • Teor 13%</p>
+                        <h3>R$ 68,00</h3>
+                        <button>Adicionar ao carrinho</button>
+
+                        <div className="dataItem">
+
+                            <img className="countryFlag" src={spainFlag} alt="Bandeira do país" />
+                            <h5>50% off</h5>
+
+                        </div>
+                    </div>
+
+                </div>
+
+            </section>
+
+            <Footer />
 
         </div>
 
