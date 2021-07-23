@@ -3,8 +3,9 @@ footer {
     width: 100vw;
     overflow-y: hidden;
     color: #FFF;
-    background-color: #ffc05c;
+    background-color: #53051a;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     // padding: 30px 0px;
@@ -18,14 +19,13 @@ footer {
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    padding-left: 15px;
-    display: none;
+    margin-bottom: 20px;
 
 }
 
 .copyright p {
 
-    font-size: 9pt
+    font-size: 1em;
 
 }
 
@@ -35,7 +35,7 @@ footer {
 
 }
 
-.address {
+.footerContacts {
 
     display: flex;
     align-items: center;
@@ -43,37 +43,32 @@ footer {
     flex-direction: column;
     width: 40%;
     max-height: 40vh;
+    margin-top: 15px;
     margin-bottom: 15px;
-    text-align: center;
 
 }
 
-.address img {
+.footerContacts img {
 
-    height: 150px;
+    height: 100px;
+    margin-bottom: 15px;
 
 }
 
-.address ul {
+.footerContacts ul {
 
     display: flex;
+    flex-direction: row;
+    align-items: space-between;
+    justify-content: space-between;
+    width: 100%;
+    margin-right: 30px;
     list-style: none;
 
 }
 
-.address li {
 
-    padding-left: 5px;
-
-}
-
-.address li span {
-
-    padding-left: 5px;
-
-}
-
-.address li a {
+.footerContacts li a {
 
     cursor: pointer;
     text-decoration: none;
@@ -83,17 +78,17 @@ footer {
 
 .socialMedias {
 
-    height: 20vh;
     display: flex;
+    justify-content: space-between;
     align-items: flex-end;
-    padding-right: 25px;
 
 }
 
 .socialMedias img {
 
-    height: 38px;
-    padding: 0px 4px;
+    height: 50px;
+    margin-right: 10px;
+    margin-left: 10px;
 
 }
 
@@ -118,6 +113,7 @@ footer {
         margin: 0px;
         height: auto;
         margin-top: 15px;
+        margin-bottom: 20px;
         align-items: center;
         border-top: 1px solid white;
         display: flex;
@@ -130,7 +126,7 @@ footer {
 
     }
 
-    .address{
+    .footerContacts{
 
         width: 90vw;
         height: auto;
@@ -140,7 +136,7 @@ footer {
 
     }
 
-    .address ul {
+    .footerContacts ul {
 
         width: 90vw;
         justify-content: space-between;
@@ -148,7 +144,7 @@ footer {
 
     }
 
-    .address li {
+    .footerContacts li {
 
         display: flex;
         align-items: center;
@@ -157,7 +153,7 @@ footer {
 
     }
 
-    .address p {
+    .footerContacts p {
 
         font-size: 9pt;
 
