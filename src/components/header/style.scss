@@ -1,9 +1,10 @@
+@import '../../global.scss';
 
 header {
 
     height: 15vh;
     width: 100vw;
-    background-color: #53051a;
+    background-color: $deepVinho;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -62,7 +63,7 @@ header {
 .menu a {
 
     text-decoration: none;
-    color: white;
+    color: $branco;
     padding-bottom: 21px;
 
 }
@@ -70,7 +71,7 @@ header {
 .menu a:hover {
 
     opacity: 0.6;
-    border-bottom: 5px solid #662210;
+    border-bottom: 5px solid $deepVinho;
 
 }
 
@@ -123,7 +124,7 @@ header {
         position: absolute;
         height: 3px;
         width: 30px;
-        background: white;
+        background: $branco;
         transition: .5s ease-in-out;
 
     }
@@ -134,7 +135,7 @@ header {
         top: -8px;
         height: 3px;
         width: 30px;
-        background: white;
+        background: $branco;
 
     }
 
@@ -144,7 +145,7 @@ header {
         top: 8px;
         height: 3px;
         width: 30px;
-        background: white;
+        background: $branco;
 
     }
 
@@ -175,7 +176,7 @@ header {
         display: none;
         align-items: center;
         justify-content: center;
-        background-color: #662210;
+        background-color: $deepVinho;
 
     }
 
@@ -188,21 +189,21 @@ header {
         justify-content: space-between;
         list-style: none;
         font-size: 9pt;
-        color: #FFF;
+        color: $branco;
 
     }
 
     .menu-mobile li {
 
         cursor: pointer;
-        color: #FFF;
+        color: $branco;
 
     }
 
     .menu-mobile a {
 
         text-decoration: none;
-        color: white;
+        color: $branco;
         padding-bottom: 18px;
 
     }

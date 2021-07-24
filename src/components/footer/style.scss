@@ -1,11 +1,4 @@
-:root {
-    --vinho: #A71C2B;
-    --deepvinho:  #53051a;
-    --branco: #ffffff;
-    --offwhite: #F2F2F2;
-    --cinza: #596264;
-    --preto: #000000;
-}
+@import '../../global.scss';
 
 
 footer {
@@ -13,7 +6,7 @@ footer {
     width: 100vw;
     overflow-y: hidden;
     color: var(--branco);
-    background-color: var(--deepvinho);
+    background-color: $deepVinho;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -86,7 +79,7 @@ footer {
 
     cursor: pointer;
     text-decoration: none;
-    color: var(--branco);
+    color: $branco;
 
 }
 

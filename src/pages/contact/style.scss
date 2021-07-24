@@ -1,14 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
-
-:root {
-    --vinho: #A71C2B;
-    --deepvinho:  #53051a;
-    --branco: #ffffff;
-    --offwhite: #F2F2F2;
-    --cinza: #596264;
-    --preto: #000000;
-}
+@import '../../global.scss';
 
 .App {
     display: flex;
@@ -49,8 +41,8 @@ form {
 form input {
     padding: 15px;
     border: none;
-    color: var(--branco);
-    background-color: var(--preto);
+    color: $branco;
+    background-color: $preto;
     margin-top: 20px;
 }
 
@@ -99,12 +91,12 @@ fieldset .field {
 
 fieldset input {
     width: 100%;
-    background-color: var(--vinho);
+    background-color: $vinho;
     border: none;
     margin: 3px 0px 50px 0px;
     padding: 16px 24px;
     font-size: 14px;
-    color: var(--branco);
+    color: $branco;
 }
 
 fieldset .selects {
@@ -116,17 +108,17 @@ fieldset .selects {
 fieldset .selects select {
 
     width: 100%;
-    background-color: var(--vinho);
+    background-color: $vinho;
     border: none;
     margin: 3px 0px 50px 0px;
     padding: 16px 24px;
     font-size: 14px;
-    color: var(--branco);
+    color: $branco;
 
 }
 
 fieldset .selects select option {
-    color: var(--branco);
+    color: $branco;
 }
 
 fieldset .messageInput {
@@ -137,8 +129,8 @@ fieldset .messageInput {
 fieldset #message {
     height: 150px;
     width: 100%;
-    background-color: var(--vinho);
-    color: var(--branco);
+    background-color: $vinho;
+    color: $branco;
     padding: 15px;
 }
 
@@ -166,10 +158,10 @@ fieldset #message {
 }
 
 .sendButton button {
-    background-color: var(--vinho);
+    background-color: $vinho;
     cursor: pointer;
     font-size: 13pt;
-    color: var(--branco);
+    color: $branco;
     text-decoration: none;
     border-radius: 10px;
     padding: 10px;
@@ -177,11 +169,11 @@ fieldset #message {
 }
 
 #mail:hover {
-    background-color: var(--cinza);
+    background-color: $cinza;
 }
 
 #mail:active {
-    background-color: var(--deepvinho);
+    background-color: $deepVinho;
 }
 
 @media screen and (max-width: 768px) {
