@@ -5,6 +5,7 @@ import Home from './pages/home'
 import Contact from './pages/contact'
 import About from './pages/about'
 import Register from './pages/signIn'
+import Admin from './pages/admin'
 
 const Routes = () => {
 
@@ -16,6 +17,7 @@ const Routes = () => {
             <Route component={About} path='/quemsomos' />
             <Route component={Contact} path='/contato'/>
             <Route component={Register} path='/entrar'/>
+            <Route component={Admin} path='/admin'/>
 
         </BrowserRouter>
 
