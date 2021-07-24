@@ -1,14 +1,20 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+:root {
+    --vinho: #A71C2B;
+    --deepvinho:  #53051a;
+    --branco: #ffffff;
+    --offwhite: #F2F2F2;
+    --cinza: #596264;
+    --preto: #000000;
+}
+
 .App {
     display: flex;
     flex-direction: column;
     font-family: 'Montserrat', sans-serif;
 }
-
-/* #contactMain h1 {
-    color: #DBB826;
-} */
 
 .page-title {
     margin-bottom: 20px;
@@ -43,8 +49,8 @@ form {
 form input {
     padding: 15px;
     border: none;
-    color: #FFF;
-    background-color: black;
+    color: var(--branco);
+    background-color: var(--preto);
     margin-top: 20px;
 }
 
@@ -93,12 +99,12 @@ fieldset .field {
 
 fieldset input {
     width: 100%;
-    background-color: #8E092D;
+    background-color: var(--vinho);
     border: none;
     margin: 3px 0px 50px 0px;
     padding: 16px 24px;
     font-size: 14px;
-    color: white;
+    color: var(--branco);
 }
 
 fieldset .selects {
@@ -110,17 +116,17 @@ fieldset .selects {
 fieldset .selects select {
 
     width: 100%;
-    background-color: #8E092D;
+    background-color: var(--vinho);
     border: none;
     margin: 3px 0px 50px 0px;
     padding: 16px 24px;
     font-size: 14px;
-    color: white;
+    color: var(--branco);
 
 }
 
 fieldset .selects select option {
-    color: white;
+    color: var(--branco);
 }
 
 fieldset .messageInput {
@@ -131,8 +137,8 @@ fieldset .messageInput {
 fieldset #message {
     height: 150px;
     width: 100%;
-    background-color: #8E092D;
-    color: #ffffff;
+    background-color: var(--vinho);
+    color: var(--branco);
     padding: 15px;
 }
 
@@ -160,10 +166,10 @@ fieldset #message {
 }
 
 .sendButton button {
-    background-color: #8E092D;
+    background-color: var(--vinho);
     cursor: pointer;
     font-size: 13pt;
-    color: white;
+    color: var(--branco);
     text-decoration: none;
     border-radius: 10px;
     padding: 10px;
@@ -171,11 +177,11 @@ fieldset #message {
 }
 
 #mail:hover {
-    background-color: #ce1042;
+    background-color: var(--cinza);
 }
 
 #mail:active {
-    background-color: purple;
+    background-color: var(--deepvinho);
 }
 
 @media screen and (max-width: 768px) {
