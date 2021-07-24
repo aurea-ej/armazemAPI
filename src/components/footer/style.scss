@@ -1,9 +1,19 @@
+:root {
+    --vinho: #A71C2B;
+    --deepvinho:  #53051a;
+    --branco: #ffffff;
+    --offwhite: #F2F2F2;
+    --cinza: #596264;
+    --preto: #000000;
+}
+
+
 footer {
 
     width: 100vw;
     overflow-y: hidden;
-    color: #FFF;
-    background-color: #53051a;
+    color: var(--branco);
+    background-color: var(--deepvinho);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -32,6 +42,7 @@ footer {
 .copyright img {
 
     height: 50px;
+    margin-top: 15px;
 
 }
 
@@ -75,7 +86,7 @@ footer {
 
     cursor: pointer;
     text-decoration: none;
-    color: #FFF;
+    color: var(--branco);
 
 }
 
