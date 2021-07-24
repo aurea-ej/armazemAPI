@@ -109,7 +109,7 @@
                   margin: 2rem;
                   z-index: 0;
 
-                  background-color: var$cinza;
+                  background-color: $cinza;
                   border-radius: .3rem;
                   
                   flex-wrap: wrap;
@@ -234,7 +234,7 @@
                   left: 13%;
                   padding: 2.5rem;
                   transition: .5s;
-                  color: var(--branco);
+                  color: $branco;
                   line-height: 1.3rem;
                   font-size: .975rem;
                   opacity: 0;
@@ -295,7 +295,7 @@
 @media screen and (max-width: 599px) {
 
       :root {
-            font-size: .9rem;
+            font-size: 1.1rem;
       }
 
       .aboutContainer {
@@ -424,7 +424,17 @@
   }
 
 @media screen and (min-width: 600px)and(max-width: 1100px) {
+      :root {
+            font-size: 1.25rem;
+      }
 
+      .aboutText {
+
+            padding: 0 3rem;
+            img{
+                  width: 65%;
+            } 
+      }
       .aboutCard {
             width: 80%;
             padding: 0;
@@ -440,7 +450,7 @@
                   padding: 0;
 
                   .card {
-                        width: 70vw;
+                        max-width: 90vw;
                         margin: 1rem 0 1rem 0;
                   }
             }
@@ -460,8 +470,9 @@
             margin-bottom: 2rem;
 
             .wineCard {
-                  width: 500px;
-                  height: 450px;
+                  width:90vw;
+                  max-height: 100vh;
+                  min-height: 40vh;
                   padding: 0;
 
                   .wineCircle {
@@ -491,10 +502,10 @@
                   }
 
                   .content {
-                        width: 75%;
+                        width: 85%;
                         position: relative;
                         padding: 1.9rem;
-                        line-height: 1.4rem;
+                        line-height: 1.3rem;
                         font-size: 1.1rem;
 
                         h2 {
@@ -511,13 +522,14 @@
                         .wineCircle {
       
                               &::before {
-                                    clip-path: circle(360px at center);
+                                    clip-path: circle(600px at center);
+                                    //padding: 1.3rem;
                               }
                               
                         }
       
                         img.tacaVinho {
-                              left: 82%;
+                              left: 89%;
                               height: 215px;
                         }
       
