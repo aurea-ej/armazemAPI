@@ -7,6 +7,7 @@ import About from './pages/about'
 import SignIn from './pages/signIn'
 import Admin from './pages/admin'
 import Register from './pages/register'
+import Request from './pages/admin/requests'
 
 
 const Routes = () => {
@@ -21,6 +22,7 @@ const Routes = () => {
             <Route component={SignIn} path='/entrar'/>
             <Route component={Admin} path='/admin'/>
             <Route component={Register} path='/cadastrar'/>
+            <Route component={Request} path='/Pedidos' />
 
 
         </BrowserRouter>

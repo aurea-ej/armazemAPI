@@ -1,0 +1,57 @@
+@import '../../../global.scss';
+
+.Request {
+
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+}
+
+.boxOrder {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.finalizarPedido {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    margin: 20px;
+    width: 100%;
+}
+
+.finalizarPedido h3 {
+    margin: 10px;
+}
+
+.finalizarPedido select {
+    width: 100%;
+    margin: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $branco;
+    color: $preto;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.finishButton {
+    background-color: $deepVinho;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 10px;
+    color: $branco;
+}
+
+@media screen and (max-width: 768px) {
+
+
+
+}
