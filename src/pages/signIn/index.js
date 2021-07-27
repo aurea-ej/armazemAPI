@@ -140,7 +140,7 @@ function SignIn() {
 
                             <div className='haveAccount' >
                                 <h5>Ainda não tem uma conta? </h5>
-                                <Link to='/Cadastro' >Cadastrar-se</Link>
+                                <Link to='/cadastrar' >Cadastrar-se</Link>
                             </div>
 
                         </div>
