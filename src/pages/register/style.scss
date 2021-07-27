@@ -100,6 +100,45 @@
 
             }
 
+            .cityDiv {
+
+                display: flex;
+                width: 100%;
+                align-items: center;
+                justify-content: space-between;
+
+                input {
+
+                    width: 69%
+
+                }
+
+                select {
+
+                    padding: .5rem;
+                    margin-top: .5rem;
+                    background-color: #ebebeb;
+                    border-radius: .2rem;
+                    border: none;
+                    height: 2.5rem;
+                    outline-color: $vinho;
+
+                }
+
+                #uf {
+
+                    width: 29%;
+
+                }
+
+                #localidade {
+
+                    width: 69%;
+
+                }
+
+            }
+
         }
 
         button {
@@ -123,54 +162,20 @@
 
     .rightSideRegisterForms {
         
-        background-color: #c4c4c4;
-        width: 35vw;
+        background-color: $deepVinho;
         right: 0;
-        position: relative;
+        margin: auto;
+        width: 500px;
+        height: 830px;
 
-        .textWelcome {
-
-            text-align: center;
-
-            h1 {
-
-                font-size: 2.5rem;
-                padding-top: 12rem;
-
-            }
-
-            p {
-
-                padding: 1rem 2rem 0 2rem;
-
-            }
-
-            h5 {
-                
-                padding-top: 10rem;
-                line-height: 0;
-
-            }
-
-            button {
-                
-                cursor: pointer;
-                margin-top: 1rem;
-                padding: 1rem 3rem 1rem 3rem;
-                border-radius: 50px;
-                border: none;
-                // background-color: rgba(255, 255, 255, 0);
-                margin: 1px solid $branco;
-                text-transform: uppercase;
-                font-weight: 700;
-
-            }
+        .wrapperDiv {
 
             img {  
 
-                width: 100%;
-                object-fit: cover;
-                display: flex;
+                width: 120%;
+                margin: auto;
+                display: block;
+                object-fit: contain;
 
             }
 

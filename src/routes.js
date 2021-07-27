@@ -8,7 +8,7 @@ import SignIn from './pages/signIn'
 import Admin from './pages/admin'
 import Register from './pages/register'
 import Request from './pages/admin/requests'
-
+import userProfile from './pages/userProfile'
 
 const Routes = () => {
 
@@ -23,11 +23,12 @@ const Routes = () => {
             <Route component={Admin} path='/admin'/>
             <Route component={Register} path='/cadastrar'/>
             <Route component={Request} path='/Pedidos' />
-
+            <Route component={userProfile} path='/Perfil' />
 
         </BrowserRouter>
 
     )
 
 }
+
 export default Routes;
