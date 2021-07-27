@@ -4,8 +4,10 @@ import { Route, BrowserRouter } from 'react-router-dom'
 import Home from './pages/home'
 import Contact from './pages/contact'
 import About from './pages/about'
-import Register from './pages/signIn'
+import SignIn from './pages/signIn'
 import Admin from './pages/admin'
+import Register from './pages/register'
+
 
 const Routes = () => {
 
@@ -16,8 +18,10 @@ const Routes = () => {
             <Route component={Home} path='/' exact />
             <Route component={About} path='/quemsomos' />
             <Route component={Contact} path='/contato'/>
-            <Route component={Register} path='/entrar'/>
+            <Route component={SignIn} path='/entrar'/>
             <Route component={Admin} path='/admin'/>
+            <Route component={Register} path='/cadastrar'/>
+
 
         </BrowserRouter>
 

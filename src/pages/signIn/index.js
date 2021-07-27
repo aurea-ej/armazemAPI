@@ -12,7 +12,7 @@ import firebase from 'firebase/app'
 import 'firebase/auth'
 import FirebaseConfig from '../../FirebaseConfig.js'
 
-function Register() {
+function SignIn() {
 
     const [loginData,setLoginData] = useState({
 
@@ -159,4 +159,4 @@ function Register() {
     }
 }
 
-export default Register;
+export default SignIn;
