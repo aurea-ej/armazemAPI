@@ -11,6 +11,8 @@ import firebaseConfig from '../../FirebaseConfig.js'
 import { Link, Redirect } from "react-router-dom";
 
 import imgVinho from '../../img/vinhoTaça.jpg';
+import googleLogo from '../../img/google.svg';
+import facebookLogo from '../../img/facebook.svg';
 
 function Register() {
 
@@ -189,15 +191,31 @@ function Register() {
         registerData.district != '' ? counter++ : counter = counter
         registerData.complement != '' ? counter++ : counter = counter
 
+        
 
-        if (counter == 10)
-            makeRegister()
-        else
+        if (counter == 10) {
+
+            if (registerData.password != registerData.passwordConfirm) {
+
+                alert('As senhas não são iguais!');
+
+            }
+
+            else {
+
+                makeRegister();
+
+            }
+
+        }
+        else {
+
             alert('Você precisa preencher todos os campos!')
-        console.log(counter)
+            console.log(counter)
+
+        }
 
     }
-
 
     if (userIsLogged) {
 
@@ -239,11 +257,10 @@ function Register() {
 
                                             <h1>Criar conta</h1>
 
-                                            <div className="teste1">
+                                            <div className="loginAlternative">
 
-                                                <div className="teste"></div>
-                                                <div className="teste"></div>
-                                                <div className="teste"></div>
+                                                <img src={googleLogo} alt="logo google"/>
+                                                <img src={facebookLogo} alt="logo facebook" />
 
                                             </div>
 

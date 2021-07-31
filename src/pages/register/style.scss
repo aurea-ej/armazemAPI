@@ -19,6 +19,7 @@
 
             text-align: center;
             color: #32323F;
+            width: 100%;
 
             h1 {
 
@@ -27,7 +28,14 @@
 
             }
 
-            .teste1 {
+            p {
+
+                padding: 1rem;
+                text-align: center;
+    
+            }
+
+            .loginAlternative {
 
                 display: flex;
                 flex-direction: row;
@@ -36,21 +44,15 @@
                 width: 100%;
                 align-items: center;
 
-                .teste {
+                img {
 
-                    background-color: $preto;
-                    width: 40px;
-                    height: 40px;
+                    width: 30px;
                     margin-right: 1rem;
                     margin-left: 1rem;
+                    cursor: pointer;
+                    display: none;
 
                 }
-
-            }
-
-            p {
-
-                padding: 1rem;
 
             }
 

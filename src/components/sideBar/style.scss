@@ -1,0 +1,59 @@
+@import "../../global.scss";
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+.barElement {
+
+    margin: 0;
+    padding: 0;
+    position: relative;
+
+    .sideMenu {
+
+        display: flex;
+        position: relative;
+        width: 20%;
+        min-height:100vh;
+        background-color: $deepVinho;
+        box-sizing: initial;
+        transition: width 0.5s;
+
+        ul {
+
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding-left: 5px;
+            padding-top: 40px;
+
+            a, span {
+
+                position: relative;
+                display: flex;
+                list-style: none;
+                width: 100%;
+                cursor: pointer;
+                text-decoration: none;
+                line-height: 4rem;
+                font-family: 'Poppins';
+                border-top-left-radius: 10px;
+                border-bottom-left-radius: 10px;
+                padding: 0rem 2rem;
+                text-decoration: none;
+                color: $branco;
+
+            }
+
+            a:hover, span:hover {
+
+                background-color: $offwhite;
+                transition: 0.3s ease-out;
+                color: #333;
+
+            }
+
+        }
+
+    }
+
+}

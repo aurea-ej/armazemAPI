@@ -1,4 +1,4 @@
-import React from 'react'
+import { React, createRef } from 'react'
 import { useEffect, useState } from 'react'
 import Header from '../../components/header'
 import Footer from '../../components/footer'
@@ -9,6 +9,7 @@ import 'firebase/auth'
 import firebaseConfig from '../../FirebaseConfig.js'
 
 import { Link, useHistory } from "react-router-dom";
+import SideBar from '../../components/sideBar'
 
 function UserProfile() {
 
@@ -28,7 +29,7 @@ function UserProfile() {
 
     })
 
-    let history = useHistory()
+    let history = useHistory();
 
     useEffect(() => {
 
@@ -158,133 +159,41 @@ function UserProfile() {
 
     return (
 
-        <div className="clientProfile">
+        <div className="profilePage">
 
             <Header />
 
-            <div className='dataClient'>
+            <SideBar />
 
-                <ul>
-                    <h2>Dados da conta</h2>
-                    <li>
-                        <p>Nome</p>
-                        <p>{dataAccount.name}</p>
-                    </li>
-                    <li>
-                        <p>E-mail:</p>
-                        <p>{dataAccount.email}</p>
-                    </li>
-                    <li>
-                        <p>Telefone:</p>
-                        <p>{dataAccount.phoneNumber}</p>
-                    </li>
-                    <li>
-                        <p>Endereço:</p>
-                        <p>{dataAccount.address}, {dataAccount.district} - {dataAccount.houseNumber}</p>
-                    </li>
-                </ul>
+            <section className="dataPage">
 
-            </div>
+                <div className="userData">
 
-            <div>
-                <h4 className="textAlterInfosProfile" onClick={() => handleDisplayDivAlterInfos()} >Deseja alterar alguma informação? <span>clique aqui</span></h4>
+                    <h3>Esses são seus dados. Para alterá-los, acesse a página <Link to='/AlterarDados'>Alterar Dados</Link>.</h3>
 
-                <div style={{ display: displayDivAlterInfos }} className="divAlterInfos" >
+                    <div className="cardData">
 
-                    <h2 className="arrowToDownUserProfile"> ⇣ </h2>
+                        <h4>Dados da conta</h4>
 
-                    <p>Preencha apenas o que deseja atualizar</p>
+                        <div className="profileData">
 
-                    <fieldset>
+                            <span><strong>Usuário: </strong>{dataAccount.name}</span>
+                            <span><strong>E-mail: </strong>{dataAccount.email}</span>
 
-                        <legend>
-                            <h2>Informações pessoais</h2>
-                        </legend>
+                        </div>
 
-                        <input name='name' onChange={handleInputRegisterChange} placeholder='Nome completo' />
+                        <h4 id="personalData">Dados pessoais</h4>
 
-                        <input name='phoneNumber' type='tel' onChange={handleInputRegisterChange} placeholder='Telefone com DDD' />
+                        <div className="profileData">
 
-                    </fieldset>
+                            <span><strong>Endereço: </strong>{dataAccount.address} - {dataAccount.houseNumber}, {dataAccount.district}</span>
+                            <span><strong>Complemento: </strong>{dataAccount.complement}</span>
+                            <span><strong>Cidade: </strong>{dataAccount.city}, {dataAccount.state}</span>
+                            <span><strong>CEP: </strong>{dataAccount.cepNumber}</span>
+                            <span><strong>Telefone: </strong>{dataAccount.phoneNumber}</span>
+                            <span><strong>Data de nascimento: </strong>{dataAccount.birthDate}</span>
 
-                    <fieldset>
-
-                        <legend>
-                            <h2>Endereço</h2>
-                        </legend>
-
-                        <input name='street' onChange={handleInputRegisterChange} placeholder='Nome da rua' />
-
-                        <input name='houseNumber' type='number' onChange={handleInputRegisterChange} placeholder='N° da casa/apto' />
-
-                        <input name='complement' onChange={handleInputRegisterChange} placeholder='Complemento' />
-
-                        <input name='district' onChange={handleInputRegisterChange} placeholder='Bairro' />
-
-                        <input name='cepNumber' onChange={handleInputRegisterChange} placeholder='CEP' />
-
-                    </fieldset>
-
-                    <a className="defaultButtonUserProfile" style={{ marginBottom: "5vh" }} onClick={() => updateRegister()}>Atualizar Informações</a>
-
-                </div>
-
-                <div className="singnOutButton" >
-                    <a onClick={() => signOut()} className="defaultButtonUserProfile" >SAIR</a>
-                </div>
-
-            </div>
-
-
-            <section>
-
-                <h4 className="textAlterInfosProfile" onClick={() => handleDisplayDivPedidos()} >Quer acompanhar seus pedidos? <span>clique aqui</span></h4>
-
-                <div style={{ display: displayDivPedidos }} className="divPedidos" >
-
-
-                    <div className="divPedidos" >
-
-                        {requestData.map((item) => {
-
-                            return <>
-
-                                {item.listItem != undefined ?
-
-                                    item.listItem.map(item => {
-
-                                        return (
-                                            <div className="acompanhaPedidos">
-                                                <div className="acomPedidosTitle">
-                                                    <h3>Nome do item:</h3>
-                                                    <h2>{item.title}</h2>
-                                                </div>
-                                                <div className="acomPedidosTitle">
-                                                    <h3>Unidade:</h3>
-                                                    <h2>{item.unity}</h2>
-                                                </div>
-                                                <div className="acomPedidosTitle">
-                                                    <h3>Quantidade:</h3>
-                                                    <h2>{item.amount}</h2>
-                                                </div>
-                                                <div className="acomPedidosTitle">
-                                                    <h3>Preço:</h3>
-                                                    <h2>R$ {item.price}</h2>
-                                                </div>
-                                                <div className="acomPedidosTitle">
-                                                    <h3>ID do item</h3>
-                                                    <h4>{item.id}</h4>
-                                                </div>
-                                            </div>
-
-                                        )
-
-                                    })
-                                    : <p></p>}
-                            </>
-
-                        })}
-
+                        </div>
 
                     </div>
 
@@ -292,10 +201,168 @@ function UserProfile() {
 
             </section>
 
+            {/* <div className="dataUser">
+
+                <ul>
+
+                    <h1>Dados do usuário</h1>
+
+                </ul>
+
+            </div> */}
+
             <Footer />
+
         </div>
 
+
     )
+
 }
 
 export default UserProfile;
+
+
+//     return (
+
+//         <div className="clientProfile">
+
+//             <Header />
+
+//             <div className='dataClient'>
+
+//                 <ul>
+//                     <h2>Dados da conta</h2>
+//                     <li>
+//                         <p>Nome</p>
+//                         <p>{dataAccount.name}</p>
+//                     </li>
+//                     <li>
+//                         <p>E-mail:</p>
+//                         <p>{dataAccount.email}</p>
+//                     </li>
+//                     <li>
+//                         <p>Telefone:</p>
+//                         <p>{dataAccount.phoneNumber}</p>
+//                     </li>
+//                     <li>
+//                         <p>Endereço:</p>
+//                         <p>{dataAccount.address}, {dataAccount.district} - {dataAccount.houseNumber}</p>
+//                     </li>
+//                 </ul>
+
+//             </div>
+
+//             <div>
+//                 <h4 className="textAlterInfosProfile" onClick={() => handleDisplayDivAlterInfos()} >Deseja alterar alguma informação? <span>clique aqui</span></h4>
+
+//                 <div style={{ display: displayDivAlterInfos }} className="divAlterInfos" >
+
+//                     <h2 className="arrowToDownUserProfile"> ⇣ </h2>
+
+//                     <p>Preencha apenas o que deseja atualizar</p>
+
+//                     <fieldset>
+
+//                         <legend>
+//                             <h2>Informações pessoais</h2>
+//                         </legend>
+
+//                         <input name='name' onChange={handleInputRegisterChange} placeholder='Nome completo' />
+
+//                         <input name='phoneNumber' type='tel' onChange={handleInputRegisterChange} placeholder='Telefone com DDD' />
+
+//                     </fieldset>
+
+//                     <fieldset>
+
+//                         <legend>
+//                             <h2>Endereço</h2>
+//                         </legend>
+
+//                         <input name='street' onChange={handleInputRegisterChange} placeholder='Nome da rua' />
+
+//                         <input name='houseNumber' type='number' onChange={handleInputRegisterChange} placeholder='N° da casa/apto' />
+
+//                         <input name='complement' onChange={handleInputRegisterChange} placeholder='Complemento' />
+
+//                         <input name='district' onChange={handleInputRegisterChange} placeholder='Bairro' />
+
+//                         <input name='cepNumber' onChange={handleInputRegisterChange} placeholder='CEP' />
+
+//                     </fieldset>
+
+//                     <a className="defaultButtonUserProfile" style={{ marginBottom: "5vh" }} onClick={() => updateRegister()}>Atualizar Informações</a>
+
+//                 </div>
+
+//                 <div className="singnOutButton" >
+//                     <a onClick={() => signOut()} className="defaultButtonUserProfile" >SAIR</a>
+//                 </div>
+
+//             </div>
+
+
+//             <section>
+
+//                 <h4 className="textAlterInfosProfile" onClick={() => handleDisplayDivPedidos()} >Quer acompanhar seus pedidos? <span>clique aqui</span></h4>
+
+//                 <div style={{ display: displayDivPedidos }} className="divPedidos" >
+
+
+//                     <div className="divPedidos" >
+
+//                         {requestData.map((item) => {
+
+//                             return <>
+
+//                                 {item.listItem != undefined ?
+
+//                                     item.listItem.map(item => {
+
+//                                         return (
+//                                             <div className="acompanhaPedidos">
+//                                                 <div className="acomPedidosTitle">
+//                                                     <h3>Nome do item:</h3>
+//                                                     <h2>{item.title}</h2>
+//                                                 </div>
+//                                                 <div className="acomPedidosTitle">
+//                                                     <h3>Unidade:</h3>
+//                                                     <h2>{item.unity}</h2>
+//                                                 </div>
+//                                                 <div className="acomPedidosTitle">
+//                                                     <h3>Quantidade:</h3>
+//                                                     <h2>{item.amount}</h2>
+//                                                 </div>
+//                                                 <div className="acomPedidosTitle">
+//                                                     <h3>Preço:</h3>
+//                                                     <h2>R$ {item.price}</h2>
+//                                                 </div>
+//                                                 <div className="acomPedidosTitle">
+//                                                     <h3>ID do item</h3>
+//                                                     <h4>{item.id}</h4>
+//                                                 </div>
+//                                             </div>
+
+//                                         )
+
+//                                     })
+//                                     : <p></p>}
+//                             </>
+
+//                         })}
+
+
+//                     </div>
+
+//                 </div>
+
+//             </section>
+
+//             <Footer />
+//         </div>
+
+//     )
+// }
+
+// export default UserProfile;

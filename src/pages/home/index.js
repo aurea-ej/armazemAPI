@@ -8,7 +8,6 @@ import flashSale from '../../img/flash-sale.svg'
 import spainFlag from '../../img/spain.svg'
 import discountTag from '../../img/offer.svg'
 
-
 import vinhoImg from '../../img/vinho_periquita_tinto.png'
 
 import Header from '../../components/header'

@@ -9,6 +9,7 @@ import Admin from './pages/admin'
 import Register from './pages/register'
 import Request from './pages/admin/requests'
 import userProfile from './pages/userProfile'
+import Items from './pages/admin/items'
 
 const Routes = () => {
 
@@ -24,6 +25,7 @@ const Routes = () => {
             <Route component={Register} path='/cadastrar'/>
             <Route component={Request} path='/Pedidos' />
             <Route component={userProfile} path='/Perfil' />
+            <Route component={Items} path='/AdminItems' />
 
         </BrowserRouter>
 
