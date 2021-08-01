@@ -165,11 +165,11 @@ function UserProfile() {
 
             <SideBar />
 
-            <section className="dataPage">
+            <section className="dataSection">
 
                 <div className="userData">
 
-                    <h3>Esses são seus dados. Para alterá-los, acesse a página <Link to='/AlterarDados'>Alterar Dados</Link>.</h3>
+                    <h3>Esses são seus dados. Para alterá-los, acesse a página <Link to='/AlterarDados'>Alterar Dados</Link></h3>
 
                     <div className="cardData">
 

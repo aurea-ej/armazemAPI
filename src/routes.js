@@ -10,6 +10,7 @@ import Register from './pages/register'
 import Request from './pages/admin/requests'
 import userProfile from './pages/userProfile'
 import Items from './pages/admin/items'
+import ChangeInfo from './pages/dataChange'
 
 const Routes = () => {
 
@@ -26,6 +27,7 @@ const Routes = () => {
             <Route component={Request} path='/Pedidos' />
             <Route component={userProfile} path='/Perfil' />
             <Route component={Items} path='/AdminItems' />
+            <Route component={ChangeInfo} path='/AlterarDados' />
 
         </BrowserRouter>
 
