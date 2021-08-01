@@ -36,8 +36,8 @@
                 text-decoration: none;
                 line-height: 4rem;
                 font-family: 'Poppins';
-                border-top-left-radius: 10px;
-                border-bottom-left-radius: 10px;
+                border-top-left-radius: 20px;
+                border-bottom-left-radius: 20px;
                 padding: 0rem 2rem;
                 text-decoration: none;
                 color: $branco;
@@ -49,6 +49,18 @@
                 background-color: $offwhite;
                 transition: 0.3s ease-out;
                 color: #333;
+
+            }
+
+            i {
+
+                position: relative;
+                display: block;
+                min-width: 60px;
+                height: 60px;
+                text-align: center;
+                line-height: 60px;
+                font-size: 1.2rem;
 
             }
 
