@@ -165,7 +165,6 @@ function Admin() {
 
                             <fieldset>
 
-
                                 <h1>Entrar</h1>
 
                                 <input name='email' onChange={handleInputLoginChange} placeholder='E-mail' />
