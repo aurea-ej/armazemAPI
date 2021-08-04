@@ -274,7 +274,11 @@ function Items() {
 
                         </select>
 
-                        <a onClick={() => { insertNewItem() }} >Inserir</a>
+                        <div className="buttonProducts">
+
+                            <a onClick={() => { insertNewItem() }} >Inserir</a>
+
+                        </div>
 
                     </fieldset>
 
@@ -337,8 +341,12 @@ function Items() {
                             <option value="Tinto" >Tinto</option>
 
                         </select>
+                        
+                        <div className="buttonProducts">
 
-                        <a onClick={() => { setWasChanged(true); updateItem(); }} >Alterar</a>
+                            <a onClick={() => { setWasChanged(true); updateItem(); }} >Alterar</a>
+
+                        </div>
 
                     </fieldset>
 
@@ -364,7 +372,11 @@ function Items() {
 
                         </select>
 
-                        <a id="deleteButton" onClick={() => { deleteItem() }} >Apagar</a>
+                        <div className="buttonProducts">
+
+                            <a id="deleteButton" onClick={() => { deleteItem() }} >Apagar</a>
+
+                        </div>
 
                     </fieldset>
 

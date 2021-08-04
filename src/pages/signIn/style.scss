@@ -86,12 +86,14 @@
         }
 
         a {
+
             text-decoration: none;
             color: var(--cinza);
             padding: 1rem;
             border: 1px solid var(--cinza);
             border-radius: .3rem;
             transition: .3s;
+            font-weight: 500;
 
             &:hover,
             &:focus {
