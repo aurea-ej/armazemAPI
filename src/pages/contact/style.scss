@@ -123,4 +123,31 @@ form textarea {
     form {
         width: 90vw;
     }
+
+    form input {
+        padding: 15px;
+        width: 80%;
+        border-radius: 10px;
+        color: $vinho;
+        background-color: $branco;
+        margin: 20px 0px;
+    }
+    
+    form select {
+        padding: 15px;
+        width: 80%;
+        border-radius: 10px;
+        color: $vinho;
+        background-color: $branco;
+        margin: 20px 0px;
+    }
+    
+    form textarea {
+        padding: 15px;
+        width: 80%;
+        border-radius: 10px;
+        color: $vinho;
+        background-color: $branco;
+        margin: 20px 0px;
+    }
 }

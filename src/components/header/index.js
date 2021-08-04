@@ -13,6 +13,9 @@ export default function Header (props) {
 
     const [isChecked,setIsChecked] = useState(false)
     const [userIsLogged, setUserIsLogged] = useState(false);
+    const [isAdmin, setIsAdmin] = useState(false);
+    const [dataUsers, setDataUsers] = useState([]);
+    const [dataAccount, setDataAccount] = useState([]);
 
     const menuMobile = createRef()
 
@@ -43,6 +46,56 @@ export default function Header (props) {
 
     }, []);
 
+    useEffect(() => {
+
+        const userEmail = localStorage.getItem('userEmail')
+
+        firebase.database().ref('users/').get('/users')
+            .then(function (snapshot) {
+
+                if (snapshot.exists()) {
+
+                    var data = snapshot.val()
+                    var temp = Object.keys(data).map((key) => data[key])
+
+                    setDataUsers(temp)
+
+                    temp.map((item) => {
+
+                        if (item.email == userEmail) {
+                            setDataAccount(item)
+                        }
+
+                    })
+
+                } else
+                    console.log("No data available");
+
+            })
+
+        firebase.database().ref('admins/').get('/admins')
+            .then(function (snapshot) {
+
+                if (snapshot.exists()) {
+
+                    var data = snapshot.val()
+                    var temp = Object.keys(data).map((key) => data[key])
+
+                    temp.map((item) => {
+
+                        if (item.email == userEmail) {
+                            setIsAdmin(true)
+                        }
+
+                    })
+
+                } else
+                    console.log("No data available");
+
+            })
+
+    }, []);
+
     return (
 
         <div>
@@ -58,15 +111,35 @@ export default function Header (props) {
 
                 <div className='menu' >
 
-                    <ul>
+                    {isAdmin ?
+                        <>
 
-                        <li> <Link to='/' > Início </Link> </li>
-                        <li> <Link to='/quemsomos'> Quem Somos </Link> </li>
-                        <li> <Link to='/carrinho'> Carrinho </Link> </li>
-                        <li> <Link to='/contato'> Contato </Link> </li>
-                        <li> <Link to='/entrar'> Login/Perfil </Link> </li>
+                            <ul>
 
-                    </ul>
+                                <li> <Link to='/' > Início </Link> </li>
+                                <li> <Link to='/Admin'> Admin </Link> </li>
+                                <li> <Link to='/quemsomos'> Quem Somos </Link> </li>
+                                <li> <Link to='/carrinho'> Carrinho </Link> </li>
+                                <li> <Link to='/contato'> Contato </Link> </li>
+                                <li> <Link to='/entrar'> Login/Perfil </Link> </li>
+
+                            </ul>
+
+                        </>
+
+                        :
+
+                        <>
+                            <ul>
+                                <li> <Link to='/' > Início </Link> </li>
+                                <li> <Link to='/quemsomos'> Quem Somos </Link> </li>
+                                <li> <Link to='/carrinho'> Carrinho </Link> </li>
+                                <li> <Link to='/contato'> Contato </Link> </li>
+                                <li> <Link to='/entrar'> Login/Perfil </Link> </li>
+                            </ul>
+                        </>
+
+                    }
                     
                 </div>
 
