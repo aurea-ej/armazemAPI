@@ -8,20 +8,29 @@
     font-family: 'Montserrat', sans-serif;
 }
 
-.page-title {
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#contactMain {
     margin-bottom: 20px;
     justify-content: center;
 }
 
-.page-title h2,
-.page-title p {
+#contactMain h2,
+#contactMain p {
     text-align: center;
+    width: 60%;
+    margin: 10px;
 }
 
 .logo-2 {
     width: 20rem;
     display: flex;
-    margin: 0 auto;
+    margin: 20px auto;
 }
 
 .logo-2 img {
@@ -31,7 +40,7 @@
 }
 
 form {
-    width: 85vw;
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -40,98 +49,57 @@ form {
 
 form input {
     padding: 15px;
-    border: none;
-    color: $branco;
-    background-color: $preto;
-    margin-top: 20px;
+    width: 30%;
+    border-radius: 10px;
+    color: $vinho;
+    background-color: $branco;
+    margin: 20px 0px;
 }
 
-fieldset {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-    font-family: 'Montserrat', sans-serif;
-    margin: 64px 0px 0px 0px;
-    padding: 0;
-    min-inline-size: auto;
-    border: 0;
-}
-
-fieldset .inputboxes {
-    width: 60%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-}
-
-fieldset .field-group1 {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
-fieldset .field-group {
-    width: 60%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
-fieldset .field {
-    display: flex;
-    width: 45%;
-    flex-direction: column;
-    align-items: flex-start;
-    /* justify-content: space-between; */
-}
-
-fieldset input {
-    width: 100%;
-    background-color: $vinho;
-    border: none;
-    margin: 3px 0px 50px 0px;
-    padding: 16px 24px;
-    font-size: 14px;
-    color: $branco;
-}
-
-fieldset .selects {
-
-    width: 100%;
-
-}
-
-fieldset .selects select {
-
-    width: 100%;
-    background-color: $vinho;
-    border: none;
-    margin: 3px 0px 50px 0px;
-    padding: 16px 24px;
-    font-size: 14px;
-    color: $branco;
-
-}
-
-fieldset .selects select option {
-    color: $branco;
-}
-
-fieldset .messageInput {
-    width: 60%;
-    font-family: 'Montserrat', sans-serif;
-}
-
-fieldset #message {
-    height: 150px;
-    width: 100%;
-    background-color: $vinho;
-    color: $branco;
+form select {
     padding: 15px;
+    width: 30%;
+    border-radius: 10px;
+    color: $vinho;
+    background-color: $branco;
+    margin: 20px 0px;
+}
+
+form textarea {
+    padding: 15px;
+    width: 30%;
+    border-radius: 10px;
+    color: $vinho;
+    background-color: $branco;
+    margin: 20px 0px;
+}
+
+.buttonsFormRegister {
+
+    width: 80%;
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+
+    #enterButtonSignIn {
+
+        color: $branco;
+        padding: 1rem;
+        background: $deepVinho;
+        border: 1px solid $deepVinho;
+        text-decoration: none;
+        border-radius: .3rem;
+        transition: .24s;
+    
+        &:hover,
+            &:focus {
+                box-shadow: inset 0 0 0 35px $branco;
+                color: $deepVinho;
+                cursor: pointer;
+            }
+    
+    }
+
 }
 
 .whatsappContact {
@@ -149,73 +117,10 @@ fieldset #message {
     cursor: pointer;
 }
 
-.sendButton {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-top: 50px;
-    margin-bottom: 50px;
-}
 
-.sendButton button {
-    background-color: $vinho;
-    cursor: pointer;
-    font-size: 13pt;
-    color: $branco;
-    text-decoration: none;
-    border-radius: 10px;
-    padding: 10px;
-    border: 0px;
-}
-
-#mail:hover {
-    background-color: $cinza;
-}
-
-#mail:active {
-    background-color: $deepVinho;
-}
 
 @media screen and (max-width: 768px) {
     form {
         width: 90vw;
-    }
-    fieldset {
-        align-items: center;
-    }
-    fieldset .inputboxes {
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: space-between;
-    }
-    fieldset .field-group {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-    fieldset .field-group {
-        width: 95%;
-    }
-    fieldset .field-group1 {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-    fieldset .field-group1 {
-        width: 95%;
-    }
-    fieldset .field {
-        width: 88%;
-    }
-    fieldset input {
-        width: 95%;
-    }
-    fieldset .selects {
-        width: 100%;
-    }
-    fieldset .messageInput {
-        display: flex;
-        align-items: center;
-        width: 88%;
     }
 }

@@ -1,14 +1,12 @@
 import React, {useRef, useEffect, useState} from 'react';
+import emailjs from "emailjs-com";
+import {init} from "emailjs-com";
 import logoArmazem from '../../img/logo-armazem-do-vinho.png';
 import whatsappIcon from '../../img/whatsappIcon.png';
 import Header from '../../components/header'
 import Footer from '../../components/footer'
 
-/* import Header from '../../components/header'
-import Footer from '../../components/footer' */
-
 import './style.scss'
-
 
 const Contact = () => {
 
@@ -77,19 +75,18 @@ const Contact = () => {
         
     }
 
-    function sendMail () {
+    function sendEmail(e) {
+        e.preventDefault();
 
-        const mail = document.querySelector('#mail')
-
-        if(formData.phone != '' && formData.name != '' && formData.message != ''){
-    
-            mail.href = `mailto:barretonovaes.vilas@gmail.com?subject=${formData.subject}&body=Oi%20,%20meu%20nome%20é%20${formData.name}.%20sou%20de%20${selectedUf},%20-%20${selectedCity},%20minhas%20informações%20para%20contato:%20${formData.phone}%20${formData.contact}%20.%0D${formData.message}`
-    
-            // alert(`Obrigado pelo contato, ${formData.name}! Seu app de e-mail abrirá agora e basta clicar em enviar que em pouco tempo te retornarei e espero que consiga te ajudar!.`)
-        
-        }
-
-       
+        emailjs.sendForm('service_fy8q6yf', 'template_q40mjfn', e.target, 'user_f5e2fQ7Fs1KiYt8Afj6xr')
+        .then((result) => {
+            console.log(result.text);
+            alert("Sucesso!");
+        }, (error) => {
+            console.log(error.text);
+            alert("Erro!");
+        });
+        e.target.reset();
     }
 
     useEffect(() => {
@@ -119,154 +116,53 @@ const Contact = () => {
 
             <main id='contactMain'>
 
-                <form>
+                <div className="logo-2">
+                    <img src={logoArmazem} alt="Logo armazém do vinho" />
+                </div>
 
-                    <fieldset>
+                <h2> Entre em contato conosco! </h2>
+                <p> Preencha os campos abaixo com seus dados e mensagem, e então clique em enviar, uma janela para envio de e-mail irá aparecer para que seja possível concluir o envio, assim que enviada responderemos em breve! </p>
 
-                        <div className="page-title">
-                            
-                            <div className="logo-2">
-                                <img src={logoArmazem} alt="Logo armazém do vinho" />
-                            </div>
+                <form className="contact-form" onSubmit={sendEmail}>
 
-                            <h2> Entre em contato conosco! </h2>
-                            <p> Preencha os campos abaixo com seus dados e mensagem, e então clique em enviar, uma janela para envio de e-mail irá aparecer para que seja possível concluir o envio, assim que enviada responderemos em breve! </p>  
+                    <input type="text" className="textBox" name="user_name" placeholder="Nome"/>
 
-                        </div>
+                    <input type="text" className="textBox" name="user_email" placeholder="Seu E-mail"/>
 
-                        <div className="inputboxes">
+                    <input type="text" className="textBox" name="user_number" placeholder="Telefone"/>
 
-                            <div className="field-group1">
+                    <select name="uf" id="uf" onChange={handleSelectedUf} value={selectedUf} >
 
-                                <div className="field">
+                        <option value="0">Selecione um estado</option>
 
-                                    <label htmlFor='name' >Nome</label>
-                                    <input
-                                        type='text'
-                                        name='name'
-                                        id='name'
-                                        onChange={handleInputChange}
-                                    />
+                        {ufs.map( uf => (
 
-                                </div>
+                            <option key={uf} value={uf} >{uf}</option>
 
+                        ) )}
 
-                                <div className="field">
+                    </select>
 
-                                    <label htmlFor='phone'>Telefone</label>
-                                    <input
-                                        type='tel'
-                                        name='phone'
-                                        id='phone'
-                                        onChange={handleInputChange}
-                                    />
+                    <select name="city" id="city" onChange={handleSelectedCity} value={selectedCity} >
 
-                                </div>
+                        <option value="0">Selecione uma cidade</option>
 
-                            </div>
+                        {city.map( city => (
 
-                            <div className="field-group1">
+                            <option key={city} value={city} >{city}</option>
 
-                                <div className="field">
+                        ) )}
 
-                                    <label htmlFor='contact'>
-                                        Contato preferencial</label>
-                                    <input
-                                        type='text'
-                                        name='contact'
-                                        id='contact'
-                                        onChange={handleInputChange}
-                                    />
+                    </select>
 
-                                </div>
-
-                                <div className="field">
-                                    
-                                    <label htmlFor='subject'>Assunto</label>
-                                    <input
-                                        type='text'
-                                        name='subject'
-                                        id='subject'
-                                        onChange={handleInputChange}
-                                    />
-
-                                </div>
-
-                            </div>
-
-                       
-
-                            <div className="field-group1">
-
-                                <div className='field' >
-
-                                    <label htmlFor='uf'>Estado</label>
-
-                                    <div className='selects'>
-
-                                        <select name="uf" id="uf" onChange={handleSelectedUf} value={selectedUf} >
-
-                                            <option value="0">Selecione um estado</option>
-
-                                            {ufs.map( uf => ( 
-
-                                                <option key={uf} value={uf} >{uf}</option>
-
-                                            ) )}
-
-                                        </select>
-
-                                    </div>
-
-                                </div>
-
-                                <div className='field' >
-
-                                    <label htmlFor='city'>Cidade</label>
-
-                                    <div className='selects'>
-
-                                        <select name="city" id="city" onChange={handleSelectedCity} value={selectedCity} >
-
-                                            <option value="0">Selecione uma cidade</option>
-
-                                            {city.map( city => ( 
-
-                                                <option key={city} value={city} >{city}</option>
-
-                                            ) )}
-
-                                        </select>
-
-                                    </div>
-
-                                </div>
-
-                            </div>
-
-                        </div>    
-
-                        <div className="field messageInput">
-
-                            <label htmlFor='message'>Sua mensagem</label>
-                            <textarea
-                                type='text'
-                                name='message'
-                                id='message'
-                                onChange={handleInputChange}
-                            />
-
-                        </div>
-
-                    </fieldset>
-
-                    <div className='sendButton' >
-
-                        <button onClick={sendMail()} href='' id='mail'>Enviar</button>                    
-
+                    <textarea className="messageBox" name="message" cols="30" rows="8" placeholder="Sua mensagem"/>
+                    
+                    <div className="buttonsFormRegister">
+                      <input id='enterButtonSignIn' type="submit" className="submitBox" value="Enviar Mensagem"></input>
                     </div>
 
                 </form>
+
 
                 <div className='whatsappContact'>
                     <h3>Ou se preferir...</h3>
