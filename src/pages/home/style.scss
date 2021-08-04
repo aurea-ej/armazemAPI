@@ -12,25 +12,40 @@
 .heroWrapper {
 
     width: 100vw;
-    height: 100vh;
+    height: 85vh;
     display: flex;
     flex-direction: row;
-    background-color: #9e9e9e;
 
     .leftSide {
         
-        background-color: #3b3a5a;
-        width: 42vw;
+        background-color: $deepVinho;
+        width: 60vw;
+        border-top: 1px solid rgba(233, 233, 233, 0.3);
+        display: flex;
+        flex-direction: column;
+        user-select: none;
 
-        h1 {
+        h2 {
 
-            color: #fff;
-            text-transform: uppercase;
-            font-size: 5rem;
-            margin-left: 2rem;
-            margin-right: 10rem;
-            padding-top: 10rem;
-            user-select: none;
+            color: $branco;
+            font-size: 4rem;
+            padding: 3rem 2rem 0 3.1rem;
+
+        }
+
+        span {
+
+            flex-direction: row;
+            margin-top: 1rem;
+            margin-left: 3.1rem;
+            color: $branco;
+
+            img {
+
+                max-width: 25px;
+                    display: block;
+    
+            }
 
         }
 
@@ -40,7 +55,7 @@
 
         right: 0;
         background-color: #db4460;
-        width: 58vw;
+        width: 40vw;
 
         .textRight {
 
@@ -182,7 +197,7 @@
     h1 {
 
         text-align: center;
-        margin-bottom: 3rem;
+        margin-bottom: 2rem;
         font-size: 2rem;
         font-weight: 500;
 
@@ -193,7 +208,6 @@
         width: 90vw;
         height: 55px;
         outline: 1px solid rgb(209, 209, 209);
-        margin-bottom: 2rem;
     
     }
 
@@ -332,6 +346,61 @@
         }
     }
 }
+
+#categorySection {
+
+    .categoryWrapper {
+
+        display: flex;
+        width: 90vw;
+        height: 380px;
+        margin-bottom: 4rem;
+
+        .leftSideCategory {
+
+            display: flex;
+            flex-direction: column;
+            width: 25%;
+            left: 0;
+            background-color: rgb(219, 168, 168);
+            align-items: center;
+            justify-content: center;
+
+            .leftSideCategoryContent {
+
+                width: 80%;
+
+                p {
+
+                    margin: 1rem 0;
+                    font-weight: 500;
+
+                }
+
+                img {
+
+                    max-width: 75%;
+                    margin-left: 1.3rem;
+
+                }
+
+            }
+
+        }
+
+        .rightSideCategory {
+
+            width: 75%;
+            background-color:rgb(38, 57, 77);
+
+        }
+
+    }
+
+
+}
+
+
 
 
 

@@ -1,110 +1,81 @@
-.Admin {
+@import '../../../global.scss';
+
+.AdminItems {
 
     display: flex;
     flex-direction: column;
     min-height: 100vh;
 
-}
+    .itemsOptions {
 
-#mainProvider {
+        width: 50%;
+        align-items: center;
+        margin: 0 auto;
 
-    width: 100vw;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    padding-bottom: 5vh;
+        h1 {
 
-}
+            margin-top: 3rem;
+            text-align: center;
 
-.titleAdmin {
+        }
 
-    width: 100%;
-    text-align: center;
-    margin-top: 6vh;
+        input::placeholder {
 
-}
+            color: $branco;
 
-.adminOptions {
+        }
 
-    width: 60%;
-    display: flex;
-    flex-direction: column;
+        select {
 
-}
+            background-color: $vinho;
+            color: $branco;
+            width: 100%;
+            margin-bottom: 3rem;
+            outline: none;
+            height: 3rem;
+            font-size: 14px;
+            padding-left: 1rem;
 
-.adminOptions ::placeholder {
+        }
+        
+        h2 {
 
-    color: white;
+            margin-bottom: .5rem;
 
-}
+        }
 
-.adminOptions fieldset a { 
+        h4 {
 
-    color: white;
-    padding: 15px;
-    margin-top: 15px;
-    cursor: pointer;
-    background-color: #662210;
-    text-decoration: none;
-    border-radius: 10px;
-    box-shadow: 0px 0px 8px rgba(160, 160, 160, 0.35);
+            margin-bottom: 1rem;
 
-}
+        }
+        
+        a {
+            
+            cursor: pointer;
+            color: $branco;
+            padding: 1rem;
+            background: $deepVinho;
+            border: 1px solid $deepVinho;
+            text-decoration: none;
+            border-radius: .3rem;
+            transition: .24s;
+        
+            &:hover,
+                &:focus {
+                    box-shadow: inset 0 0 0 35px var(--branco);
+                    color: var(--deepvinho);
+                }
+        
+        }
 
-.adminOptions input {
+        #deleteButton {
 
-    width: 60%;
-    border: none;
-    padding: 15px;
-    margin: 10px 0;
-    color: black;
-    overflow: hidden;
-    border-radius: 5px;
-    background-color: #ffc05c;
-    box-shadow: 0px 0px 8px rgba(160, 160, 160, 0.35);
+            margin-bottom: 2rem;
 
-}
-
-.adminOptions fieldset select {
-
-    width: 64%;
-    border: none;
-    padding: 15px;
-    margin: 10px 0;
-    color: white;
-    overflow: hidden;
-    border-radius: 5px;
-    background-color: #ffc05c;
-    box-shadow: 0px 0px 8px rgba(160, 160, 160, 0.35);
-
-}
-
-.adminOptions fieldset option {
-
-    padding: 10px;
-
-}
-
-@media screen and (max-width: 768px) {
-
-    .adminOptions {
-
-        width: 90%;
-
-    }
-
-    .adminOptions input {
-
-        width: 80%;
-
-    }
-
-    .adminOptions fieldset select {
-
-        width: 88%;
-    
+        }
+        
     }
 
 }
+

@@ -69,7 +69,7 @@ function SideBar() {
 
                     <ul>
 
-                        <Link to='/Perfil'><i class="fa fa-user-circle-o" aria-hidden="true"></i> Pefil</Link>
+                        <Link to='/Perfil'><i class="fa fa-user-circle-o" aria-hidden="true"></i> Perfil</Link>
                         <Link to='/MeusPedidos'><i class="fas fa-shopping-basket"></i>Meus Pedidos</Link>
                         <Link to='/AlterarDados'><i class="fas fa-pencil-alt"></i>Alterar Dados</Link>
                         <Link to='/Contato'><i class="fas fa-comment-dots"></i>Entre em contato</Link>

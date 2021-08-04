@@ -8,7 +8,6 @@ import 'firebase/auth'
 import 'firebase/storage'
 import firebaseConfig from '../../../FirebaseConfig.js'
 
-
 function Items() {
 
     const [wasChanged, setWasChanged] = useState(false)
@@ -22,10 +21,10 @@ function Items() {
         price: '',
         itemAvailability: 0,
         unityPrice: '',
-        category: '',
-        unity: '',
+        country: '',
+        type: '',
         amountInStock: ''
-        
+
     })
 
     const [selectItem, setSelectItem] = useState('')
@@ -41,8 +40,8 @@ function Items() {
         price: '',
         itemAvailability: 0,
         unityPrice: '',
-        category: '',
-        unity: '',
+        country: '',
+        type: '',
         amountInStock: ''
 
     })
@@ -133,16 +132,16 @@ function Items() {
             price: newDataAdmin.price,
             id: id,
             itemAvailability: newDataAdmin.itemAvailability,
-            unityPrice: newDataAdmin.unityPrice,
-            category: newDataAdmin.category,
-            unity: newDataAdmin.itemUnity,
+            country: newDataAdmin.country,
+            type: newDataAdmin.type,
+            amountInStock: newDataAdmin.amountInStock,
             amount: 0
 
         }
 
         firebase.database().ref('items/' + id)
-        .set(data)
-        .then(err => console.log(err))
+            .set(data)
+            .then(err => console.log(err))
         setNewDataAdmin({
 
             imageSrc: '',
@@ -150,13 +149,12 @@ function Items() {
             desc: '',
             price: '',
             itemAvailability: 0,
-            unityPrice: '',
-            category: '',
-            unity: ''
-    
+            country: '',
+            type: '',
+
         })
-        alert("Item inserido com sucesso!.")
-        
+        alert("Item inserido com sucesso!")
+
     }
 
     function updateItem() {
@@ -164,19 +162,20 @@ function Items() {
         if (wasChanged) {
 
             firebase.database()
-            .ref('items/' + dataKeysAdm[selectItem])
-            .update({
+                .ref('items/' + dataKeysAdm[selectItem])
+                .update({
 
-                imageSrc: alteredImageUrl != '' ? alteredImageUrl : dataAdmin[selectItem].imageSrc,
-                title: dataAlterItem.title != '' ? dataAlterItem.title : dataAdmin[selectItem].title,
-                desc: dataAlterItem.desc != '' ? dataAlterItem.desc : dataAdmin[selectItem].desc,
-                price: dataAlterItem.price != 0 ? dataAlterItem.price : dataAdmin[selectItem].price,
-                itemAvailability: dataAlterItem.itemAvailability != 0 ? dataAlterItem.itemAvailability : dataAdmin[selectItem].itemAvailability,
-                unity: dataAlterItem.unity != 0 ? dataAlterItem.unity : dataAdmin[selectItem].unity,
-                amountInStock: dataAlterItem.amountInStock != 0 ? dataAlterItem.amountInStock : dataAdmin[selectItem].amountInStock,
+                    imageSrc: alteredImageUrl != '' ? alteredImageUrl : dataAdmin[selectItem].imageSrc,
+                    title: dataAlterItem.title != '' ? dataAlterItem.title : dataAdmin[selectItem].title,
+                    desc: dataAlterItem.desc != '' ? dataAlterItem.desc : dataAdmin[selectItem].desc,
+                    price: dataAlterItem.price != 0 ? dataAlterItem.price : dataAdmin[selectItem].price,
+                    itemAvailability: dataAlterItem.itemAvailability != 0 ? dataAlterItem.itemAvailability : dataAdmin[selectItem].itemAvailability,
+                    country: dataAlterItem.country != 0 ? dataAlterItem.country : dataAdmin[selectItem].country,
+                    type: dataAlterItem.type != 0 ? dataAlterItem.type : dataAdmin[selectItem].type,
+                    amountInStock: dataAlterItem.amountInStock != 0 ? dataAlterItem.amountInStock : dataAdmin[selectItem].amountInStock,
 
-            })
-            .then(() => alert("Item atualizado com sucesso!"))
+                })
+                .then(() => alert("Item atualizado com sucesso!"))
 
         }
 
@@ -223,13 +222,15 @@ function Items() {
 
     return (
 
-        <div className='Admin'>
+        <div className='AdminItems'>
 
             <Header />
 
-            <main id='mainAdmin' >
+            <main id='mainItems' >
 
-                <div className='adminOptions' >
+                <div className='itemsOptions' >
+
+                    <h1>Cadastro de produtos</h1>
 
                     <fieldset>
 
@@ -237,24 +238,15 @@ function Items() {
                             <h2>Inserir novo item</h2>
                         </legend>
 
-                        <input name='title' onChange={handleInputAdminChange} placeholder='Nome' value={newDataAdmin.title}/>
+                        <input name='title' onChange={handleInputAdminChange} placeholder='Nome' value={newDataAdmin.title} />
 
                         <input name='desc' onChange={handleInputAdminChange} placeholder='Descrição' value={newDataAdmin.desc} />
 
-                        <input name='price' onChange={handleInputAdminChange} placeholder='Preço por Kg' type='number' value={newDataAdmin.price} />
-
-                        <input name='unityPrice' onChange={handleInputAdminChange} placeholder='Preço unitário' type='number' value={newDataAdmin.unityPrice} />
+                        <input name='price' onChange={handleInputAdminChange} placeholder='Valor' type='number' value={newDataAdmin.price} />
 
                         <input name='amountInStock' onChange={handleInputAdminChange} placeholder='Quantidade em estoque' type='number' value={newDataAdmin.amountInStock} />
-                        
-                        <input type='file' onChange={uploadImage} accept="image/png, image/jpeg" placeholder='Imagem'/>
 
-                        <select onChange={handleInputAdminChange} name='itemUnity' >
-
-                            <option value='unidade' >Unidade</option>
-                            <option value='kg' >Kg</option>
-
-                        </select>
+                        <input type='file' onChange={uploadImage} accept="image/png, image/jpeg" placeholder='Imagem' />
 
                         <select onChange={handleInputAdminChange} name='itemAvailability' >
 
@@ -264,30 +256,25 @@ function Items() {
 
                         </select>
 
-                        <select onChange={handleInputAdminChange} name='category' value={newDataAdmin.category} >
+                        <select onChange={handleInputAdminChange} name='country' value={newDataAdmin.country} >
 
-                            <option value={0} >Categoria</option>
-                            <option value="Diversos" >Diversos</option>
-                            <option value="Panificação" >Panificação</option>
-                            <option value="Processados" >Processados orgânicos</option>
-                            <option value="Hortaliças orgânicas" >Hortaliças orgânicas</option>
-                            <option value="Palmito pupunha congelado" >Palmito pupunha congelado</option>
-                            <option value="Laticínios e tofu" >Laticínios e tofu</option>
-                            <option value="Brotos e germinados" >Brotos e germinados</option>
-                            <option value="Geleias sem edição de açúcar" >Geleias sem edição de açúcar</option>
-                            <option value="Kombucha" >Kombucha</option>
-                            <option value="Cogumelos orgânicos" >Cogumelos orgânicos</option>
-                            <option value="Frutas congeladas" >Frutas congeladas</option>
-                            <option value="Frutas orgânicas" >Frutas orgânicas</option>
-                            <option value="Temperos desidratados orgânicos" >Temperos desidratados orgânicos</option>
-                            <option value="Temperos orgânicos in natura" >Temperos orgânicos in natura</option>
-                            <option value="Farinhas e cereais orgânicos" >Farinhas e cereais orgânicos</option>
-                            <option value="Alimentos prontos congelados" >Alimentos prontos congelados</option>
-                            <option value="Artesanato" >Artesanato</option>
+                            <option value={0} >País</option>
+                            <option value="Argentina" >Argentina</option>
+                            <option value="França" >França</option>
+                            <option value="Portugal" >Portugal</option>
 
                         </select>
 
-                        <a onClick={()=>{insertNewItem()}} >Inserir</a>
+                        <select onChange={handleInputAdminChange} name='type' value={newDataAdmin.type} >
+
+                            <option value={0} >Tipo</option>
+                            <option value="Rosé" >Rosé</option>
+                            <option value="Seco" >Seco</option>
+                            <option value="Tinto" >Tinto</option>
+
+                        </select>
+
+                        <a onClick={() => { insertNewItem() }} >Inserir</a>
 
                     </fieldset>
 
@@ -313,7 +300,7 @@ function Items() {
 
                         </select>
 
-                        <h6>Preencha o que deseja alterar</h6>
+                        <h4>Preencha o que deseja alterar</h4>
 
                         <input name='title' onChange={handleInputAdminChangeAlter} placeholder='Nome' />
 
@@ -321,7 +308,7 @@ function Items() {
 
                         <input name='price' onChange={handleInputAdminChangeAlter} placeholder='Preço' type='number' />
 
-                        <input type='file' onChange={uploadImageAltered} accept="image/png, image/jpeg" placeholder='Imagem'/>
+                        <input type='file' onChange={uploadImageAltered} accept="image/png, image/jpeg" placeholder='Imagem' />
 
                         <input name='amountInStock' onChange={handleInputAdminChangeAlter} placeholder='Quantidade em estoque' />
 
@@ -333,11 +320,21 @@ function Items() {
 
                         </select>
 
-                        <select onChange={handleInputAdminChangeAlter} name='unity' >
+                        <select onChange={handleInputAdminChangeAlter} name='country' value={newDataAdmin.country} >
 
-                            <option value='' > Selecione a unidade</option>
-                            <option value='kg' >Quilograma</option>
-                            <option value='Unidade' >Unidade</option>
+                            <option value={0} >País</option>
+                            <option value="Argentina" >Argentina</option>
+                            <option value="França" >França</option>
+                            <option value="Portugal" >Portugal</option>
+
+                        </select>
+
+                        <select onChange={handleInputAdminChangeAlter} name='type' value={newDataAdmin.type} >
+
+                            <option value={0} >Tipo</option>
+                            <option value="Rosé" >Rosé</option>
+                            <option value="Seco" >Seco</option>
+                            <option value="Tinto" >Tinto</option>
 
                         </select>
 
@@ -367,7 +364,7 @@ function Items() {
 
                         </select>
 
-                        <a onClick={() => { deleteItem() }} >Apagar</a>
+                        <a id="deleteButton" onClick={() => { deleteItem() }} >Apagar</a>
 
                     </fieldset>
 
@@ -376,6 +373,7 @@ function Items() {
             </main>
 
             <Footer />
+
         </div>
 
     )

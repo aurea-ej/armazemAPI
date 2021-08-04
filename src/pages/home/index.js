@@ -7,6 +7,8 @@ import securityLogo from '../../img/security.svg'
 import flashSale from '../../img/flash-sale.svg'
 import spainFlag from '../../img/spain.svg'
 import discountTag from '../../img/offer.svg'
+import wineTasting from '../../img/wineTasting.svg'
+import checked from '../../img/checked.svg'
 
 import vinhoImg from '../../img/vinho_periquita_tinto.png'
 
@@ -60,7 +62,11 @@ function Home() {
 
                     <div className="leftSide">
 
-                        <h1>Isso é um teste</h1>
+                        <h2>Brinde os bons momentos.<br/>Brinde com Armazém</h2>
+
+                        <span> <img src={checked} alt="" /> Melhores preços</span>
+                        <span> <img src={checked} alt="" /> Entrega segura</span>
+                        <span> <img src={checked} alt="" /> Segurança na compra</span>
 
                     </div>
 
@@ -144,7 +150,7 @@ function Home() {
 
                 <h1>Confira nossas melhores ofertas</h1>
 
-                <div className="selectedOptions">
+                {/* <div className="selectedOptions">
 
                     <div className="optionsContainer">
 
@@ -174,7 +180,7 @@ function Home() {
 
                     </div>
 
-                </div>
+                </div> */}
 
             </section>
 
@@ -233,7 +239,7 @@ function Home() {
                         <img src={vinhoImg} alt="Imagem do vinho" />
                         <p>Vinho Periquita Tinto</p>
                         <p className="itemInfos">Espanha • Tinto • Teor 13%</p>
-                        <h3>R$ 68,00</h3>                        
+                        <h3>R$ 68,00</h3>
                         <button>Adicionar ao carrinho</button>
 
                         <div className="dataItem">
@@ -244,20 +250,33 @@ function Home() {
                         </div>
 
                     </div>
-                    <div className="productCard">
 
-                    <img src={vinhoImg} alt="Imagem do vinho" />
-                        <p>Vinho Periquita Tinto</p>
-                        <p className="itemInfos">Espanha • Tinto • Teor 13%</p>
-                        <h3>R$ 68,00</h3>
-                        <button>Adicionar ao carrinho</button>
+                </div>
 
-                        <div className="dataItem">
+            </section>
 
-                            <img className="countryFlag" src={spainFlag} alt="Bandeira do país" />
-                            <h5>50% off</h5>
+            <section id="categorySection">
+
+                <div className="categoryWrapper">
+
+                    <div className="leftSideCategory">
+
+                        <div className="leftSideCategoryContent">
+
+                            <h3>Explore diversos lugares do mundo sem sair do conforto de sua casa.</h3>
+
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui, vitae totam. Sed error quisquam vero!</p>
+
+                            <img src={wineTasting} alt="Ilustração vinho" />
 
                         </div>
+
+                    </div>
+
+                    <div className="rightSideCategory">
+
+
+
                     </div>
 
                 </div>
