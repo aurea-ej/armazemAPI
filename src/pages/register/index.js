@@ -64,6 +64,7 @@ function Register() {
                     birthDate: registerData.birthDate,
                     cepNumber: registerData.cepNumber,
                     address: registerData.address,
+                    street: registerData.street,
                     city: selectedCity,
                     state: selectedUf,
                     houseNumber: registerData.houseNumber,
