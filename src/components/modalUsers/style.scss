@@ -1,0 +1,193 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+@import '../../global.scss';
+
+.modalUser{
+
+    width: 75vw;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    border-radius: 10px;
+    position: absolute;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+    z-index: 300;
+    color: black;
+    background-color: $offwhite;
+    padding: 1rem;
+
+    main {
+
+        width: 85%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        flex-direction: column;
+    
+    }
+
+}
+
+
+.titleModalUser {
+
+    img {
+        height: 150px;
+    }
+
+    h2 {
+        display: flex;
+        text-align: center; 
+        justify-content: center;   
+    }
+
+    h1 {
+
+        font-size: 2rem;
+        display: flex;
+        text-align: center;
+    
+    }
+}
+
+.editUser {
+
+    justify-content: center;
+    text-align: center;
+    margin: 1rem 0;
+
+    h4 {
+        text-align: center;
+        color:rgba(70, 70, 70, 0.6);
+        margin: 1rem;
+        font-style: italic;
+    }
+
+    fieldset {
+        padding: 1rem;
+        margin: .8rem auto;
+        text-align: center;
+        border: none;
+        border-radius: 5px;
+        background: #adadad;
+
+        h2 {
+            display: flex;
+        }
+        
+    }
+
+    input {
+        background-color: #ebebeb;
+        padding: 15px;
+        width: 30%;
+        border-radius: .2rem;
+        color: $vinho;
+        border: 1px solid $preto;
+        margin: 20px 0px;
+        outline: none;
+    }
+
+    .updateButton {
+        display: flex;
+        justify-content: center;
+
+        a {
+            width: 450px;
+            padding: 15px;
+            border-radius: 10px;
+            cursor: pointer;
+            background-color: $deepVinho;
+            
+            color: white;
+            text-decoration: none;
+            text-align: center;
+            font-weight: 700;
+        }
+    }
+    
+}
+
+.userInfo {
+
+    display: flex;
+
+    input {
+        margin: 1rem;
+    }
+}
+
+.userAddress {
+
+    display: flex;
+    flex-direction: column;
+
+    input {
+        margin: 1rem;
+    }
+}
+
+@media screen and (max-width: 768px) {
+
+    .modalUser {
+
+        font-size: .7rem;
+        width: 80vw;
+
+        main {
+
+            width: 90%;
+            box-shadow: none;
+            
+            img {
+                height: 80px;
+            }
+    
+        }
+
+    }
+
+    fieldset {
+        width: 70vw;
+    }
+
+    .userInfo {
+        flex-direction: column;
+    }
+
+    .editUser input {
+        width: 75%;
+
+    }
+
+    .updateButton {
+        width: 70vw;
+        justify-content: center;
+    }
+
+    .titleModal {
+
+        h2 {
+            margin: 0 1rem;
+        }
+        h1 {
+
+            font-size: 17pt;
+            display: flex;
+            flex-wrap: wrap;
+            text-align: center;
+    
+        }
+
+        main p {
+    
+            text-align: justify;
+        
+        }
+    }
+    
+}

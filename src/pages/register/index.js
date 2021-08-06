@@ -64,7 +64,6 @@ function Register() {
                     birthDate: registerData.birthDate,
                     cepNumber: registerData.cepNumber,
                     address: registerData.address,
-                    street: registerData.street,
                     city: selectedCity,
                     state: selectedUf,
                     houseNumber: registerData.houseNumber,
@@ -191,7 +190,6 @@ function Register() {
         registerData.cepNumber != '' ? counter++ : counter = counter
         registerData.city != '' ? counter++ : counter = counter
         registerData.state != '' ? counter++ : counter = counter
-        registerData.street != '' ? counter++ : counter = counter
         registerData.houseNumber != '' ? counter++ : counter = counter
         registerData.district != '' ? counter++ : counter = counter
         registerData.complement != '' ? counter++ : counter = counter
