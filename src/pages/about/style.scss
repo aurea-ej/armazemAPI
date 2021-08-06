@@ -98,18 +98,18 @@
             justify-content: center;
             
             .card {
-                  box-shadow: inset 0px 0px 13px 0px rgba(0,0,0,0.6);
+                  box-shadow: inset 0px 0px 12px -1px rgba(0,0,0,0.6);
                   display: block;
                   overflow: hidden;
                   position: relative;
-                  max-width: 450px;
+                  width: 450px;
                   max-height: 460px;
                   
                   padding: 2rem;
                   margin: 2rem;
                   z-index: 0;
 
-                  background-color: $cinza;
+                  background-color: #adadad;
                   border-radius: .3rem;
                   
                   flex-wrap: wrap;
@@ -189,6 +189,7 @@
                   h4 {
                         color: $deepVinho;
                         font-style: italic;
+                        font-size: 1.2rem;
                   }
 
                   &::before {
@@ -198,7 +199,7 @@
                         left: 0;
                         width: 100%;
                         height: 100%;
-                        background: $deepVinho;
+                        background: #D9D5C9;
                         clip-path: circle(200px at center);
                         transition: .5s;
                         
@@ -234,7 +235,7 @@
                   left: 13%;
                   padding: 2.5rem;
                   transition: .5s;
-                  color: $branco;
+                  color: black;
                   line-height: 1.3rem;
                   font-size: .975rem;
                   opacity: 0;
@@ -243,7 +244,7 @@
                   h2 {
                         //margin-top: 1.2rem;
                         font-size: 4rem;
-                        opacity: 0.09;
+                        opacity: 0.1;
                   }
 
                   h3 {
@@ -255,11 +256,11 @@
                   }
                   a {
                         text-decoration: none;
-                        background: $offwhite;
-                        color: $preto;
+                        background: $deepVinho;
+                        color: #D9D5C9;
                         border-radius: .3rem;
                         padding: .75rem;
-                        font-weight: 600;
+                        font-weight: 400;
                   }
             }
 
@@ -269,7 +270,7 @@
 
                         &::before {
                               clip-path: circle(600px at center);
-                              background: $deepVinho;
+                              background: #D9D5C9;
                         }
                         
                   }

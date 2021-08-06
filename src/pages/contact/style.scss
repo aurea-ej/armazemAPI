@@ -50,28 +50,34 @@ form {
 form input {
     padding: 15px;
     width: 30%;
-    border-radius: 10px;
+    border-radius: .2rem;
     color: $vinho;
+    border: 1px solid $preto;
     background-color: $branco;
     margin: 20px 0px;
+    outline: none;
 }
 
 form select {
     padding: 15px;
     width: 30%;
-    border-radius: 10px;
+    border-radius: .2rem;
     color: $vinho;
+    border: 1px solid $preto;
     background-color: $branco;
     margin: 20px 0px;
+    outline: none;
 }
 
 form textarea {
     padding: 15px;
     width: 30%;
-    border-radius: 10px;
+    border-radius: .2rem;
     color: $vinho;
     background-color: $branco;
     margin: 20px 0px;
+    border: 1px solid $preto;
+    outline: none;
 }
 
 .buttonsFormRegister {

@@ -33,7 +33,7 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    background: var(--offwhite);
+    background: var(--branco);
 
 }
 
@@ -65,15 +65,10 @@
         border: none;
         padding: 15px;
         margin: 10px 0;
-        color: white;
-        background-color: var(--cinza);
+        background-color: #ebebeb;
         border-radius: 5px;
-        box-shadow: inset 0px 0px 7px 0px rgba(0,0,0,0.6);
-        outline: none;
-    }
-
-    ::placeholder {
-        color: white;
+        //box-shadow: inset 0px 0px 7px 0px rgba(0,0,0,0.6);
+        outline-color: var(--vinho);
     }
 
     .haveAccount {
@@ -95,11 +90,11 @@
             transition: .3s;
             font-weight: 500;
 
-            &:hover,
-            &:focus {
-                box-shadow: inset 0 0 0 35px var(--cinza);
-                color: var(--branco);
-            }
+            // &:hover,
+            // &:focus {
+            //     box-shadow: inset 0 0 0 35px var(--cinza);
+            //     color: var(--branco);
+            // }
         }
     }
 
@@ -119,7 +114,7 @@
     display: flex;
     justify-content: center;
 
-    #enterButtonSignIn {
+    #enterButtonSignInPage {
 
         color: var(--branco);
         padding: 1rem;
@@ -129,11 +124,11 @@
         border-radius: .3rem;
         transition: .24s;
     
-        &:hover,
-            &:focus {
-                box-shadow: inset 0 0 0 35px var(--branco);
-                color: var(--deepvinho);
-            }
+        // &:hover,
+        //     &:focus {
+        //         box-shadow: inset 0 0 0 35px var(--branco);
+        //         color: var(--deepvinho);
+        //     }
     
     }
 

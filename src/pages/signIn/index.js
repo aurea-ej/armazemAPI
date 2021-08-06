@@ -135,7 +135,7 @@ function SignIn() {
                             </fieldset>
 
                             <div className='buttonsFormRegister' >
-                                <Link id='enterButtonSignIn' onClick={makeLogin}>Entrar</Link>
+                                <Link id='enterButtonSignInPage' onClick={makeLogin}>Entrar</Link>
                             </div>
 
                             <div className='haveAccount' >
