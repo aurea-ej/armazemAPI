@@ -1,6 +1,8 @@
 import { React } from 'react';
 import { useState, useEffect } from 'react';
 
+import Slider from "react-slick";
+
 import shoppingBagLogo from '../../img/close-shopping-bag.svg'
 import deliveryPackageLogo from '../../img/delivery.svg'
 import securityLogo from '../../img/security.svg'
@@ -11,11 +13,20 @@ import wineTasting from '../../img/wineTasting.svg'
 import checked from '../../img/checked.svg'
 
 import vinhoImg from '../../img/vinho_periquita_tinto.png'
+import vinhoImg2 from '../../img/vinho tinto.png'
+import vinhoImg3 from '../../img/vinho rosé.png'
+import vinhoImg4 from '../../img/vinho tinto 2.png'
+
+import banner from '../../img/banner.png'
+import banner2 from '../../img/banner 2.png'
 
 import Header from '../../components/header'
 import Footer from '../../components/footer'
 
 import './style.scss'
+
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 import firebase from 'firebase/app'
 import 'firebase/auth'
@@ -50,232 +61,161 @@ function Home() {
 
     }, [])
 
+    var carouselSettings = {
+        dots: true,
+        infinite: true,
+        speed: 500,
+        slidesToShow: 1,
+        slidesToScroll: 1
+    };
+
     return (
 
-        <div className="App">
+        <div className="HomePage">
 
             <Header />
 
             <section id="heroSection">
 
+                <div className="optionsHero">
+
+                    <span>Tintos</span>
+                    <span>Brancos</span>
+                    <span>Rosés</span>
+                    <span>Espumantes</span>
+                    <span>Seco</span>
+                    <span>Suave</span>
+                    <span>Kits</span>
+                    <span>Outros</span>
+
+                </div>
+
                 <div className="heroWrapper">
 
-                    <div className="leftSide">
-
-                        <h2>Brinde os bons momentos.<br/>Brinde com Armazém</h2>
-
-                        <span> <img src={checked} alt="" /> Melhores preços</span>
-                        <span> <img src={checked} alt="" /> Entrega segura</span>
-                        <span> <img src={checked} alt="" /> Segurança na compra</span>
-
-                    </div>
-
-                    <div className="rightSide">
-
-                        <div className="textRight">
-
-                            <h2>E isso aqui também</h2>
-
-                            <h1>Compre vinho</h1>
-
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-
+                    <Slider {...carouselSettings}>
+                        <div>
+                            <img src={banner} alt="banner dia dos pais" />
                         </div>
-
-                        <div className="buttonBuy">
-
-                            <a
-
-                                href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">
-                                Adicionar ao carrinho
-                                <img src={shoppingBagLogo}
-                                    alt="sacola de compras" />
-
-                            </a>
-
+                        <div>
+                            <img src={banner2} alt="banner kits" />
                         </div>
-
-                    </div>
+                        <div>
+                            <h3>3</h3>
+                        </div>
+                        <div>
+                            <h3>4</h3>
+                        </div>
+                        <div>
+                            <h3>5</h3>
+                        </div>
+                        <div>
+                            <h3>6</h3>
+                        </div>
+                    </Slider>
 
                 </div>
 
             </section>
 
-            <section id="sectionInfos">
+            <section id="featuredProdutcsSection">
 
-                <div className="cardInfoHome">
+                <h4>Confira alguns de nossos produtos</h4>
 
-                    <div className="cardInfos">
+                <div className="featuredProducts">
 
-                        <div className="textCard">
+                    <div className="featuredProductsCard">
 
-                            <img id="logoSale" src={flashSale} alt="Promoção" />
+                        <div className="imgFeaturedWrapper">
 
-                            <h4>Melhores Preços</h4>
-                            <h5>Lorem ipsum dolor sit amet, consectetur adipiscing elit</h5>
-
-                        </div>
-
-                    </div>
-                    <div className="cardInfos">
-
-                        <div className="textCard">
-
-                            <img src={deliveryPackageLogo} alt="Entrega" />
-
-                            <h4>Entrega segura</h4>
-                            <h5>Lorem ipsum dolor sit amet, consectetur adipiscing elit</h5>
+                            <img src={vinhoImg} alt="Imagem do vinho" />
 
                         </div>
 
-                    </div>
-                    <div className="cardInfos">
+                        <div className="featuredTag">
 
-                        <div className="textCard">
+                            <h6>Informação</h6>
 
-                            <img id="logoSecurity" src={securityLogo} alt="Segurança" />
+                        </div>
 
-                            <h4>Segurança na compra</h4>
-                            <h5>Lorem ipsum dolor sit amet, consectetur adipiscing elit</h5>
+                        <div className="featuredTextWrapper">
+
+                            <h5>Vinho Periquita tinto</h5>
+
+                            <span>Espanha • Tinto</span>
 
                         </div>
 
                     </div>
 
-                </div>
+                    <div className="featuredProductsCard">
 
-            </section>
+                        <div className="imgFeaturedWrapper">
 
-            <section id="selectedSection">
-
-                <h1>Confira nossas melhores ofertas</h1>
-
-                {/* <div className="selectedOptions">
-
-                    <div className="optionsContainer">
-
-                        <div className="optionsText">
-
-                            <p>Promoções</p>
+                            <img id="imgVinho" src={vinhoImg2} alt="Imagem do vinho" />
 
                         </div>
 
-                        <div className="optionsText">
+                        <div className="featuredTag">
 
-                            <p>Especiais</p>
-
-                        </div>
-
-                        <div className="optionsText">
-
-                            <p>Importados</p>
+                            <h6>Informação</h6>
 
                         </div>
 
-                        <div className="optionsText">
+                        <div className="featuredTextWrapper">
 
-                            <p>Kits</p>
+                            <h5>Vinho Don Simon</h5>
+
+                            <span>Espanha • Tinto</span>
 
                         </div>
 
                     </div>
 
-                </div> */}
+                    <div className="featuredProductsCard">
 
-            </section>
+                        <div className="imgFeaturedWrapper">
 
-            <section id="productsSection">
-
-                <div className="productsContainer">
-
-                    <div className="productCard">
-
-                        <img src={vinhoImg} alt="Imagem do vinho" />
-                        <p>Vinho Periquita Tinto</p>
-                        <p className="itemInfos">Espanha • Tinto • Teor 13%</p>
-                        <h3>R$ 68,00</h3>
-                        <button>Adicionar ao carrinho</button>
-
-                        <div className="dataItem">
-
-                            <img className="countryFlag" src={spainFlag} alt="Bandeira do país" />
-                            <h5>50% off</h5>
+                            <img id="imgVinho" src={vinhoImg3} alt="Imagem do vinho" />
 
                         </div>
 
-                    </div>
-                    <div className="productCard">
+                        <div className="featuredTag">
 
-                        <img src={vinhoImg} alt="Imagem do vinho" />
-                        <p>Vinho Periquita Tinto</p>
-                        <p className="itemInfos">Espanha • Tinto • Teor 13%</p>
-                        <h3>R$ 68,00</h3>
-                        <button>Adicionar ao carrinho</button>
-
-                        <div className="dataItem">
-
-                            <img className="countryFlag" src={spainFlag} alt="Bandeira do país" />
-                            <h5>50% off</h5>
-
-                        </div>
-                    </div>
-                    <div className="productCard">
-                        <img src={vinhoImg} alt="Imagem do vinho" />
-                        <p>Vinho Periquita Tinto</p>
-                        <p className="itemInfos">Espanha • Tinto • Teor 13%</p>
-                        <h3>R$ 68,00</h3>
-                        <button>Adicionar ao carrinho</button>
-
-                        <div className="dataItem">
-
-                            <img className="countryFlag" src={spainFlag} alt="Bandeira do país" />
-                            <h5>50% off</h5>
+                            <h6>Informação</h6>
 
                         </div>
 
-                    </div>
-                    <div className="productCard">
+                        <div className="featuredTextWrapper">
 
-                        <img src={vinhoImg} alt="Imagem do vinho" />
-                        <p>Vinho Periquita Tinto</p>
-                        <p className="itemInfos">Espanha • Tinto • Teor 13%</p>
-                        <h3>R$ 68,00</h3>
-                        <button>Adicionar ao carrinho</button>
+                            <h5>Vinho Viñapeña</h5>
 
-                        <div className="dataItem">
-
-                            <img className="countryFlag" src={spainFlag} alt="Bandeira do país" />
-                            <h5>50% off</h5>
+                            <span>Espanha • Rosé</span>
 
                         </div>
 
                     </div>
 
-                </div>
+                    <div className="featuredProductsCard">
 
-            </section>
+                        <div className="imgFeaturedWrapper">
 
-            <section id="categorySection">
-
-                <div className="categoryWrapper">
-
-                    <div className="leftSideCategory">
-
-                        <div className="leftSideCategoryContent">
-
-                            <h3>Explore diversos lugares do mundo sem sair do conforto de sua casa.</h3>
-
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui, vitae totam. Sed error quisquam vero!</p>
-
-                            <img src={wineTasting} alt="Ilustração vinho" />
+                            <img id="imgVinho" src={vinhoImg4} alt="Imagem do vinho" />
 
                         </div>
 
-                    </div>
+                        <div className="featuredTag">
 
-                    <div className="rightSideCategory">
+                            <h6>Informação</h6>
 
+                        </div>
 
+                        <div className="featuredTextWrapper">
+
+                            <h5>Vinho Anciano</h5>
+
+                            <span>Espanha • Tinto</span>
+
+                        </div>
 
                     </div>
 
