@@ -22,6 +22,7 @@ import banner2 from '../../img/banner 2.png'
 
 import Header from '../../components/header'
 import Footer from '../../components/footer'
+import WhatsAppButton from '../../components/whatsappButton'
 
 import './style.scss'
 
@@ -223,6 +224,7 @@ function Home() {
 
             </section>
 
+            <WhatsAppButton />
             <Footer />
 
         </div>

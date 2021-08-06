@@ -4,6 +4,7 @@ import { Link, Redirect } from "react-router-dom"
 
 import Header from '../../components/header'
 import Footer from '../../components/footer'
+import WhatsAppButton from '../../components/whatsappButton'
 
 import './style.scss'
 import taca_armazem from '../../img/taca_armazem.png'
@@ -149,7 +150,7 @@ function SignIn() {
 
                 </div>
                 
-
+                <WhatsAppButton />
                 <Footer />
 
             </div>

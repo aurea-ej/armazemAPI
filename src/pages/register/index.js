@@ -1,8 +1,10 @@
 import React from 'react'
 import { useEffect, useState } from 'react'
+
+
 import Header from '../../components/header'
 import Footer from '../../components/footer'
-import './style.scss'
+import WhatsAppButton from '../../components/whatsappButton'
 
 import firebase from 'firebase/app'
 import 'firebase/auth'
@@ -13,6 +15,8 @@ import { Link, Redirect } from "react-router-dom";
 import imgVinho from '../../img/vinhoTaça.jpg';
 import googleLogo from '../../img/google.svg';
 import facebookLogo from '../../img/facebook.svg';
+
+import './style.scss'
 
 function Register() {
 
@@ -340,6 +344,7 @@ function Register() {
 
                     </section>
 
+                    <WhatsAppButton />
                     <Footer />
 
                 </div>

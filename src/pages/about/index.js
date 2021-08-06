@@ -2,6 +2,7 @@ import { React } from 'react'
 import './style.scss'
 import Header from '../../components/header'
 import Footer from '../../components/footer'
+import WhatsAppButton from '../../components/whatsappButton'
 
 import logoArmazem from '../../img/logo-armazem-do-vinho.png'
 import taca_armazem from '../../img/taca_armazem.png'
@@ -88,6 +89,8 @@ function About() {
                 </div>
                     
             </div>
+
+            <WhatsAppButton />
             <Footer />
         </div>  
     )
