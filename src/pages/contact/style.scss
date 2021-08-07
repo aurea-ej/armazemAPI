@@ -13,6 +13,7 @@ main {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    background-color: $branco;
 }
 
 #contactMain {
@@ -50,10 +51,10 @@ form {
 form input {
     padding: 15px;
     width: 30%;
-    border-radius: .2rem;
+    border-radius: 5px;
     color: $vinho;
-    border: 1px solid $preto;
-    background-color: $branco;
+    background-color: $offwhite;
+    border: none;
     margin: 20px 0px;
     outline: none;
 }
@@ -61,10 +62,10 @@ form input {
 form select {
     padding: 15px;
     width: 30%;
-    border-radius: .2rem;
+    border-radius: 5px;
     color: $vinho;
-    border: 1px solid $preto;
-    background-color: $branco;
+    background-color: $offwhite;
+    border: none;
     margin: 20px 0px;
     outline: none;
 }
@@ -72,11 +73,11 @@ form select {
 form textarea {
     padding: 15px;
     width: 30%;
-    border-radius: .2rem;
+    border-radius: 5px;
     color: $vinho;
-    background-color: $branco;
+    background-color: $offwhite;
+    border: none;
     margin: 20px 0px;
-    border: 1px solid $preto;
     outline: none;
 }
 
@@ -94,7 +95,7 @@ form textarea {
         background: $deepVinho;
         border: 1px solid $deepVinho;
         text-decoration: none;
-        border-radius: .3rem;
+        border-radius: 5px;
         transition: .24s;
         font-family: 'Montserrat';
         font-size: 16px;
@@ -138,7 +139,7 @@ form textarea {
         width: 80%;
         border-radius: 10px;
         color: $vinho;
-        background-color: $branco;
+        background-color: $offwhite;
         margin: 20px 0px;
     }
     
@@ -147,7 +148,7 @@ form textarea {
         width: 80%;
         border-radius: 10px;
         color: $vinho;
-        background-color: $branco;
+        background-color: $offwhite;
         margin: 20px 0px;
     }
     
@@ -156,7 +157,7 @@ form textarea {
         width: 80%;
         border-radius: 10px;
         color: $vinho;
-        background-color: $branco;
+        background-color: $offwhite;
         margin: 20px 0px;
     }
 }
