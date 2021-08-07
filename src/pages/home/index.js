@@ -3,14 +3,7 @@ import { useState, useEffect } from 'react';
 
 import Slider from "react-slick";
 
-import shoppingBagLogo from '../../img/close-shopping-bag.svg'
-import deliveryPackageLogo from '../../img/delivery.svg'
-import securityLogo from '../../img/security.svg'
-import flashSale from '../../img/flash-sale.svg'
-import spainFlag from '../../img/spain.svg'
-import discountTag from '../../img/offer.svg'
-import wineTasting from '../../img/wineTasting.svg'
-import checked from '../../img/checked.svg'
+import rightArrow from '../../img/right-arrow.svg'
 
 import vinhoImg from '../../img/vinho_periquita_tinto.png'
 import vinhoImg2 from '../../img/vinho tinto.png'
@@ -33,6 +26,7 @@ import firebase from 'firebase/app'
 import 'firebase/auth'
 import 'firebase/database'
 import firebaseConfig from '../../FirebaseConfig.js'
+import { Link } from 'react-router-dom';
 
 function Home() {
 
@@ -120,7 +114,18 @@ function Home() {
 
             <section id="featuredProdutcsSection">
 
-                <h4>Confira alguns de nossos produtos</h4>
+                <div className="featuredProductsText">
+
+                    <h4>Confira alguns de nossos produtos</h4>
+
+                    <Link to='/produtos' className="viewAll">
+
+                        <h4>Ver tudo</h4>
+                        <img src={rightArrow} alt="Todos os produtos" />
+
+                    </Link>
+
+                </div>
 
                 <div className="featuredProducts">
 

@@ -68,12 +68,39 @@
         width: 95vw;
         height: 250px;
         margin-bottom: 2rem;
+        position: relative;
 
-        h4 {
+        .featuredProductsText {
 
+            display: flex;
+            flex-direction: row;
             font-size: 1.1rem;
             color: $branco;
-            margin-bottom: 4rem;
+
+            .viewAll {
+
+                display: flex;
+                flex-direction: row;
+                position: absolute;
+                right: 0;
+                align-items: center;
+                justify-content: center;
+                text-decoration: none;
+                color: $branco;
+
+                h4 {
+
+                    margin-right: 5px;
+
+                }
+                
+                img {
+
+                    max-width: 30px;
+
+                }
+
+            }
 
         }
 
@@ -98,6 +125,7 @@
                 margin: 0 auto;
                 border-radius: 10px;
                 position: relative;
+                margin-top: 4rem;
 
                 .imgFeaturedWrapper {
 
