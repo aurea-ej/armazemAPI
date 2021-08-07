@@ -9,6 +9,7 @@ import vinhoImg from '../../img/vinho_periquita_tinto.png'
 import vinhoImg2 from '../../img/vinho tinto.png'
 import vinhoImg3 from '../../img/vinho rosé.png'
 import vinhoImg4 from '../../img/vinho tinto 2.png'
+import mapaLagos from '../../img/mapa.png';
 
 import banner from '../../img/banner.png'
 import banner2 from '../../img/banner 2.png'
@@ -226,6 +227,67 @@ function Home() {
                     </div>
 
                 </div>
+
+            </section>
+
+            <section id="optionSection">
+
+                <h4>Sinta o sabor de diversos países sem sair de casa</h4>
+
+                <div className="optionsInfos">
+
+                    <div className="optionsWrapper">
+
+                        <img src={mapaLagos} alt="Mapa" />
+
+                    </div>
+
+                    <div className="optionsSelection">
+
+                        <div className="cardsOptionsSelection">
+
+                            <h3>Brasilllll</h3>
+
+                        </div>
+                        <div className="cardsOptionsSelection">
+
+                            <h3>Miracema</h3>
+
+                        </div>
+                        <div className="cardsOptionsSelection">
+
+                            <h3>França</h3>
+
+                        </div>
+                        <div className="cardsOptionsSelection">
+
+                            <h3>Portugal</h3>
+
+                        </div>
+                        <div className="cardsOptionsSelection">
+
+                            <h3>Espanha</h3>
+
+                        </div>
+                        <div className="cardsOptionsSelection">
+
+                            <h3>Peru</h3>
+
+                        </div>
+                        <div className="cardsOptionsSelection">
+
+                            <h3>Holanda</h3>
+
+                        </div>
+                        <div className="cardsOptionsSelection">
+
+                            <h3>Argentina</h3>
+
+                        </div>
+
+                    </div>
+                </div>
+
 
             </section>
 

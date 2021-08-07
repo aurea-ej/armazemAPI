@@ -198,5 +198,68 @@
 
     }
 
+#optionSection{
+
+    h4 {
+
+        font-size: 1.1rem;
+        color: $branco;
+        margin-bottom: 1rem;
+
+    }
+
+    .optionsInfos {
+
+        display: flex;
+        width: 95vw;
+        height: 270px;
+        background-color: #2b2b2b;
+        margin-bottom: 4rem;
+        position: relative;
+
+        img {
+
+            width: auto;
+            height: auto;
+
+        }
+
+        .optionsSelection {
+
+            display: flex;
+            position: absolute;
+            height: 100%;
+            right:0;
+            width: 60vw;
+            display: grid;
+            grid-template-columns: 210px 210px 210px 210px;
+            align-items: center;
+
+            .cardsOptionsSelection {
+
+                display: flex;
+                height: 70px;
+                width: 150px;
+                border-radius: 60px 0 60px 0;
+                background-color:#333333;
+                align-items: center;
+                justify-content: center;
+                text-transform: uppercase;
+                color: $branco;
+                cursor: pointer;
+
+                :hover{
+
+                    color: $vinhoPink;
+
+                }
+
+            }
+
+        }
+
+    }
+
+}
 }
 
