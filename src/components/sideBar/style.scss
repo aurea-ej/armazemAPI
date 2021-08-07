@@ -5,14 +5,13 @@
 
     margin: 0;
     padding: 0;
-    position: relative;
 
     .sideMenu {
 
         display: flex;
         position: relative;
-        width: 20%;
-        min-height:100vh;
+        width: 20vw;
+        height:100%;
         background-color: $deepVinho;
         box-sizing: initial;
         transition: width 0.5s;

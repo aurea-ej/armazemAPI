@@ -163,9 +163,9 @@ function UserProfile() {
 
             <Header />
 
-            <SideBar />
-
             <section className="dataSection">
+                
+            <SideBar />
 
                 <div className="userData">
 

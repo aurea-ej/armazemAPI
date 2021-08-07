@@ -3,12 +3,12 @@
 
 .dataSection {
 
-    width: 80vw;
-    position: absolute;
+    width: 100vw;
     left: 20%;
     top: 6.5rem;
     justify-content: center;
     display: flex;
+    flex-direction: row;
 
     .userData {
 
@@ -18,6 +18,8 @@
         justify-content: center;
         flex-direction: column;
         align-items: center;
+        margin: 0 auto;
+        padding: 0;
 
         h3 {
 
@@ -39,6 +41,8 @@
             width: 80%;
             flex-direction: column;
             margin-top: 1rem;
+            align-items: center;
+            margin-bottom: 4rem;;
 
             h4 {
 

@@ -17,6 +17,10 @@ function ChangeInfos() {
     const [displayDivAlterInfos, setDisplayDivAlterInfos] = useState("none");
     const [displayDivPedidos, setDisplayDivPedidos] = useState("none");
     const [requestData, setRequestData] = useState([{}]);
+    const [ufs, setUfs] = useState([])
+    const [selectedUf, setSelectedUf] = useState([])
+    const [city, setCity] = useState([])
+    const [selectedCity, setSelectedCity] = useState([])
     const [registerData, setRegisterData] = useState({
 
         name: '',
@@ -131,6 +135,58 @@ function ChangeInfos() {
 
     }
 
+
+    function getLocales() {
+
+        fetch('https://servicodados.ibge.gov.br/api/v1/localidades/estados?orderBy=nome')
+            .then(async (res) => await res.json())
+            .then((json) => {
+
+                const names = json.map(uf => uf.sigla)
+                setUfs(names)
+                console.log(names)
+
+            })
+
+    }
+
+    function handleSelectedUf(event) {
+
+        setSelectedUf(event.target.value)
+
+    }
+
+    function setCities() {
+
+        fetch(`https://servicodados.ibge.gov.br/api/v1/localidades/estados/${selectedUf}/municipios`)
+            .then(async (res) => await res.json())
+            .then((json) => {
+
+                const names = json.map(uf => uf.nome)
+                setCity(names)
+
+            })
+
+    }
+
+    function handleSelectedCity(event) {
+
+        setSelectedCity(event.target.value)
+
+    }
+
+    useEffect(() => {
+
+        getLocales();
+
+    }, [])
+
+    useEffect(() => {
+
+        setCities();
+
+    }, [selectedUf])
+
     function updateRegister() {
 
         firebase.database().ref('users/' + dataAccount.id).update({
@@ -163,9 +219,9 @@ function ChangeInfos() {
 
             <Header />
 
-            <SideBar />
-
             <section className="changeSection">
+
+                <SideBar />
 
                 <div className="userDataChange">
 
@@ -180,18 +236,18 @@ function ChangeInfos() {
                             <span>
                                 <strong>Usuário:
                                     <input
-                                    name='name' 
-                                    placeholder='Nome completo' 
-                                    /> 
+                                        name='name'
+                                        placeholder='Nome completo'
+                                    />
                                 </strong>
                             </span>
-                            
+
                             <span>
                                 <strong>E-mail:
                                     <input
-                                    name='email' 
-                                    placeholder='E-mail' 
-                                    /> 
+                                        name='email'
+                                        placeholder='E-mail'
+                                    />
                                 </strong>
                             </span>
 
@@ -202,62 +258,104 @@ function ChangeInfos() {
                         <div className="profileDataChange">
 
                             <span>
+                                <strong>Estado:
+
+                                    <select select name="uf" id="uf" onChange={handleSelectedUf} value={selectedUf}>
+
+                                        {/* onChange={handleInputAdminChangeAlter} name='unity' value={dataAdmin[selectItem]?.state} */}
+
+                                        {ufs.map(uf => (
+
+                                            <option key={uf} value={uf} >{uf}</option>
+
+                                        ))}
+
+                                    </select>
+                                </strong>
+                            </span>
+
+                            <span>
+                                <strong>Cidade:
+
+                                    <select name="city" id="localidade" onChange={handleSelectedCity} value={selectedCity}>
+
+                                        {/* onChange={handleInputAdminChangeAlter} name='unity' value={dataAdmin[selectItem]?.state} */}
+
+                                        {city.map(city => (
+
+                                            <option key={city} value={city} >{city}</option>
+
+                                        ))}
+
+                                    </select>
+                                </strong>
+                            </span>
+
+                            <span>
                                 <strong>Endereço:
                                     <input
-                                    name='address' 
-                                    placeholder='Alterar endereço' 
-                                    /> 
+                                        name='address'
+                                        placeholder='Alterar endereço'
+                                    />
+                                </strong>
+                            </span>
+
+                            <span>
+                                <strong>Bairro:
+                                    <input
+                                        name='district'
+                                        placeholder='Alterar complemento'
+                                    />
                                 </strong>
                             </span>
 
                             <span>
                                 <strong>Complemento:
                                     <input
-                                    name='complement' 
-                                    placeholder='Alterar complemento' 
-                                    /> 
-                                </strong>
-                            </span>
-
-                            <span>
-                                <strong>Cidade:
-                                    <input
-                                    name='city' 
-                                    placeholder='Alterar cidade' 
-                                    /> 
+                                        name='complement'
+                                        placeholder='Alterar complemento'
+                                    />
                                 </strong>
                             </span>
 
                             <span>
                                 <strong>CEP:
                                     <input
-                                    name='cepNumber' 
-                                    placeholder='Alterar CEP' 
-                                    /> 
+                                        name='cepNumber'
+                                        placeholder='Alterar CEP'
+                                    />
                                 </strong>
                             </span>
 
                             <span>
                                 <strong>Telefone:
                                     <input
-                                    name='phoneNumber' 
-                                    placeholder='Alterar telefone' 
-                                    /> 
+                                        name='phoneNumber'
+                                        placeholder='Alterar telefone'
+                                    />
                                 </strong>
                             </span>
 
                             <span>
-                                <strong>Data de nascimento:
+                                <strong>Nascimento:
+
                                     <input
-                                    name='birthDate' 
-                                    placeholder='Alterar data de nascimento' 
-                                    /> 
+                                        id='birthDate'
+                                        name='birthDate'
+                                        type='date'
+                                        // onChange={handleInputRegisterChange} 
+                                        placeholder='Data de nascimento'
+                                    />
+
                                 </strong>
                             </span>
 
                         </div>
 
+
                     </div>
+
+                    <button>Alterar dados</button>
 
                 </div>
 

@@ -194,8 +194,6 @@ function Register() {
         registerData.district != '' ? counter++ : counter = counter
         registerData.complement != '' ? counter++ : counter = counter
 
-        
-
         if (counter == 10) {
 
             if (registerData.password != registerData.passwordConfirm) {
