@@ -151,15 +151,6 @@ function Admin() {
                                 <p><b>Telefone</b>: {item.phoneNumber}</p>
                                 <p><b>E-mail</b>: {item.email}</p>
                                 <p><b>Data de nascimento</b>: {item.birthDate} </p>
-                                {item.giveData == true ? 
-                                
-                                    <p><b>Aceita receber informações: </b>Sim</p> 
-                                    
-                                    : 
-                                    
-                                    <p><b>Aceita receber informações: </b>Não</p>
-
-                                }
                             </div>
 
                             <div>

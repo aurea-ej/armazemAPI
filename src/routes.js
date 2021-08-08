@@ -12,6 +12,7 @@ import userProfile from './pages/userProfile'
 import Items from './pages/admin/items'
 import ChangeInfo from './pages/dataChange'
 import ClientsList from './pages/admin/clientsList'
+import ProviderRegister from './pages/admin/providersRegister'
 
 const Routes = () => {
 
@@ -30,6 +31,7 @@ const Routes = () => {
             <Route component={Items} path='/AdminItems' />
             <Route component={ChangeInfo} path='/AlterarDados' />
             <Route component={ClientsList} path='/ListaDeClientes' />
+            <Route component={ProviderRegister} path='/AdminFornecedor' />
 
         </BrowserRouter>
 
