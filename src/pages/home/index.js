@@ -55,7 +55,7 @@ function Home() {
 
         });
 
-    }, [])
+    }, []);
 
     var carouselSettings = {
         dots: true,
@@ -246,17 +246,12 @@ function Home() {
 
                         <div className="cardsOptionsSelection">
 
-                            <h3>Brasilllll</h3>
+                            <h3>Argentina</h3>
 
                         </div>
                         <div className="cardsOptionsSelection">
 
-                            <h3>Miracema</h3>
-
-                        </div>
-                        <div className="cardsOptionsSelection">
-
-                            <h3>França</h3>
+                            <h3>Chile</h3>
 
                         </div>
                         <div className="cardsOptionsSelection">
@@ -271,23 +266,18 @@ function Home() {
                         </div>
                         <div className="cardsOptionsSelection">
 
-                            <h3>Peru</h3>
+                            <h3>França</h3>
 
                         </div>
                         <div className="cardsOptionsSelection">
 
-                            <h3>Holanda</h3>
-
-                        </div>
-                        <div className="cardsOptionsSelection">
-
-                            <h3>Argentina</h3>
+                            <h3>Brasil</h3>
 
                         </div>
 
                     </div>
-                </div>
 
+                </div>
 
             </section>
 

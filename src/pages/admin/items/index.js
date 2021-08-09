@@ -23,6 +23,7 @@ function Items() {
         unityPrice: '',
         country: '',
         type: '',
+        sweetness: '',
         amountInStock: ''
 
     })
@@ -42,6 +43,7 @@ function Items() {
         unityPrice: '',
         country: '',
         type: '',
+        sweetness: '',
         amountInStock: ''
 
     })
@@ -134,6 +136,7 @@ function Items() {
             itemAvailability: newDataAdmin.itemAvailability,
             country: newDataAdmin.country,
             type: newDataAdmin.type,
+            sweetness: newDataAdmin.sweetness,
             amountInStock: newDataAdmin.amountInStock,
             amount: 0
 
@@ -151,6 +154,7 @@ function Items() {
             itemAvailability: 0,
             country: '',
             type: '',
+            sweetness: '',
 
         })
         alert("Item inserido com sucesso!")
@@ -172,6 +176,7 @@ function Items() {
                     itemAvailability: dataAlterItem.itemAvailability != 0 ? dataAlterItem.itemAvailability : dataAdmin[selectItem].itemAvailability,
                     country: dataAlterItem.country != 0 ? dataAlterItem.country : dataAdmin[selectItem].country,
                     type: dataAlterItem.type != 0 ? dataAlterItem.type : dataAdmin[selectItem].type,
+                    sweetness: dataAlterItem.sweetness != 0 ? dataAlterItem.sweetness : dataAdmin[selectItem].sweetness,
                     amountInStock: dataAlterItem.amountInStock != 0 ? dataAlterItem.amountInStock : dataAdmin[selectItem].amountInStock,
 
                 })
@@ -260,6 +265,9 @@ function Items() {
 
                             <option value={0} >País</option>
                             <option value="Argentina" >Argentina</option>
+                            <option value="Brasil" >Brasil</option>
+                            <option value="Chile" >Chile</option>
+                            <option value="Espanha" >Espanha</option>
                             <option value="França" >França</option>
                             <option value="Portugal" >Portugal</option>
 
@@ -268,9 +276,18 @@ function Items() {
                         <select onChange={handleInputAdminChange} name='type' value={newDataAdmin.type} >
 
                             <option value={0} >Tipo</option>
+                            <option value="Branco" >Branco</option>
+                            <option value="Espumante" >Espumante</option>
                             <option value="Rosé" >Rosé</option>
-                            <option value="Seco" >Seco</option>
                             <option value="Tinto" >Tinto</option>
+
+                        </select>
+
+                        <select onChange={handleInputAdminChange} name='sweetness' value={newDataAdmin.sweetness} >
+
+                            <option value={0} >Doçura</option>
+                            <option value="Seco" >Seco</option>
+                            <option value="Suave" >Suave</option>
 
                         </select>
 
@@ -328,6 +345,9 @@ function Items() {
 
                             <option value={0} >País</option>
                             <option value="Argentina" >Argentina</option>
+                            <option value="Brasil" >Brasil</option>
+                            <option value="Chile" >Chile</option>
+                            <option value="Espanha" >Espanha</option>
                             <option value="França" >França</option>
                             <option value="Portugal" >Portugal</option>
 
@@ -336,9 +356,18 @@ function Items() {
                         <select onChange={handleInputAdminChangeAlter} name='type' value={newDataAdmin.type} >
 
                             <option value={0} >Tipo</option>
+                            <option value="Branco" >Branco</option>
+                            <option value="Espumante" >Espumante</option>
                             <option value="Rosé" >Rosé</option>
-                            <option value="Seco" >Seco</option>
                             <option value="Tinto" >Tinto</option>
+
+                        </select>
+
+                        <select onChange={handleInputAdminChangeAlter} name='sweetness' value={newDataAdmin.sweetness} >
+                        
+                            <option value={0} >Doçura</option>
+                            <option value="Seco" >Seco</option>
+                            <option value="Suave" >Suave</option>
 
                         </select>
                         
