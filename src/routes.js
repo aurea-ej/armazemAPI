@@ -12,12 +12,9 @@ import userProfile from './pages/userProfile'
 import Items from './pages/admin/items'
 import ChangeInfo from './pages/dataChange'
 import ClientsList from './pages/admin/clientsList'
-<<<<<<< HEAD
 import Products from './pages/products'
 import Cart from './pages/cart'
-=======
 import ProviderRegister from './pages/admin/providersRegister'
->>>>>>> eca74cbe73aa320ad100829f76d182232b1c7d2f
 
 const Routes = () => {
 
@@ -36,12 +33,9 @@ const Routes = () => {
             <Route component={Items} path='/AdminItems' />
             <Route component={ChangeInfo} path='/AlterarDados' />
             <Route component={ClientsList} path='/ListaDeClientes' />
-<<<<<<< HEAD
             <Route component={Products} path='/Produtos' />
             <Route component={Cart} path='/Carrinho' />
-=======
             <Route component={ProviderRegister} path='/AdminFornecedor' />
->>>>>>> eca74cbe73aa320ad100829f76d182232b1c7d2f
 
         </BrowserRouter>
 
