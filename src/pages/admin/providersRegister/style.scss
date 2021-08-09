@@ -1,0 +1,79 @@
+@import '../../../global.scss';
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;
+    box-sizing: border-box;
+}
+
+.mainRegister {
+    width: 100vw;
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background: $offwhite;
+    
+    main {
+        margin: 1rem auto;
+        background: $deepVinho;
+        display: flex;
+        height: 78vh;
+        border-radius: 5px;
+    }
+}
+
+fieldset {
+    width: 60vw;
+    margin: 1rem auto;
+    border: none;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+
+    h2 {
+        color: white;
+        margin-bottom: .85rem;
+    }
+    
+    input {
+        margin: .2rem;
+        height: 2rem;
+        width: 30vw;
+
+        background-color: #ebebeb;
+        border: none;
+        border-radius: 5px;
+        outline: none;
+
+        font-size: .9rem;
+        padding: 1rem;
+
+        ::placeholder {
+            text-align: center;
+        }
+    }   
+}
+
+.buttonsFormSignIn a {
+    display: flex;
+    color: $preto;
+    padding: 15px;
+    margin-top: .5rem;
+    margin-bottom: 1.2rem;
+    cursor: pointer;
+    background-color: #ebebeb;
+    border-radius: 10px;
+    justify-content: center;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+

@@ -27,6 +27,7 @@
         justify-content: center;
         flex-direction: column;
         padding-top: 3vh;
+        background-color: #1D222C;
     }
 
     h1 {
@@ -98,15 +99,15 @@
 
     a {
         display: flex;
-    color: $preto;
-    padding: 15px;
-    margin-top: 2rem;
-    margin-bottom: 1.5rem;
-    cursor: pointer;
-    background-color: #ebebeb;
-    border-radius: 10px;
-    justify-content: center;
-    font-weight: 700;
+        color: $preto;
+        padding: 15px;
+        margin-top: 2rem;
+        margin-bottom: 1.5rem;
+        cursor: pointer;
+        background-color: #ebebeb;
+        border-radius: 10px;
+        justify-content: center;
+        font-weight: 700;
     }
 
     h2 {
