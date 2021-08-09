@@ -125,11 +125,11 @@ const Contact = () => {
 
                 <form className="contact-form" onSubmit={sendEmail}>
 
-                    <input type="text" className="textBox" name="user_name" placeholder="Nome"/>
+                    <input id="inputID" type="text" className="textBox" name="user_name" placeholder="Nome"/>
 
-                    <input type="text" className="textBox" name="user_email" placeholder="Seu E-mail"/>
+                    <input id="inputID" type="text" className="textBox" name="user_email" placeholder="Seu E-mail"/>
 
-                    <input type="text" className="textBox" name="user_number" placeholder="Telefone"/>
+                    <input id="inputID" type="text" className="textBox" name="user_number" placeholder="Telefone"/>
 
                     <select name="uf" id="uf" onChange={handleSelectedUf} value={selectedUf} >
 
@@ -155,7 +155,7 @@ const Contact = () => {
 
                     </select>
 
-                    <textarea className="messageBox" name="message" cols="30" rows="8" placeholder="Sua mensagem"/>
+                    <textarea id="inputID" className="messageBox" name="message" cols="30" rows="8" placeholder="Sua mensagem"/>
                     
                     <div className="buttonsFormRegister">
                       <input id='enterButtonSignIn' type="submit" className="submitBox" value="Enviar Mensagem"></input>

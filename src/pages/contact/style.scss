@@ -14,6 +14,8 @@ main {
     justify-content: center;
     align-items: center;
     background-color: $branco;
+    width: 100%;
+    height: 100%;
 }
 
 #contactMain {
@@ -80,6 +82,12 @@ form textarea {
     margin: 20px 0px;
     outline: none;
 }
+
+#inputID::placeholder {
+    color: $vinho;
+    opacity: 1;
+}
+
 
 .buttonsFormRegister {
 
