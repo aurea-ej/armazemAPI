@@ -1,20 +1,105 @@
 @import '../../../global.scss';
 
-.Request {
-
-    width: 100vw;
+#mainRequest {
     display: flex;
-    align-items: center;
-    justify-content: center;
     flex-direction: column;
-    background-color: $branco;
 
 }
 
 .boxOrder {
     display: flex;
+    flex-direction: row;
     justify-content: center;
     align-items: center;
+    width: 80%;
+    padding: 25px;
+}
+
+.leftSizeBoxOrder {
+    padding: 10px;
+    background-color: $deepVinho;
+    width: 100%;
+}
+
+.leftSizeBoxOrder p {
+    padding: 10px;
+    color: white;
+}
+
+.leftSizeBoxOrder b {
+    padding: 10px;
+    color: white;
+}
+
+.rightSizeBoxOrder {
+    padding: 10px;
+    background-color: $vinho;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: left;
+}
+
+.flexDisplayRequestPage {
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    align-items: center;
+    list-style: none;
+}
+
+.flexDisplayRequestPage li {
+    color: white;
+    margin: 0.5vw;
+}
+
+.flexDisplayRequestPage img {
+    width: 1.5vw;
+    cursor: pointer;
+}
+
+.rightSizeBoxOrder p {
+    padding: 10px;
+    color: white;
+}
+
+.rightSizeBoxOrder b {
+    padding: 10px;
+    color: white;
+}
+
+.clientMessage {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.clientMessage input {
+    padding: 10px;
+    width: 70%;
+    border-radius: 5px;
+    color: $vinho;
+    background-color: $offwhite;
+    border: none;
+    outline: none;
+}
+
+.sendMessage {
+    display: flex;
+    flex-direction: column;
+}
+
+.sendMessage a {
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    background-color: $offwhite;
+    text-align: center;
+    margin: 10px;
+    width: 100%;
+    cursor: pointer;
 }
 
 .finalizarPedido {
@@ -24,7 +109,7 @@
     justify-content: center;
     padding: 20px;
     margin: 20px;
-    width: 100%;
+    width: 50%;
 }
 
 .finalizarPedido h3 {
