@@ -1,272 +1,203 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+@import "../../global.scss";
 
-.flexDisplayCart {
+.cartPage {
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-}
-
-.sectionCart {
-    
     width: 100vw;
-    flex-direction: column;
-
-}
-
-.boxCart {
-
-    width: 50vw;
-    padding: 15px;
-    margin: 15px 0px;
-    border-radius: 10px;
-    box-shadow: -2px 5px 8px #92929255;
-    justify-content: space-between;
-
-}
-
-.lineBoxCardProduct {
-
     display: flex;
-    align-items: center;
-    justify-content: space-between;
-
-}
-
-.lineBoxCardProduct h4, h5, h3{
-
-    padding: 0px 0px;
-    text-align: left;
-
-}
-
-.lineBoxCardProduct h3 {
-
-    color: #434f38;
-
-}
-
-.lineBoxCardProduct h4 {
-
-    color: #434f38;
-
-}
-
-.lineBoxCardProduct h5 {
-
-    color: rgb(175, 175, 175);
-
-}
-
-
-.nameProductInCart {
-
-    width: 23vw;
-
-}
-
-.infoProductInCart {
-
-    width: 20vw;
-
-}
-
-.imgProductCart {
-
-    width: 50px;
-
-}
-
-.imgRemoveIconCart {
-
-    width: 20px;
-    cursor: pointer;
-
-}
-
-.CartPage {
-
-    width: 100%;
-    display: flex;
-    align-items: center;
     flex-direction: column;
+    align-items: center;
     justify-content: center;
-    font-family: 'Montserrat', sans-serif;
+    background-color: #1D222C;
 
-}
+    h3 {
 
-.textIntroCart {
-
-    margin-top: 13vh;
-    margin-bottom: 8vh;
-    text-align: center;
-
-}
-
-.textIntroCart p{
-
-    color: rgb(175, 175, 175);
-    font-size: 8pt;
-
-}
-
-.paymentSelect {
-
-    width: 52vw;
-    border: none;
-    padding: 25px;
-    color: white;
-    font-size: 11pt;
-    margin: 15px 0px;
-    border-radius: 10px;
-    background-color: #ffc05c;
-    justify-content: space-between;
-    /* box-shadow: -2px 5px 8px #92929255; */
-
-}
-
-.clientNoteInput {
-
-    width: 50vw;
-    border: none;
-    color: white;
-    font-size: 11pt;
-    margin: 15px 0px;
-    padding: 25px 15px;
-    border-radius: 10px;
-    background-color: #ffc05c;
-    /* box-shadow: -2px 5px 8px #92929255; */
-    justify-content: space-between;
-
-}
-
-::placeholder {
-
-    color: white;
-    font-size: 11pt;
-
-}
-
-.checkOut {
-
-    width: 100%;
-    text-align: center;
-    margin-bottom: 5vh;
-    margin-top: 15vh;
-
-}
-
-.checkOut a {
-
-    text-decoration: none;
-    cursor: pointer;
-    color: white;
-    padding: 15px;
-    border-radius: 10px;
-    background-color: #662210;
-
-}
-
-@media screen and (max-width: 768px) {
-
-    .boxCart {
-
-        width: 80%;
-
-    }
-
-    .textIntroCart {
-
-        margin-top: 3vh;
-        margin-bottom: 2vh;
-
-    }
-
-    .textIntroCart p{
-
-        font-size: 11pt;
-
-    }
-
-    .infoProductInCart {
-
-        width: auto;
-
-    }
-
-    .lineBoxCardProduct h4, h5, h3{
-
-        padding: 8px;
-    
-    }
-
-    .lineBoxCardProduct h3{
-
-        font-size: 10pt;
-    
-    }
-
-    .lineBoxCardProduct h4{
-
-        font-size: 10pt;
-        padding: 0px 15px 0px 0px;
-    
-    }
-
-    .lineBoxCardProduct h5{
-
-        font-size: 7pt;
-    
-    }
-
-    .lineBoxCardProduct {
-        display: flex;
-        flex-wrap: nowrap;
-    }
-
-    .imgProductCart {
-
-        width: 40px;
-
-    }
-
-    .imgRemoveIconCart {
-
-        width: 25px;
-
-    }
-
-    .emptyCart {
-
-        width: 80%;
+        margin: 2rem 0 3rem 0;
+        color: $branco;
         text-align: center;
-        font-size: 12pt;
 
     }
 
-    .paymentSelect {
+    .showCartContainer {
 
-        width: 88vw;
+        display: flex;
+        flex-direction: column;
 
+        .showProductCardCart {
+
+            display: flex;
+            flex-direction: row;
+            width: 1200px;
+            height: 150px;
+            background-color: #2B303A;
+            margin-bottom: 2rem;
+            border-radius: 7px;
+
+            .imageProductWrapperCart {
+
+                display: flex;
+                height: 100%;
+                width: 10%;
+                justify-content: center;
+                border-radius: 7px 0 0 7px;
+
+                img {
+
+                    width: auto;
+                    height: auto;
+                    padding: .2rem;
+
+                }
+
+            }
+
+            .descriptionProductCart {
+
+                display: flex;
+                flex-direction: column;
+                height: 100%;
+                width: 60%;
+                padding: 2rem;
+
+                h4, p, span {
+
+                    margin: .2rem 0;
+
+                }
+
+                h4 {
+
+                    color: $branco;
+
+                }
+
+                p, span {
+
+                    color: #6b6e75;
+
+                }
+
+            }
+
+            .priceProductCard {
+
+                display: flex;
+                flex-direction: column;
+                height: 100%;
+                width: 30%;
+                padding: 2rem;
+                justify-content: center;
+
+                h4 ,h5 {
+
+                    color: $branco;
+                    margin: .6rem 0;
+
+                }
+
+            }
+
+            .trashCanWrapper {
+
+                display: flex;
+                width: 10%;
+                height:100%;
+                justify-content: center;
+                align-items: center;
+
+            }
+
+            img {
+
+                height: 40px;
+                cursor: pointer;
+
+            }
+        }
+        
     }
-
-    .clientNoteInput {
-
-        width: 80%;
-        border: none;
-        padding: 25px 15px;
-        margin: 15px 0px;
-        border-radius: 10px;
-        box-shadow: -2px 5px 8px #92929255;
-        justify-content: space-between;
     
-    }
+    .finishOrder {
+        
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        justify-content: center;
 
+        select, input {
+
+            width: 40vw;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            background-color: #2b303a;
+            outline: none;
+            border: none;
+            color: $branco;
+
+        }
+
+        input::placeholder {
+
+            color: $branco;
+
+        }
+
+    }
+    
     .checkOut {
+        
+        display: flex;
+        flex-direction: row;
+        width: auto;
+        align-items: baseline; 
 
-        margin-top: 12vw;
+        a, button {
+            
+            text-decoration: none;
+            padding: 0 2rem;
+            margin: 2rem 0;
+
+        }
+
+        a {
+
+            color: $branco;
+            
+            &:hover {
+
+                color: $vinhoPink;
+
+            }
+
+        }
+
+        button {
+
+            display:flex;
+            cursor: pointer;
+            color: $branco;
+            padding: 1rem;
+            margin: 0 0 2rem 0;
+            background-color: transparent;
+            text-decoration: none;
+            border-radius: 50px;
+            transition: .24s;
+            border: 1px solid $vinhoPink;
+            justify-content:center;
+            font-weight: 500;
+            font-size: 1rem;
+            margin: 0 auto;
+                
+            &:hover,
+            &:focus {
+
+                box-shadow: inset 0 0 0 35px #2b303A;
+                color: $vinhoPink;
+
+            }
+        }
 
     }
-
+    
 }

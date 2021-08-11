@@ -11,21 +11,21 @@ import 'firebase/auth'
 import 'firebase/database'
 import firebaseConfig from '../../FirebaseConfig.js'
 
-// import closeIcon from '../../img/removeIcon.png'
+import trashCan from '../../img/trash.svg'
 
 function Cart() {
 
-    const [ data, setData ] = useState([]);
+    const [data, setData] = useState([]);
     const [seller, setSeller] = useState([]);
     const [dataUsers, setDataUsers] = useState([]);
     const [isSeller, setIsSeller] = useState(false);
-    const [ totalValue, setTotalValue ] = useState(0);
+    const [totalValue, setTotalValue] = useState(0);
     const [dataAccount, setDataAccount] = useState([]);
-    const [ dataExists, setDataExists ] = useState(false);
+    const [dataExists, setDataExists] = useState(false);
     const [userIsLogged, setUserIsLogged] = useState(false);
     const [selectedClient, setSelectedClient] = useState('')
     const [clientNote, setClientNote] = useState('')
-    
+
     const [selectedPayment, setSelectedPayment] = useState('');
 
     const [redirect, setRedirect] = useState(useHistory());
@@ -33,20 +33,20 @@ function Cart() {
     function onAuthStateChanged(user) {
 
         firebase.auth().onAuthStateChanged((user) => {
-            if (user) 
-              setUserIsLogged(true)
-          });
-        
+            if (user)
+                setUserIsLogged(true)
+        });
+
     }
 
     useEffect(async () => {
 
         const verify = await JSON.parse(localStorage.getItem('products'))
 
-        if (verify != null ){
+        if (verify != null) {
 
             var temp = Object.keys(verify).map((key) => verify[key])
-            
+
             setData(temp)
             setDataExists(true)
 
@@ -54,9 +54,9 @@ function Cart() {
 
             var total = 0
 
-            temp.map((item)=>{
+            temp.map((item) => {
 
-                var value = ( Number(item.price) * Number(item.amount) )
+                var value = (Number(item.price) * Number(item.amount))
                 total = value + total
 
                 setTotalValue(total)
@@ -66,72 +66,72 @@ function Cart() {
         else
             setDataExists(false)
 
-    },[])
-
-    useEffect(()=>{
-
-        window.scrollTo(0, 0);
-        
-        if(!firebase.apps.length)
-            firebase.initializeApp(firebaseConfig);
-        onAuthStateChanged()
-
-    },[])
+    }, [])
 
     useEffect(() => {
 
-        const userEmail = localStorage.getItem('userEmail')        
+        window.scrollTo(0, 0);
+
+        if (!firebase.apps.length)
+            firebase.initializeApp(firebaseConfig);
+        onAuthStateChanged()
+
+    }, [])
+
+    useEffect(() => {
+
+        const userEmail = localStorage.getItem('userEmail')
 
         firebase.database().ref('users/').get('/users')
-        .then(function (snapshot) {
+            .then(function (snapshot) {
 
-            if (snapshot.exists()){
+                if (snapshot.exists()) {
 
-                var data = snapshot.val()
-                var temp = Object.keys(data).map((key) => data[key])
+                    var data = snapshot.val()
+                    var temp = Object.keys(data).map((key) => data[key])
 
-                setDataUsers(temp)
+                    setDataUsers(temp)
 
-                temp.map((item)=>{ 
+                    temp.map((item) => {
 
-                    if(item.email == userEmail){
-                        setDataAccount(item)
-                    }
+                        if (item.email == userEmail) {
+                            setDataAccount(item)
+                        }
 
-                })
+                    })
 
-            }else 
-                console.log("No data available");
+                } else
+                    console.log("No data available");
 
-        })
+            })
 
         firebase.database().ref('sellers/').get('/sellers')
-        .then(function (snapshot) {
+            .then(function (snapshot) {
 
-            if (snapshot.exists()){
+                if (snapshot.exists()) {
 
-                var data = snapshot.val()
-                var temp = Object.keys(data).map((key) => data[key])
+                    var data = snapshot.val()
+                    var temp = Object.keys(data).map((key) => data[key])
 
-                temp.map((item)=>{ 
+                    temp.map((item) => {
 
-                    if(item.email == userEmail){
-                        setSeller(item)
-                        setIsSeller(true)
-                    }
+                        if (item.email == userEmail) {
+                            setSeller(item)
+                            setIsSeller(true)
+                        }
 
-                })
+                    })
 
-            }else 
-                console.log("No data available");
+                } else
+                    console.log("No data available");
 
-        })
+            })
 
     }, []);
 
-    function sendOrder () {
+    function sendOrder() {
 
-        if(userIsLogged){
+        if (userIsLogged) {
 
             if (selectedPayment != '') {
 
@@ -145,7 +145,7 @@ function Cart() {
                     totalValue: totalValue.toFixed(2),
                     userName: dataAccount.name,
                     phoneNumber: dataAccount.phoneNumber,
-                    street: dataAccount.street,
+                    address: dataAccount.address,
                     houseNumber: dataAccount.houseNumber,
                     district: dataAccount.district,
                     cepNumber: dataAccount.cepNumber,
@@ -153,32 +153,32 @@ function Cart() {
                     paymentType: selectedPayment,
                     clientNote: clientNote,
                     userEmail: dataAccount.email,
-                    adminNote: '',
+                    // adminNote: '',
                     dateToCompare: new Date().toDateString(),
                     date: `${now.getUTCDate()}/${now.getMonth()}/${now.getFullYear()}-${now.getHours()}:${now.getMinutes()}:${now.getSeconds()}`
 
                 }
 
                 firebase.database().ref('requests/' + id).set(dataToSend)
-                .then(()=>{
-                    localStorage.setItem('products', '{}')
-                })
+                    .then(() => {
+                        localStorage.setItem('products', '{}')
+                    })
 
                 firebase.database().ref('reportsSales/' + id).set(dataToSend)
-                .then(()=>{
-                    localStorage.setItem('products', '{}')
-                    alert("Pedido finalizado com sucesso!.")
-                })
+                    .then(() => {
+                        localStorage.setItem('products', '{}')
+                        alert("Pedido finalizado com sucesso!.")
+                    })
 
-            }else alert('Você precisa selecionar o tipo de pagamento!')
+            } else alert('Você precisa selecionar o tipo de pagamento!')
 
         }
         else {
-            
+
             var confirm = window.confirm("Você precisa ter uma conta para finalizar um pedido!.")
 
-            if(confirm)
-                redirect.push("/Cadastro")
+            if (confirm)
+                redirect.push("/Cadastrar")
 
         }
 
@@ -186,7 +186,7 @@ function Cart() {
 
     }
 
-    function sendOrderSeller () {
+    function sendOrderSeller() {
 
         const id = firebase.database().ref().child('posts').push().key
 
@@ -205,26 +205,26 @@ function Cart() {
             paymentType: selectedPayment,
             seller: seller.name
 
-        }).then(()=>{
+        }).then(() => {
             localStorage.setItem('products', '[{}]')
             alert("Pedido finalizado com sucesso!.")
         })
 
     }
 
-    function handleSelectPayment (event) {
+    function handleSelectPayment(event) {
 
         setSelectedPayment(event.target.value)
 
     }
 
-    function handleSelectedClient (event) {
+    function handleSelectedClient(event) {
 
         setSelectedClient(event.target.value)
 
     }
 
-    function handleClientNote (event) {
+    function handleClientNote(event) {
 
         setClientNote(event.target.value)
 
@@ -234,130 +234,126 @@ function Cart() {
 
         var confirm = window.confirm('Tem certeza que deseja remover este item ?')
 
-        if(confirm) {
+        if (confirm) {
 
             data.splice(index, 1);
             localStorage.setItem('products', JSON.stringify(data))
             window.location.reload()
 
             // localStorage.setItem('totalValue', totalValue.toFixed(2))
-            
+
         }
 
-        
+
     }
 
     if (dataExists) {
 
         return (
-            <div className="CartPage">
+
+            <section id="CartSection">
 
                 <Header />
 
-                <div className='textIntroCart' >
-                    <p>Após revisar os itens, clique no botão para finalizar o pedido </p>
-                </div>
+                <div className="cartPage">
 
-                <section className='sectionCart flexDisplay'>
+                    <div className="cartIntro">
 
-                    {
-                        data.map((item,index) => {
-                            
-                            return (
+                        <h3>Após revisar os itens, clique no botão para prosseguir com a sua compra</h3>
 
-                                <div className='boxCart flexDisplayCart'>
+                    </div>
 
-                                    <div className='lineBoxCardProduct nameProductInCart' >
+                    <section id='SectionCartProducts'>
 
-                                        <img src={item.imageSrc} alt='imagem do produto' className="imgProductCart" />
-                                        <h3>{item.title}</h3>
-                                        {/* {console.log(item)} */}
+                        {
+                            data.map((item, index) => {
+
+                                return (
+
+                                    <div className="showCartContainer">
+
+                                        <div className="showProductCardCart">
+
+                                            <div className="imageProductWrapperCart">
+
+                                                <img src={item.imageSrc} alt="" />
+
+                                            </div>
+
+                                            <div className="descriptionProductCart">
+
+                                                <h4>{item.title}</h4>
+
+                                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam praesentium atque itaque!</p>
+
+                                                <span>{item.country} • {item.type} • {item.sweetness} </span>
+
+                                            </div>
+
+                                            <div className='priceProductCard'>
+
+                                                <h5>Quantidade: {item.amount}</h5>
+                                                <h4>Valor total: R$ {((item.price) * item.amount).toFixed(2)}</h4>
+
+                                            </div>
+
+                                            <div className="trashCanWrapper">
+
+                                                <img
+                                                    src={trashCan}
+                                                    className="imgRemoveIconCart"
+                                                    alt='Remover item'
+                                                    onClick={() => {
+                                                        removeItemInCart(index)
+                                                    }}
+                                                />
+
+                                            </div>
+
+                                        </div>
 
                                     </div>
+                                )
 
-                                    <div className='lineBoxCardProduct flexDisplayCart infoProductInCart'>
+                            })
+                        }
 
-                                        <h4>R$ {((item.price) * item.amount).toFixed(2)}</h4>
-                                        <h5>qnt.:{item.amount}</h5>
-                                        <h5>({item.unity})</h5>
-
-                                    </div>
-
-                                    <img 
-                                        // src={closeIcon}
-                                        className="imgRemoveIconCart"
-                                        alt='opção de remover item'
-                                        onClick={()=>{
-                                            removeItemInCart(index)
-                                        }}
-                                    />
-
-                                </div>
-                            )
-
-                        })
-                    }
-
-                    <h3>Valor total: R$ {totalValue.toFixed(2)}</h3>
-
-                    <select className="paymentSelect" onChange={handleSelectPayment} >
-
-                        <option value=''>Selecione o tipo de pagamento (obrigatório)</option>
-                        <option value="Cartão" >Cartão de débito</option>
-                        <option value="Dinheiro" >Dinheiro</option>
-                        <option value="Pix" >PicPay</option>
-                        <option value="Pix" >PIX</option>
-                        <option value="Pix" >TED</option>
-
-                    </select>
-
-                    <input className="clientNoteInput" onChange={handleClientNote} placeholder='Escreva aqui alguma observação sobre seu pedido (opcional)' />
-
-                </section>
-
-                {isSeller ? 
-
-                    <section>
-
-                        <h2>Selecione o cliente</h2>
-
-                        <select
-                        onChange={handleSelectedClient}
-                        className="selectOrder" >
-
-                            <option className="optionSelectOrder" >Selecionar</option>
-
-                            {dataUsers.map((item, index)=> (
-                                <option className="optionSelectOrder" value={index} key={item.id}>{item.name}: {item.id}</option>
-                            ))}
-
-                        </select>
+                        <h3>Valor total: R$ {totalValue.toFixed(2)}</h3>
 
                     </section>
 
-                    : <p></p>
+                    <div className="finishOrder">
 
-                }
+                        <select className="paymentSelect" onChange={handleSelectPayment} >
 
-                {isSeller ? 
-                    <div className='checkOut' >
-                        <Link to='/' onClick={()=>sendOrderSeller()} style={{marginRight: '15px'}} >Continuar comprando</Link>
-                        <a onClick={()=>sendOrderSeller()} >Finalizar pedido</a>
+                            <option value=''>Selecione o tipo de pagamento</option>
+                            <option value="Dinheiro" >Dinheiro</option>
+                            <option value="Débito" >Cartão de débito</option>
+                            <option value="Crédito" >Cartão de crédito</option>
+                            <option value="Pix" >PIX</option>
+
+                        </select>
+
+                        <input className="clientNoteInput" onChange={handleClientNote} placeholder='Escreva aqui alguma observação sobre seu pedido (opcional)' />
+
                     </div>
-                :
+
                     <div className='checkOut' >
-                        <Link to='/' onClick={()=>sendOrder()} style={{marginRight: '15px'}} >Continuar comprando</Link>
-                        <a onClick={()=>sendOrder()} >Finalizar pedido</a>
+
+                        <Link to='/'>Continuar comprando</Link>
+
+                        <button onClick={()=>sendOrder()} >Finalizar pedido</button>
+
                     </div>
-    
-                }
-                
+
+                </div>
+
                 <Footer />
 
-            </div>
+            </section>
         )
 
-    }else {
+    } else {
 
         return (
 
@@ -365,7 +361,7 @@ function Cart() {
 
                 <Header />
 
-                <div className="emptyCart" style={{height: "60vh", display: "flex", alignItems: "center", justifyContent: "center"}} >
+                <div className="emptyCart" style={{ height: "60vh", display: "flex", alignItems: "center", justifyContent: "center" }} >
                     <h2>Seu carrinho de compras está vazio 😧 </h2>
                 </div>
 
