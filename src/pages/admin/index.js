@@ -134,7 +134,7 @@ function Admin() {
                             <Link to='/PedidoFornecedor' >Realizar pedido do fornecedor</Link>
                             <Link to="/ListaDeClientes" >Listagem de clientes</Link>
                             <Link to="/relatorios" >Relatórios</Link>
-                            <Link to="/Estoque" >Estoque</Link>
+                            <Link to="/AdminEstoque" >Estoque</Link>
                             
                         </ul>
 
@@ -184,6 +184,7 @@ function Admin() {
                     </main>
 
                 <Footer />
+                
             </div>
 
         )

@@ -15,6 +15,7 @@ import ClientsList from './pages/admin/clientsList'
 import Products from './pages/products'
 import Cart from './pages/cart'
 import ProviderRegister from './pages/admin/providersRegister'
+import Stock from './pages/admin/stock'
 
 const Routes = () => {
 
@@ -36,6 +37,7 @@ const Routes = () => {
             <Route component={Products} path='/Produtos' />
             <Route component={Cart} path='/Carrinho' />
             <Route component={ProviderRegister} path='/AdminFornecedor' />
+            <Route component={Stock} path='/AdminEstoque' />
 
         </BrowserRouter>
 
