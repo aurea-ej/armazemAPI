@@ -145,7 +145,6 @@ function ChangeInfos() {
             console.log(registerData.email)
         }).catch((error) => {
             // An error occurred
-            // ...
         });
 
     }
