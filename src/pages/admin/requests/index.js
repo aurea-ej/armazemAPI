@@ -269,20 +269,21 @@ function Request() {
                             {
 
                             item.adminNote != '' ?
-                                <p>Observações da Empório: <b>{item.adminNote}</b></p>
+                                <p>Observações do Armazém: <b>{item.adminNote}</b></p>
                                 : ''
 
                             }
 
-                            <div>
+                            <div className="clientMessage">
                                 <input 
                                     placeholder='Recado para cliente'
-                                    onChange={handleInputNote} />
+                                    onChange={handleInputNote} 
+                                />
                                     
-                                    <div > 
-                                        <a onClick={()=>{sendNoteAdmin(indexItem)}} >Enviar Recado</a>
-                                        <a onClick={() => { handleModalInfos(item) }}>Designar Entregador</a>
-                                    </div>
+                                <div className="sendMessage"> 
+                                    <a onClick={()=>{sendNoteAdmin(indexItem)}} >Enviar Recado</a>
+                                    <a onClick={() => { handleModalInfos(item) }}>Designar Entregador</a>
+                                </div>
                             </div>
 
                             
