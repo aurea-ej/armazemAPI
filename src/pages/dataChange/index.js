@@ -24,12 +24,14 @@ function ChangeInfos() {
     const [registerData, setRegisterData] = useState({
 
         name: '',
-        phoneNumber: '',
-        street: '',
-        houseNumber: '',
-        complement: '',
+        email: '',
+        state: '',
+        address: '',
         district: '',
+        complement: '',
         cepNumber: '',
+        phoneNumber: '',
+        houseNumber: '',
 
     })
 
@@ -97,14 +99,6 @@ function ChangeInfos() {
 
     }, []);
 
-    function signOut() {
-
-        firebase.auth().signOut()
-        localStorage.setItem('userEmail', '')
-        history.push('/')
-
-    }
-
     function handleDisplayDivAlterInfos() {
 
         if (displayDivAlterInfos == "none")
@@ -135,6 +129,26 @@ function ChangeInfos() {
 
     }
 
+    function handleInputEmailChange(event) {
+
+        const { name, value } = event.target
+
+        setRegisterData({
+
+            ...registerData, [name]: value
+
+        })
+
+        const user = firebase.auth().currentUser;
+
+        user.updateEmail(registerData.email).then(() => {
+            console.log(registerData.email)
+        }).catch((error) => {
+            // An error occurred
+            // ...
+        });
+
+    }
 
     function getLocales() {
 
@@ -192,15 +206,16 @@ function ChangeInfos() {
         firebase.database().ref('users/' + dataAccount.id).update({
 
             name: registerData.name != '' ? registerData.name : dataAccount.name,
-            phoneNumber: registerData.phoneNumber != '' ? registerData.phoneNumber : dataAccount.phoneNumber,
-            personWhoIndicated: dataAccount.personWhoIndicated,
-            whoIndicated: dataAccount.whoIndicated,
-            street: registerData.street != '' ? registerData.street : dataAccount.street,
-            houseNumber: registerData.houseNumber != '' ? registerData.houseNumber : dataAccount.houseNumber,
-            complement: registerData.complement != '' ? registerData.complement : dataAccount.complement,
-            district: registerData.district != '' ? registerData.district : dataAccount.district,
-            cepNumber: registerData.cepNumber != '' ? registerData.cepNumber : dataAccount.cepNumber,
             email: dataAccount.email,
+            state: registerData.state != '' ? registerData.state : dataAccount.state,
+            city: registerData.city != undefined ? registerData.city : dataAccount.city,
+            address: registerData.address != '' ? registerData.address : dataAccount.address,
+            district: registerData.district != '' ? registerData.district : dataAccount.district,
+            complement: registerData.complement != '' ? registerData.complement : dataAccount.complement,
+            houseNumber: registerData.houseNumber != '' ? registerData.houseNumber : dataAccount.houseNumber,
+            cepNumber: registerData.cepNumber != '' ? registerData.cepNumber : dataAccount.cepNumber,
+            phoneNumber: registerData.phoneNumber != '' ? registerData.phoneNumber : dataAccount.phoneNumber,
+            birthDate: registerData.birthDate != undefined ? registerData.birthDate : dataAccount.birthDate,
             id: dataAccount.id
 
         })
@@ -237,6 +252,7 @@ function ChangeInfos() {
                                 <strong>Usuário:
                                     <input
                                         name='name'
+                                        onChange={handleInputRegisterChange}
                                         placeholder='Nome completo'
                                     />
                                 </strong>
@@ -246,6 +262,7 @@ function ChangeInfos() {
                                 <strong>E-mail:
                                     <input
                                         name='email'
+                                        onChange={handleInputEmailChange}
                                         placeholder='E-mail'
                                     />
                                 </strong>
@@ -260,7 +277,7 @@ function ChangeInfos() {
                             <span>
                                 <strong>Estado:
 
-                                    <select select name="uf" id="uf" onChange={handleSelectedUf} value={selectedUf}>
+                                    <select selected={dataAccount.state} select name="uf" id="uf" onChange={handleSelectedUf} value={selectedUf}>
 
                                         {/* onChange={handleInputAdminChangeAlter} name='unity' value={dataAdmin[selectItem]?.state} */}
 
@@ -277,7 +294,7 @@ function ChangeInfos() {
                             <span>
                                 <strong>Cidade:
 
-                                    <select name="city" id="localidade" onChange={handleSelectedCity} value={selectedCity}>
+                                    <select name="city" id="localidade" onChange={handleSelectedCity} value={selectedCity} >
 
                                         {/* onChange={handleInputAdminChangeAlter} name='unity' value={dataAdmin[selectItem]?.state} */}
 
@@ -295,6 +312,7 @@ function ChangeInfos() {
                                 <strong>Endereço:
                                     <input
                                         name='address'
+                                        onChange={handleInputRegisterChange}
                                         placeholder='Alterar endereço'
                                     />
                                 </strong>
@@ -304,6 +322,7 @@ function ChangeInfos() {
                                 <strong>Bairro:
                                     <input
                                         name='district'
+                                        onChange={handleInputRegisterChange}
                                         placeholder='Alterar complemento'
                                     />
                                 </strong>
@@ -313,7 +332,18 @@ function ChangeInfos() {
                                 <strong>Complemento:
                                     <input
                                         name='complement'
+                                        onChange={handleInputRegisterChange}
                                         placeholder='Alterar complemento'
+                                    />
+                                </strong>
+                            </span>
+
+                            <span>
+                                <strong>Nº:
+                                    <input
+                                        name='houseNumber'
+                                        onChange={handleInputRegisterChange}
+                                        placeholder='Alterar número de residência'
                                     />
                                 </strong>
                             </span>
@@ -322,6 +352,7 @@ function ChangeInfos() {
                                 <strong>CEP:
                                     <input
                                         name='cepNumber'
+                                        onChange={handleInputRegisterChange}
                                         placeholder='Alterar CEP'
                                     />
                                 </strong>
@@ -331,6 +362,7 @@ function ChangeInfos() {
                                 <strong>Telefone:
                                     <input
                                         name='phoneNumber'
+                                        onChange={handleInputRegisterChange}
                                         placeholder='Alterar telefone'
                                     />
                                 </strong>
@@ -343,7 +375,7 @@ function ChangeInfos() {
                                         id='birthDate'
                                         name='birthDate'
                                         type='date'
-                                        // onChange={handleInputRegisterChange} 
+                                        onChange={handleInputRegisterChange}
                                         placeholder='Data de nascimento'
                                     />
 
@@ -352,10 +384,9 @@ function ChangeInfos() {
 
                         </div>
 
-
                     </div>
 
-                    <button>Alterar dados</button>
+                    <button onClick={() => updateRegister()}>Alterar dados</button>
 
                 </div>
 
@@ -364,7 +395,6 @@ function ChangeInfos() {
             <Footer />
 
         </div>
-
 
     )
 
