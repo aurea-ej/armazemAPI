@@ -16,6 +16,7 @@ import Products from './pages/products'
 import Cart from './pages/cart'
 import ProviderRegister from './pages/admin/providersRegister'
 import Stock from './pages/admin/stock'
+import Reports from './pages/admin/reports'
 
 const Routes = () => {
 
@@ -38,6 +39,7 @@ const Routes = () => {
             <Route component={Cart} path='/Carrinho' />
             <Route component={ProviderRegister} path='/AdminFornecedor' />
             <Route component={Stock} path='/AdminEstoque' />
+            <Route component={Reports} path='/AdminRelatorios' />
 
         </BrowserRouter>
 
