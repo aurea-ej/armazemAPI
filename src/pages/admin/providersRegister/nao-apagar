@@ -112,7 +112,6 @@ function Provider() {
         setDataKeysAdm(keys)
 
     }, []);
-    
 
     function handleSelectProvider(event) {
 
@@ -169,9 +168,9 @@ function Provider() {
 
     function updateProvider() {
 
-        if (wasChanged) {
+        
 
-            firebase.database().ref('providers/' + dataKeysAdm[selectProvider]).update({
+            firebase.database().ref('providers/' + dataKeysAdm[selectProvider].id).update({
 
                 corporateName: dataAlterProvider.corporateName !== '' ? dataAlterProvider.corporateName : dataProvider[selectProvider].corporateName,
                 tradeName: dataAlterProvider.tradeName !== '' ? dataAlterProvider.tradeName : dataProvider[selectProvider].tradeName,
@@ -187,7 +186,7 @@ function Provider() {
 
             })
             .then(() => alert("Item atualizado com sucesso!"))
-        }
+        
 
     }
 
@@ -248,6 +247,8 @@ function Provider() {
 
                             <a onClick={() => { handleHistoryInfos() }}>Informação dos fornecedores</a>
                             <Link to='/AdminProdutoFornecedor' >Cadastrar produtos dos fornecedores</Link>
+                            <Link to='/PedidoFornecedor' >Realizar pedido do fornecedor</Link>
+                            <Link to='/AdminHistorico' >Histórico de pedidos</Link>
 
                         </ul>
 
@@ -344,7 +345,7 @@ function Provider() {
 
                         </fieldset>
                             <p>
-                                <a onClick={() => { setWasChanged(true); updateProvider() }} >Alterar</a>  
+                                <a onClick={() => { updateProvider() }} >Alterar</a>  
                             </p>
                     </div>
 

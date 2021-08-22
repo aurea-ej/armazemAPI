@@ -17,6 +17,7 @@ import Cart from './pages/cart'
 import ProviderRegister from './pages/admin/providersRegister'
 import Stock from './pages/admin/stock'
 import Reports from './pages/admin/reports'
+import ProviderProducts from './pages/admin/providersProducts'
 
 const Routes = () => {
 
@@ -40,6 +41,7 @@ const Routes = () => {
             <Route component={ProviderRegister} path='/AdminFornecedor' />
             <Route component={Stock} path='/AdminEstoque' />
             <Route component={Reports} path='/AdminRelatorios' />
+            <Route component={ProviderProducts} path='/AdminProdutoFornecedor' />
 
         </BrowserRouter>
 
