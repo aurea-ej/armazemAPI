@@ -181,22 +181,22 @@ function Register() {
 
         var counter = 0
 
-        registerData.name != '' ? counter = counter + 1 : counter = counter
-        registerData.email != '' ? counter++ : counter = counter
-        registerData.password != '' ? counter++ : counter = counter
-        registerData.passwordConfirm != '' ? counter++ : counter = counter
-        registerData.phoneNumber != '' ? counter++ : counter = counter
-        registerData.birthDate != '' ? counter++ : counter = counter
-        registerData.cepNumber != '' ? counter++ : counter = counter
-        registerData.city != '' ? counter++ : counter = counter
-        registerData.state != '' ? counter++ : counter = counter
-        registerData.houseNumber != '' ? counter++ : counter = counter
-        registerData.district != '' ? counter++ : counter = counter
-        registerData.complement != '' ? counter++ : counter = counter
+        registerData.name !== '' ? counter = counter + 1 : counter = counter
+        registerData.email !== '' ? counter++ : counter = counter
+        registerData.password !== '' ? counter++ : counter = counter
+        registerData.passwordConfirm !== '' ? counter++ : counter = counter
+        registerData.phoneNumber !== '' ? counter++ : counter = counter
+        registerData.birthDate !== '' ? counter++ : counter = counter
+        registerData.cepNumber !== '' ? counter++ : counter = counter
+        registerData.city !== '' ? counter++ : counter = counter
+        registerData.state !== '' ? counter++ : counter = counter
+        registerData.houseNumber !== '' ? counter++ : counter = counter
+        registerData.district !== '' ? counter++ : counter = counter
+        registerData.complement !== '' ? counter++ : counter = counter
 
-        if (counter == 10) {
+        if (counter === 10) {
 
-            if (registerData.password != registerData.passwordConfirm) {
+            if (registerData.password !== registerData.passwordConfirm) {
 
                 alert('As senhas não são iguais!');
 

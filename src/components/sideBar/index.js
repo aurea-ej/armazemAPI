@@ -41,7 +41,7 @@ function SideBar() {
 
                     temp.map((item) => {
 
-                        if (item.email == userEmail)
+                        if (item.email === userEmail)
                             setDataAccount(item)
 
                     })

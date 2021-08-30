@@ -149,7 +149,7 @@ function ProviderProducts() {
 
                     temp.map(item => {
 
-                        if (item.products != undefined)
+                        if (item.products !== undefined)
                             dataProductTemp.push(item.products)
 
                     })
@@ -223,7 +223,7 @@ function ProviderProducts() {
 
         var data = dataProvider[position].products
 
-        if (data != undefined && data != null) {
+        if (data !== undefined && data !== null) {
 
             var items = Object.keys(data).map((key) => data[key])
             var temp = []
@@ -260,15 +260,14 @@ function ProviderProducts() {
 
             products[selectProductToAlter] = {
                 
-                type: dataAlterProduct.type != '' ? dataAlterProduct.type : products[selectProductToAlter].type,
-                country: dataAlterProduct.country != '' ? dataAlterProduct.country : products[selectProductToAlter].country,
-                amount: dataAlterProduct.amount != '' ? dataAlterProduct.amount : products[selectProductToAlter].amount,
-                buyPrice: dataAlterProduct.buyPrice != '' ? dataAlterProduct.buyPrice : products[selectProductToAlter].buyPrice,
-                imageSrc: dataAlterProduct.imageSrc != '' ? dataAlterProduct.imageSrc : products[selectProductToAlter].imageSrc,
-                title: dataAlterProduct.title != '' ? dataAlterProduct.title : products[selectProductToAlter].title,
-                sellPrice: dataAlterProduct.sellPrice != '' ? dataAlterProduct.sellPrice : products[selectProductToAlter].sellPrice,
-                sweetness: dataAlterProduct.sweetness != '' ? dataAlterProduct.sweetness : products[selectProductToAlter].sweetness,
-                amount: dataAlterProduct.amount != '' ? dataAlterProduct.amount : products[selectProductToAlter].amount,
+                type: dataAlterProduct.type !== '' ? dataAlterProduct.type : products[selectProductToAlter].type,
+                country: dataAlterProduct.country !== '' ? dataAlterProduct.country : products[selectProductToAlter].country,
+                amount: dataAlterProduct.amount !== '' ? dataAlterProduct.amount : products[selectProductToAlter].amount,
+                buyPrice: dataAlterProduct.buyPrice !== '' ? dataAlterProduct.buyPrice : products[selectProductToAlter].buyPrice,
+                imageSrc: dataAlterProduct.imageSrc !== '' ? dataAlterProduct.imageSrc : products[selectProductToAlter].imageSrc,
+                title: dataAlterProduct.title !== '' ? dataAlterProduct.title : products[selectProductToAlter].title,
+                sellPrice: dataAlterProduct.sellPrice !== '' ? dataAlterProduct.sellPrice : products[selectProductToAlter].sellPrice,
+                sweetness: dataAlterProduct.sweetness !== '' ? dataAlterProduct.sweetness : products[selectProductToAlter].sweetness,
                 id: products[selectProductToAlter].id
 
             }

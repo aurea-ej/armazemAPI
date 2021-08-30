@@ -109,7 +109,7 @@ function Request() {
         setModalData(item)
         setHeightPageWhenOpenModal(document.body.getBoundingClientRect().top)
         window.scrollTo(0, 0);
-        displayModal == "none" ? setDisplayModal("flex") : setDisplayModal("none")
+        displayModal === "none" ? setDisplayModal("flex") : setDisplayModal("none")
 
     }
 
@@ -121,7 +121,7 @@ function Request() {
 
     function closeModal() {
 
-        if (displayModal == "none")
+        if (displayModal === "none")
             setDisplayModal("flex")
         else {
             window.scrollTo(-heightPageWhenOpenModal, - heightPageWhenOpenModal)
@@ -213,7 +213,7 @@ function Request() {
 
                         <div className="rightSizeBoxOrder" >
 
-                            {item.seller != undefined ? <p>Vendedor: {item.seller}</p> : ''}
+                            {item.seller !== undefined ? <p>Vendedor: {item.seller}</p> : ''}
 
                             <p>Itens:</p>
 
@@ -262,7 +262,7 @@ function Request() {
 
                             {
 
-                                item.clientNote != '' ?
+                                item.clientNote !== '' ?
                                     <p>Observações do cliente: <b>{item.clientNote}</b></p>
                                     : ''
 
@@ -272,7 +272,7 @@ function Request() {
                             <p>Valor Total do pedido: <b>R$ {Number(item.totalValue).toFixed(2)}</b></p>
                             
                             {
-                                item.deliveryman != undefined ?
+                                item.deliveryman !== undefined ?
                                 <p>Entregador: <b>{item.deliveryman}</b></p>
                                 : ''
 
@@ -280,7 +280,7 @@ function Request() {
 
                             {
 
-                            item.adminNote != '' ?
+                            item.adminNote !== '' ?
                                 <p>Observações do Armazém: <b>{item.adminNote}</b></p>
                                 : ''
 

@@ -64,17 +64,17 @@ function ModalUser(props) {
 
             firebase.database().ref('users/' + modalDataUsers.id).update({
 
-                name: customerRegisterData.name != '' ? customerRegisterData.name : modalDataUsers.name,
-                email: customerRegisterData.email != '' ? customerRegisterData.email : modalDataUsers.email,
-                phoneNumber: customerRegisterData.phoneNumber != '' ? customerRegisterData.phoneNumber : modalDataUsers.phoneNumber,
-                birthDate: customerRegisterData.birthDate != '' ? customerRegisterData.birthDate : modalDataUsers.birthDate,
-                cepNumber: customerRegisterData.cepNumber != '' ? customerRegisterData.cepNumber : modalDataUsers.cepNumber,
-                address: customerRegisterData.address != '' ? customerRegisterData.address : modalDataUsers.address,
-                city: customerRegisterData.city != '' ? customerRegisterData.city : modalDataUsers.city,
-                state: customerRegisterData.state != '' ? customerRegisterData.state : modalDataUsers.state,
-                houseNumber: customerRegisterData.houseNumber != '' ? customerRegisterData.houseNumber : modalDataUsers.houseNumber,
-                district: customerRegisterData.district != '' ? customerRegisterData.district : modalDataUsers.district,
-                complement: customerRegisterData.complement != '' ? customerRegisterData.complement : modalDataUsers.complement,
+                name: customerRegisterData.name !== '' ? customerRegisterData.name : modalDataUsers.name,
+                email: customerRegisterData.email !== '' ? customerRegisterData.email : modalDataUsers.email,
+                phoneNumber: customerRegisterData.phoneNumber !== '' ? customerRegisterData.phoneNumber : modalDataUsers.phoneNumber,
+                birthDate: customerRegisterData.birthDate !== '' ? customerRegisterData.birthDate : modalDataUsers.birthDate,
+                cepNumber: customerRegisterData.cepNumber !== '' ? customerRegisterData.cepNumber : modalDataUsers.cepNumber,
+                address: customerRegisterData.address !== '' ? customerRegisterData.address : modalDataUsers.address,
+                city: customerRegisterData.city !== '' ? customerRegisterData.city : modalDataUsers.city,
+                state: customerRegisterData.state !== '' ? customerRegisterData.state : modalDataUsers.state,
+                houseNumber: customerRegisterData.houseNumber !== '' ? customerRegisterData.houseNumber : modalDataUsers.houseNumber,
+                district: customerRegisterData.district !== '' ? customerRegisterData.district : modalDataUsers.district,
+                complement: customerRegisterData.complement !== '' ? customerRegisterData.complement : modalDataUsers.complement,
 
             })
             .then(() => alert("Cadastro atualizado com sucesso!"))

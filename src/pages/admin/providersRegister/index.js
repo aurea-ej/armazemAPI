@@ -215,13 +215,13 @@ function Provider() {
 
         setHistoryData();
 
-        displayHistory == "none" ? setDisplayHistory("flex") : setDisplayHistory("none")
+        displayHistory === "none" ? setDisplayHistory("flex") : setDisplayHistory("none")
 
     }
 
     function closeHistory() {
 
-        displayHistory == "none" ? setDisplayHistory("flex") : setDisplayHistory("none")
+        displayHistory === "none" ? setDisplayHistory("flex") : setDisplayHistory("none")
 
     }
 

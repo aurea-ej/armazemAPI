@@ -4,8 +4,6 @@ import { useHistory } from 'react-router-dom'
 
 import Header from '../../components/header'
 import Footer from '../../components/footer'
-
-import spainFlag from '../../img/spain.svg'
 import addButton from '../../img/plus.svg'
 import removeButton from '../../img/minus.svg'
 
@@ -75,7 +73,7 @@ function Products() {
 
     function handleSearchInput(event) {
 
-        if (event.key == 'Enter') {
+        if (event.key === 'Enter') {
 
             clearSearchItem()
             searchItem()
@@ -110,7 +108,7 @@ function Products() {
 
     function handleDisplaySearchMobile() {
 
-        if (displayMobileSearch == 'none')
+        if (displayMobileSearch === 'none')
             setDisplayMobileSearch('flex')
         else
             setDisplayMobileSearch('none')
@@ -119,14 +117,14 @@ function Products() {
 
     function handleMinProductPrice(event) {
 
-        if (event.key == 'Enter')
+        if (event.key === 'Enter')
             filterItemByPrice()
 
     }
 
     function handleMaxProductPrice(event) {
 
-        if (event.key == 'Enter')
+        if (event.key === 'Enter')
             filterItemByPrice()
 
     }
@@ -177,7 +175,7 @@ function Products() {
 
         })
         
-        if (listOfItems != null) {
+        if (listOfItems !== null) {
             
             newListOfItems = {
                 ...listOfItems,
@@ -283,7 +281,7 @@ function Products() {
                     {
                         data.map((item, index) => {
 
-                            if (item.itemAvailability == 'true') {
+                            if (item.itemAvailability === 'true') {
 
                                 return (
 

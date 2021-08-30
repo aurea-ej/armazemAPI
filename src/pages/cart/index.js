@@ -43,7 +43,7 @@ function Cart() {
 
         const verify = await JSON.parse(localStorage.getItem('products'))
 
-        if (verify != null) {
+        if (verify !== null) {
 
             var temp = Object.keys(verify).map((key) => verify[key])
 
@@ -94,7 +94,7 @@ function Cart() {
 
                     temp.map((item) => {
 
-                        if (item.email == userEmail) {
+                        if (item.email === userEmail) {
                             setDataAccount(item)
                         }
 
@@ -115,7 +115,7 @@ function Cart() {
 
                     temp.map((item) => {
 
-                        if (item.email == userEmail) {
+                        if (item.email === userEmail) {
                             setSeller(item)
                             setIsSeller(true)
                         }
@@ -133,7 +133,7 @@ function Cart() {
 
         if (userIsLogged) {
 
-            if (selectedPayment != '') {
+            if (selectedPayment !== '') {
 
                 const id = firebase.database().ref().child('posts').push().key
                 const now = new Date()

@@ -69,7 +69,7 @@ function Stock() {
 
         items.map(item => {
 
-            if (item.id == selectedItem)
+            if (item.id === selectedItem)
                 product = item
 
         })
@@ -122,7 +122,7 @@ function Stock() {
 
     function handleSearchInput(event) {
 
-        if (event.key == 'Enter') {
+        if (event.key === 'Enter') {
 
             clearSearchItem()
             searchItem()

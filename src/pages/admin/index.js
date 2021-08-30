@@ -35,7 +35,7 @@ function Admin() {
 
                     temp.map((item) => {
 
-                        if(item.email == userEmail)
+                        if(item.email === userEmail)
                             setUserIsLogged(true)
 
                     })
@@ -92,7 +92,7 @@ function Admin() {
 
                 temp.map((item) => {
 
-                    if(item.email == userEmail)
+                    if(item.email === userEmail)
                         setUserIsLogged(true)
 
                 })

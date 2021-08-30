@@ -62,7 +62,7 @@ export default function Header (props) {
 
                     temp.map((item) => {
 
-                        if (item.email == userEmail) {
+                        if (item.email === userEmail) {
                             setDataAccount(item)
                         }
 
@@ -83,7 +83,7 @@ export default function Header (props) {
 
                     temp.map((item) => {
 
-                        if (item.email == userEmail) {
+                        if (item.email === userEmail) {
                             setIsAdmin(true)
                         }
 

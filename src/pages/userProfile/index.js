@@ -50,7 +50,7 @@ function UserProfile() {
 
                     temp.map((item) => {
 
-                        if (item.email == userEmail)
+                        if (item.email === userEmail)
                             setDataAccount(item)
 
                     })
@@ -80,7 +80,7 @@ function UserProfile() {
 
                     temp.map((item) => {
 
-                        if (item.userEmail == userEmail)
+                        if (item.userEmail === userEmail)
                             requestDataTemp.push(item)
 
                     })
@@ -103,7 +103,7 @@ function UserProfile() {
 
     function handleDisplayDivAlterInfos() {
 
-        if (displayDivAlterInfos == "none")
+        if (displayDivAlterInfos === "none")
             setDisplayDivAlterInfos("flex")
         else
             setDisplayDivAlterInfos("none")
@@ -112,7 +112,7 @@ function UserProfile() {
 
     function handleDisplayDivPedidos() {
 
-        if (displayDivPedidos == "none")
+        if (displayDivPedidos === "none")
             setDisplayDivPedidos("flex")
         else
             setDisplayDivPedidos("none")
@@ -135,15 +135,15 @@ function UserProfile() {
 
         firebase.database().ref('users/' + dataAccount.id).update({
 
-            name: registerData.name != '' ? registerData.name : dataAccount.name,
-            phoneNumber: registerData.phoneNumber != '' ? registerData.phoneNumber : dataAccount.phoneNumber,
+            name: registerData.name !== '' ? registerData.name : dataAccount.name,
+            phoneNumber: registerData.phoneNumber !== '' ? registerData.phoneNumber : dataAccount.phoneNumber,
             personWhoIndicated: dataAccount.personWhoIndicated,
             whoIndicated: dataAccount.whoIndicated,
-            street: registerData.street != '' ? registerData.street : dataAccount.street,
-            houseNumber: registerData.houseNumber != '' ? registerData.houseNumber : dataAccount.houseNumber,
-            complement: registerData.complement != '' ? registerData.complement : dataAccount.complement,
-            district: registerData.district != '' ? registerData.district : dataAccount.district,
-            cepNumber: registerData.cepNumber != '' ? registerData.cepNumber : dataAccount.cepNumber,
+            street: registerData.street !== '' ? registerData.street : dataAccount.street,
+            houseNumber: registerData.houseNumber !== '' ? registerData.houseNumber : dataAccount.houseNumber,
+            complement: registerData.complement !== '' ? registerData.complement : dataAccount.complement,
+            district: registerData.district !== '' ? registerData.district : dataAccount.district,
+            cepNumber: registerData.cepNumber !== '' ? registerData.cepNumber : dataAccount.cepNumber,
             email: dataAccount.email,
             id: dataAccount.id
 
@@ -316,7 +316,7 @@ export default UserProfile;
 
 //                             return <>
 
-//                                 {item.listItem != undefined ?
+//                                 {item.listItem !== undefined ?
 
 //                                     item.listItem.map(item => {
 

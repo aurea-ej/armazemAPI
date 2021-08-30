@@ -56,7 +56,7 @@ function ChangeInfos() {
 
                     temp.map((item) => {
 
-                        if (item.email == userEmail)
+                        if (item.email === userEmail)
                             setDataAccount(item)
 
                     })
@@ -86,7 +86,7 @@ function ChangeInfos() {
 
                     temp.map((item) => {
 
-                        if (item.userEmail == userEmail)
+                        if (item.userEmail === userEmail)
                             requestDataTemp.push(item)
 
                     })
@@ -101,7 +101,7 @@ function ChangeInfos() {
 
     function handleDisplayDivAlterInfos() {
 
-        if (displayDivAlterInfos == "none")
+        if (displayDivAlterInfos === "none")
             setDisplayDivAlterInfos("flex")
         else
             setDisplayDivAlterInfos("none")
@@ -110,7 +110,7 @@ function ChangeInfos() {
 
     function handleDisplayDivPedidos() {
 
-        if (displayDivPedidos == "none")
+        if (displayDivPedidos === "none")
             setDisplayDivPedidos("flex")
         else
             setDisplayDivPedidos("none")
@@ -204,17 +204,17 @@ function ChangeInfos() {
 
         firebase.database().ref('users/' + dataAccount.id).update({
 
-            name: registerData.name != '' ? registerData.name : dataAccount.name,
+            name: registerData.name !== '' ? registerData.name : dataAccount.name,
             email: dataAccount.email,
-            state: registerData.state != '' ? registerData.state : dataAccount.state,
-            city: registerData.city != undefined ? registerData.city : dataAccount.city,
-            address: registerData.address != '' ? registerData.address : dataAccount.address,
-            district: registerData.district != '' ? registerData.district : dataAccount.district,
-            complement: registerData.complement != '' ? registerData.complement : dataAccount.complement,
-            houseNumber: registerData.houseNumber != '' ? registerData.houseNumber : dataAccount.houseNumber,
-            cepNumber: registerData.cepNumber != '' ? registerData.cepNumber : dataAccount.cepNumber,
-            phoneNumber: registerData.phoneNumber != '' ? registerData.phoneNumber : dataAccount.phoneNumber,
-            birthDate: registerData.birthDate != undefined ? registerData.birthDate : dataAccount.birthDate,
+            state: registerData.state !== '' ? registerData.state : dataAccount.state,
+            city: registerData.city !== undefined ? registerData.city : dataAccount.city,
+            address: registerData.address !== '' ? registerData.address : dataAccount.address,
+            district: registerData.district !== '' ? registerData.district : dataAccount.district,
+            complement: registerData.complement !== '' ? registerData.complement : dataAccount.complement,
+            houseNumber: registerData.houseNumber !== '' ? registerData.houseNumber : dataAccount.houseNumber,
+            cepNumber: registerData.cepNumber !== '' ? registerData.cepNumber : dataAccount.cepNumber,
+            phoneNumber: registerData.phoneNumber !== '' ? registerData.phoneNumber : dataAccount.phoneNumber,
+            birthDate: registerData.birthDate !== undefined ? registerData.birthDate : dataAccount.birthDate,
             id: dataAccount.id
 
         })

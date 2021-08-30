@@ -46,7 +46,7 @@ function Admin() {
 
     function handleSearchInput(event) {
 
-        if (event.key == 'Enter') {
+        if (event.key === 'Enter') {
 
             clearSearchName()
             searchName()
@@ -85,13 +85,13 @@ function Admin() {
 
         setModalDataUsers(item)
         window.scrollTo(0, 0);
-        displayModal == "none" ? setDisplayModal("flex") : setDisplayModal("none")
+        displayModal === "none" ? setDisplayModal("flex") : setDisplayModal("none")
 
     }
 
     function closeModal() {
 
-        if (displayModal == "none")
+        if (displayModal === "none")
             setDisplayModal("flex")
         else {
             setDisplayModal("none");

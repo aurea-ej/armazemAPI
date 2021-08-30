@@ -169,15 +169,15 @@ function Items() {
                 .ref('items/' + dataKeysAdm[selectItem])
                 .update({
 
-                    imageSrc: alteredImageUrl != '' ? alteredImageUrl : dataAdmin[selectItem].imageSrc,
-                    title: dataAlterItem.title != '' ? dataAlterItem.title : dataAdmin[selectItem].title,
-                    desc: dataAlterItem.desc != '' ? dataAlterItem.desc : dataAdmin[selectItem].desc,
-                    price: dataAlterItem.price != 0 ? dataAlterItem.price : dataAdmin[selectItem].price,
-                    itemAvailability: dataAlterItem.itemAvailability != 0 ? dataAlterItem.itemAvailability : dataAdmin[selectItem].itemAvailability,
-                    country: dataAlterItem.country != 0 ? dataAlterItem.country : dataAdmin[selectItem].country,
-                    type: dataAlterItem.type != 0 ? dataAlterItem.type : dataAdmin[selectItem].type,
-                    sweetness: dataAlterItem.sweetness != 0 ? dataAlterItem.sweetness : dataAdmin[selectItem].sweetness,
-                    amountInStock: dataAlterItem.amountInStock != 0 ? dataAlterItem.amountInStock : dataAdmin[selectItem].amountInStock,
+                    imageSrc: alteredImageUrl !== '' ? alteredImageUrl : dataAdmin[selectItem].imageSrc,
+                    title: dataAlterItem.title !== '' ? dataAlterItem.title : dataAdmin[selectItem].title,
+                    desc: dataAlterItem.desc !== '' ? dataAlterItem.desc : dataAdmin[selectItem].desc,
+                    price: dataAlterItem.price !== 0 ? dataAlterItem.price : dataAdmin[selectItem].price,
+                    itemAvailability: dataAlterItem.itemAvailability !== 0 ? dataAlterItem.itemAvailability : dataAdmin[selectItem].itemAvailability,
+                    country: dataAlterItem.country !== 0 ? dataAlterItem.country : dataAdmin[selectItem].country,
+                    type: dataAlterItem.type !== 0 ? dataAlterItem.type : dataAdmin[selectItem].type,
+                    sweetness: dataAlterItem.sweetness !== 0 ? dataAlterItem.sweetness : dataAdmin[selectItem].sweetness,
+                    amountInStock: dataAlterItem.amountInStock !== 0 ? dataAlterItem.amountInStock : dataAdmin[selectItem].amountInStock,
 
                 })
                 .then(() => alert("Item atualizado com sucesso!"))

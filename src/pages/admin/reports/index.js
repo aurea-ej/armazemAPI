@@ -79,7 +79,7 @@ function Reports() {
 
     function salesThisMonth() {
 
-        if (thisMonth.length == 0 )  {
+        if (thisMonth.length === 0 )  {
 
             const today = new Date()
             const thisMonthTemp = []
@@ -108,7 +108,7 @@ function Reports() {
 
     function salesThreeMonths() {
 
-        if (threeMonths.length == 0 )  {
+        if (threeMonths.length === 0 )  {
 
             const today = new Date()
             const period = []
@@ -135,7 +135,7 @@ function Reports() {
 
     function salesSixMonths() {
 
-        if (sixMonths.length == 0 )  {
+        if (sixMonths.length === 0 )  {
 
             const today = new Date()
             const period = []
@@ -219,7 +219,7 @@ function Reports() {
 
                 {
 
-                    thisMonth != [] ?
+                    thisMonth !== [] ?
 
                         thisMonth.map((item)=> {
 
@@ -259,7 +259,7 @@ function Reports() {
 
                 {
 
-                    sixMonths != [] ?
+                    sixMonths !== [] ?
 
                         threeMonths.map((item)=> {
 
@@ -298,7 +298,7 @@ function Reports() {
 
                 {
 
-                    sixMonths != [] ?
+                    sixMonths !== [] ?
 
                     sixMonths.map((item)=> {
 

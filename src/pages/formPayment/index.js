@@ -4,9 +4,39 @@ import { useState, useEffect } from 'react';
 import Header from '../../components/header'
 import Footer from '../../components/footer'
 
+import mercadopago from 'mercadopago'
+
 import './style.scss'
 
 function PaymentForm() {
+
+  useEffect(() => {
+    const mercadopago = require ('mercadopago');
+
+    mercadopago.configure({
+      access_token:"TEST-7958052856366423-082721-e6e9735bff14c755b0c0f5af97bb4489-129407879"
+    })
+
+    let preference = {
+      items: [
+        {
+          title: 'Meu produto',
+          unit_price: 100,
+          quantity: 1,
+        },
+      ]
+    };
+    
+    mercadopago.preferences.create(preference)
+    .then(function(response){
+    // Este valor substituirá a string "<%= global.id %>" no seu HTML
+      global.id = response.body.id;
+    }).catch(function(error){
+      console.log(error);
+    });
+
+  },[])
+
 
   return (
 
@@ -14,30 +44,14 @@ function PaymentForm() {
 
       <Header />
 
-      <form action="/process_payment" method="post" id="paymentForm">
-        <h3>Detalhe do comprador</h3>
-        <div>
-          <div>
-            <label for="email">E-mail</label>
-            <input id="email" name="email" type="text" value="test@test.com" />
-          </div>
-          <div>
-            <label for="docType">Tipo de documento</label>
-            <select id="docType" name="docType" data-checkout="docType" type="text"></select>
-          </div>
-          <div>
-            <label for="docNumber">Número do documento</label>
-            <input id="docNumber" name="docNumber" data-checkout="docNumber" type="text" />
-          </div>
-        </div>
-        <h3>Detalhes do cartão</h3>
+        <button className="cho-container" >Pagar</button>
+        
+      <Footer />
 
-        <Footer />
 
-      </form>
     </section>
 
   )
 }
 
-export default PaymentForm;
+export default PaymentForm

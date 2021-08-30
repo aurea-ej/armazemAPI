@@ -11,7 +11,7 @@ function AgePopup() {
 
     }
 
-    if(ageVerify == true) {
+    if(ageVerify === true) {
 
         return (null)
 
