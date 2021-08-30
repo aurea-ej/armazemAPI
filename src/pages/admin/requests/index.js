@@ -179,23 +179,35 @@ function Request() {
 
                         <div className="leftSizeBoxOrder" >
 
-                            <p>Nome:</p>
-                            <b>{item.userName}</b>
+                            <div className="rowItens">
+                                <p>Nome:</p>
+                                <b>{item.userName}</b>
+                            </div>
 
-                            <p>Telefone: </p>
-                            <b>{item.phoneNumber}</b>
+                            <div className="rowItens">
+                                <p>Telefone: </p>
+                                <b>{item.phoneNumber}</b>
+                            </div>
 
-                            <p>Rua:</p>
-                            <b>{item.street}</b>
+                            <div className="rowItens">
+                                <p>Rua:</p>
+                                <b>{item.street}</b>
+                            </div>
 
-                            <p>Bairro:</p>
-                            <b>{item.district}</b>
+                            <div className="rowItens">
+                                <p>Bairro:</p>
+                                <b>{item.district}</b>
+                            </div>
 
-                            <p>Número da casa:</p>
-                            <b>{item.houseNumber}</b>
+                            <div className="rowItens">
+                                <p>Número da casa:</p>
+                                <b>{item.houseNumber}</b>
+                            </div>
 
-                            <p>CEP:</p>
-                            <b>{item.cepNumber}</b>
+                            <div className="rowItens">
+                                <p>CEP:</p>
+                                <b>{item.cepNumber}</b>
+                            </div>
 
                         </div>
 

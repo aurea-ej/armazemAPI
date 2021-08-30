@@ -13,17 +13,27 @@
     align-items: center;
     width: 80%;
     padding: 25px;
+    background-color: $vinho;
+    border-radius: 15px;
+    margin: 3em;
 }
 
 .leftSizeBoxOrder {
     padding: 10px;
-    background-color: $deepVinho;
     width: 100%;
+    display: flex;
+    flex-direction: column;
+
+    .rowItens {
+        display: flex;
+        flex-direction: row;
+    }
 }
 
 .leftSizeBoxOrder p {
     padding: 10px;
     color: white;
+    font-style: italic;
 }
 
 .leftSizeBoxOrder b {
@@ -33,7 +43,6 @@
 
 .rightSizeBoxOrder {
     padding: 10px;
-    background-color: $vinho;
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -62,6 +71,7 @@
 .rightSizeBoxOrder p {
     padding: 10px;
     color: white;
+    font-style: italic;
 }
 
 .rightSizeBoxOrder b {
@@ -100,6 +110,11 @@
     margin: 10px;
     width: 100%;
     cursor: pointer;
+}
+
+.sendMessage a:hover {
+    background-color: $deepVinho;
+    color: $branco;
 }
 
 .finalizarPedido {
