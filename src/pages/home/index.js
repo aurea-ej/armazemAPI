@@ -17,6 +17,7 @@ import banner2 from '../../img/banner 2.png'
 import Header from '../../components/header'
 import Footer from '../../components/footer'
 import WhatsAppButton from '../../components/whatsappButton'
+import AgePopup from '../../components/agePopup'
 
 import './style.scss'
 
@@ -72,6 +73,8 @@ function Home() {
         <div className="HomePage">
 
             <Header />
+
+            <AgePopup />
 
             <section id="heroSection">
 

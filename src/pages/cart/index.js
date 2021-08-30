@@ -4,6 +4,7 @@ import { useHistory } from 'react-router-dom'
 
 import Header from '../../components/header'
 import Footer from '../../components/footer'
+import PaymentForm from '../../components/formPayment'
 import './style.scss'
 
 import firebase from 'firebase/app'
@@ -256,6 +257,8 @@ function Cart() {
                 <Header />
 
                 <div className="cartPage">
+
+                    <PaymentForm />
 
                     <div className="cartIntro">
 
