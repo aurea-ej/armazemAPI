@@ -5,6 +5,7 @@ import Home from './pages/home'
 import Contact from './pages/contact'
 import About from './pages/about'
 import SignIn from './pages/signIn'
+import PaymentForm from './pages/formPayment'
 import Admin from './pages/admin'
 import Register from './pages/register'
 import Request from './pages/admin/requests'
@@ -42,6 +43,7 @@ const Routes = () => {
             <Route component={Stock} path='/AdminEstoque' />
             <Route component={Reports} path='/AdminRelatorios' />
             <Route component={ProviderProducts} path='/AdminProdutoFornecedor' />
+            <Route component={PaymentForm} path='/pagamento' />
 
         </BrowserRouter>
 
